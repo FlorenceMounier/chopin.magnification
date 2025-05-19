@@ -14,17 +14,17 @@ All commands that you use to use when developing packages...
 ```{r description}
 # Describe your package
 fusen::fill_description(
-  pkg = here::here(),
+  pkg = here::here(),overwrite = TRUE,
   fields = list(
-    Title = "Build A Package From Rmarkdown File",
+    Title = "R code for Field Methodological Comparison of biomagnification assessment",
     Description = "Use Rmarkdown First method to build your package. Start your package with documentation. Everything can be set from a Rmarkdown file in your project.",
     `Authors@R` = c(
-      person("John", "Doe", email = "john@email.me", role = c("aut", "cre"), comment = c(ORCID = "0000-0000-0000-0000"))
+      person("Florence", "Mounier", email = "florence.mounier@inrae.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-8916-7007"))
     )
   )
 )
 # Define License with use_*_license()
-usethis::use_mit_license("John Doe")
+usethis::use_mit_license("Florence Mounier")
 ```
 
 # All-in-one function to deploy publicly on GitHub
