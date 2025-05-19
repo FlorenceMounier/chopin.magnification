@@ -27,17 +27,6 @@ fusen::fill_description(
 usethis::use_mit_license("Florence Mounier")
 ```
 
-# All-in-one function to deploy publicly on GitHub
-
-Either use this GitHub all-in-one function or choose the steps one-by-one in the following sections.
-See `vignette("share-on-a-github-website", package = "fusen")` for more information.
-
-```{r, eval=FALSE}
-# _All-in-one share of your package and its documentation on GitHub
-fusen::init_share_on_github()
-```
-
-
 # Start using git
 
 ```{r, eval=FALSE}
@@ -56,7 +45,7 @@ remotes::install_local()
 # README
 usethis::use_readme_rmd()
 # Code of Conduct
-usethis::use_code_of_conduct("contact@fake.com")
+usethis::use_code_of_conduct("florence.mounier42@gmail.com")
 # NEWS
 usethis::use_news_md()
 ```
