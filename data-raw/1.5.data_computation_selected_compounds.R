@@ -127,6 +127,11 @@ for(c in 1:length(HBCDD)){
 soles_contam$sommeHBCDD_ng_gww = apply(soles_contam[,paste(HBCDD,"_ng_gww",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 # --------------------------------------------------------------
+# Save dataset
+write_csv(x = benthos_contam, file = "data-raw/benthos_contam.csv")
+write_csv(x = soles_contam, file = "data-raw/sole_contam.csv")
+
+# --------------------------------------------------------------
 # Output data
 
 usethis::use_data(PCB_lab, overwrite = TRUE)
