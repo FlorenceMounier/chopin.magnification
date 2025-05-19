@@ -1,17 +1,26 @@
 Package: chopin.magnification
+Title: R Code for Field Methodological Comparison of Biomagnification
+    Assessment
 Version: 0.0.0.9000
-Title: R Code for Field Methodological Comparison of Biomagnification Assessment
-Description: Use Rmarkdown First method to build your package. Start your package with documentation. Everything can be set from a Rmarkdown file in your project.
-Authors@R: person(given = "Florence",
-       family = "Mounier",
-       role = c("aut", "cre"),
-       email = "florence.mounier@inrae.fr",
-       comment = c(ORCID = "0000-0001-8916-7007"))
+Authors@R: 
+    person("Florence", "Mounier", , "florence.mounier@inrae.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-8916-7007"))
+Description: Use Rmarkdown First method to build your package. Start your
+    package with documentation. Everything can be set from a Rmarkdown
+    file in your project.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
-Imports: 
-    magrittr
 URL: https://github.com/FlorenceMounier/chopin.magnification
 BugReports: https://github.com/FlorenceMounier/chopin.magnification/issues
+Depends: 
+    R (>= 3.5)
+Imports: 
+    magrittr
+Suggests: 
+    knitr,
+    rmarkdown,
+    rstudioapi,
+    usethis
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
