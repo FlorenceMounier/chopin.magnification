@@ -1,0 +1,87 @@
+---
+title: "1. Data formatting"
+format: html
+---
+
+## 1.1. Contaminants list and properties formatting
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.1.data_formatting_contaminants.R")
+```
+
+Outputs :
+
+-   data/contam_prop
+-   data/PCB_ALL
+-   data/PCB_ALL_lab
+-   data/log_Kow_PCB_ALL
+-   data/PCB_indicators
+-   data/PCB_dioxineL
+-   data/inter_dioxineL
+-   data/HBCDD_ALL
+-   data/HBCDD_ALL_lab
+-   data/log_Kow_HBCDD_ALL
+-   data/PFAS_ALL
+-   data/PFAS_ALL_lab
+-   data/subfamilies_PFAS_ALL
+-   data/n_C_PFAS_ALL
+
+## 1.2. Benthos data formatting
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.2.data_formatting_benthos.R")
+```
+
+Outputs :
+
+- data-raw/benthos_contam.csv
+- data/benthos_metadata
+- data/benthos_contam
+
+## 1.3. Soles data formatting
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.3.data_formatting_soles.R")
+```
+
+Outputs :
+
+- data-raw/soles_contam.csv
+- data/soles_contam
+
+
+## 1.4. Compound selection
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.4.compound_selection.R")
+```
+
+Outputs :
+
+- data-raw/detection_rates.csv
+- data/PCB
+- data/PFAS
+- data/HBCDD
+
+## 1.5. Ddata computation for selected compounds
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.5.data_computation_selected_compounds.R")
+```
+
+Outputs :
+
+- data-raw/benthos_contam.csv
+- data-raw/soles_contam.csv
+- data/benthos_contam
+- data/soles_contam
+
+- data/PCB_lab
+- data/log_Kow_PCB
+
+- data/PFAS_lab
+- data/subfamilies_PFAS
+- data/n_C_PFAS
+
+- data/HBCDD_lab
+- data/log_Kow_HBCDD
