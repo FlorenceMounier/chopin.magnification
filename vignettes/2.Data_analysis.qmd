@@ -67,7 +67,7 @@ Dataset:
 lipid <- contam |>
   select(species, lipid_percent_dw) |>
   full_join(metadata) |> 
-  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes"))) |> 
+  # mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes"))) |> 
   drop_na()
 ```
 
@@ -149,6 +149,3 @@ sum_levels <- rbind(sum_levels_ng_gdw, sum_levels_ng_gww, sum_levels_ng_glw)
 # Save dataset
 write_csv(x = sum_levels, file = "results/data_analysis/3.sum_levels.csv")
 ```
-
-
-

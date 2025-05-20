@@ -13,6 +13,11 @@ library(chopin.magnification)
 library(tidyverse)
 
 #-----------------------------------------------------------
+# Join metadata
+
+metadata <- full_join(soles_metadata, benthos_metadata)
+
+#-----------------------------------------------------------
 # Join data of contamination for soles and benthos
 
 ## Reduce datasets
@@ -31,12 +36,10 @@ sub_soles_contam <- soles_contam |>
          labels = soles_metadata$labels, grp = soles_metadata$grp)
 
 ## Join datasets
-contam <- full_join(sub_benthos_contam, sub_soles_contam)
+contam <- full_join(sub_benthos_contam, sub_soles_contam) |>
+  left_join(metadata) |>
+  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes")))
 
-#-----------------------------------------------------------
-# Join metadata
-
-metadata <- full_join(soles_metadata, benthos_metadata)
 
 #-----------------------------------------------------------
 # Calculation of concentrations normalized by the sum within a family (ng/g dw)
