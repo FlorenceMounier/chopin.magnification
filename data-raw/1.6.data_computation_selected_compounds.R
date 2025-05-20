@@ -24,6 +24,27 @@ n_C_PFAS <- n_C_PFAS_ALL[which(PFAS_ALL %in% PFAS)]
 HBCDD_lab <- HBCDD_ALL_lab[which(HBCDD_ALL %in% HBCDD)]
 log_Kow_HBCDD <- log_Kow_HBCDD_ALL[which(HBCDD_ALL %in% HBCDD)]
 
+#-----------------------------------------------------------
+# Joined data of contamination for soles and benthos
+
+## Reducted datasets aux sommes de contaminant, commun sole-benthos
+
+sub_benthos_contam <- benthos_contam |>
+  select(-c(year, season, date_sampling, zone, station, comment))|>
+  rename(lip_percent_dw = lip_dw_percent)
+
+sub_soles_contam <- soles_contam |>
+  mutate(dw_percent = 100-water_percent) |>
+  select(-c(year, season, Date_prlvt, zone, grp, sample_type,
+            length_TL_cm, length_TL_cm_sd, length_SL_cm, mass_tot_gww,
+            mass_tot_gww_sd, FultonK_gwwTL3, FultonK_sd_gwwTL3, water_percent,
+            "a-HBCDD_pg_gdw", "b-HBCDD_pg_gdw", "g-HBCDD_pg_gdw")) |>
+  mutate(species = soles_metadata$species, alim = soles_metadata$alim,
+         labels = soles_metadata$labels, grp = soles_metadata$grp)
+
+setdiff(names(sub_benthos_contam), names(sub_soles_contam))
+
+full_join(sub_benthos_contam, sub_soles_contam)
 #-------------------------------------------------------------------------
 # PCB
 
