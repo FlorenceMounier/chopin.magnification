@@ -23,6 +23,14 @@ soles_contam$`b-HBCDD_ng_gdw` = soles_contam$`b-HBCDD_pg_gdw`/1000
 soles_contam$`g-HBCDD_ng_gdw` = soles_contam$`g-HBCDD_pg_gdw`/1000
 
 # --------------------------------------------------------------
+# Sole metadata
+
+soles_metadata <- tibble("species" = "Solea_solea",
+                         "labels" = "S. solea",
+                         "grp" = "Actinopterygii",
+                         "alim" = "Omnivore")
+
+# --------------------------------------------------------------
 # Calculation of dry weight
 
 soles_contam$mass_tot_gdw = soles_contam$mass_tot_gww*((100-soles_contam$water_percent)/100)
@@ -205,4 +213,5 @@ write_csv(x = soles_contam, file = "data-raw/sole_contam.csv")
 # Output data
 
 usethis::use_data(soles_contam, overwrite = TRUE)
+usethis::use_data(soles_metadata, overwrite = TRUE)
 

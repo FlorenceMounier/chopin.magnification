@@ -58,10 +58,10 @@ soles_isotopes_CHOPIN <- soles_isotopes_CHOPIN |> select(d13C, d15N)
 
 # Join data from CAPES & CHOPIN
 soles_isotopes <- full_join(soles_isotopes_CHOPIN, soles_isotopes_CAPES)
-soles_isotopes$species <- "Solea_solea"
-soles_isotopes$labels <- "S. solea"
-soles_isotopes$grp <- "Actinopterygii"
-soles_isotopes$alim <- "Omnivore"
+soles_isotopes$species <- soles_metadata$species
+soles_isotopes$labels <- soles_metadata$labels
+soles_isotopes$grp <- soles_metadata$grp
+soles_isotopes$alim <- soles_metadata$alim
 
 #-----------------------------------------------------------
 # Join BENTHOS & SOLES
