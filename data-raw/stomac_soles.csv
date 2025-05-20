@@ -1,18 +1,14 @@
 Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C1-sole-G0/10,Annelida,Polydora ciliata,5
-06-17/C1-sole-G0/10,Divers,Bacillariophyceae,1
 06-17/C1-sole-G0/10,Arthropoda,Corophium volutator,1
-06-17/C1-sole-G0/10,Divers,Bacillariophyceae,2
 06-17/C1-Sole-G0/12,Annelida,Annelida,1
 06-17/C1-Sole-G0/12,Arthropoda,Corophium volutator,1
 06-17/C1-Sole-G0/12,Arthropoda,Harpacticoida,107
 06-17/C1-Sole-G0/15,Arthropoda,Harpacticoida,20
-06-17/C1-Sole-G0/15,Divers,Actinopterygii,1
 06-17/C1-Sole-G0/15,Arthropoda,Amphipoda,1
 06-17/C1-Sole-G0/15,Annelida,Annelida,1
 06-17/C1-Sole-G0/15,Annelida,Polydora ciliata,1
 06-17/C1-Sole-G0/16,Annelida,Hediste diversicolor,1
-06-17/C1-Sole-G0/16,Divers,Foraminifera,1
 06-17/C1-Sole-G0/16,Annelida,Polydora ciliata,2
 06-17/C1-Sole-G0/16,Arthropoda,Harpacticoida,2
 06-17/C1-Sole-G0/17,Arthropoda,Harpacticoida,144
@@ -27,15 +23,11 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C1-Sole-G0/20,Arthropoda,Corophium volutator,1
 06-17/C1-Sole-G0/20,Annelida,Polydora ciliata,3
 06-17/C1-Sole-G0/21,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/21,Divers,Demospongiae,1
 06-17/C1-Sole-G0/22,Arthropoda,Harpacticoida,16
 06-17/C1-Sole-G0/22,Annelida,Polydora ciliata,1
 06-17/C1-Sole-G0/6,Arthropoda,Corophium volutator,10
 06-17/C1-Sole-G0/6,Annelida,Polydora ciliata,2
 06-17/C1-Sole-G0/6,Arthropoda,Harpacticoida,4
-06-17/C1-Sole-G0/6,Divers,Demospongiae,2
-06-17/C1-Sole-G0/6,Echinodermata,Holothuroidea,1
-06-17/C1-Sole-G0/6,Divers,Bacillariophyceae,1
 06-17/C1-Sole-G0/6,Mollusca,Bivalvia_larve,2
 06-17/C2-Sole-G0/3,Annelida,Annelida,1
 06-17/C2-Sole-G0/3,Arthropoda,Corophium volutator,3
@@ -51,13 +43,11 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C7-Sole-G0/13,Annelida,Annelida,1
 06-17/C7-Sole-G0/13,Mollusca,Bivalvia,1
 06-17/C7-Sole-G0/7,Arthropoda,Ostracoda,1
-06-17/C7-Sole-G0/7,Divers,Hydrozoa,1
 06-17/C7-Sole-G0/7,Mollusca,Cardiidae,1
 06-17/C7-Sole-G0/7,Annelida,Polydora ciliata,4
 06-17/C7-Sole-G0/7,Arthropoda,Amphipoda,1
 06-17/CF5-C6-Sole-G0/1,Annelida,Annelida,1
 06-17/CF5-C6-Sole-G0/2,Mollusca,Bivalvia,1
-06-17/CF5-C6-Sole-G0/2,Echinodermata,Echinodermata_débris,1
 06-17/CF5-C6-Sole-G0/2,Annelida,Polydora ciliata,3
 06-17/CF5-C6-Sole-G0/3,Annelida,Polydora ciliata,1
 06-17/CF5-C6-Sole-G0/4,Annelida,Annelida,1
@@ -75,7 +65,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/AN2-Sole-G0/13,Mollusca,Cardiidae,1
 06-17/AN2-Sole-G0/13,Arthropoda,Diastylis sp,1
 06-17/AN2-Sole-G0/13,Mollusca,Pharidae,2
-06-17/AN2-Sole-G0/13,Divers,Foraminifera,1
 06-17/AN2-Sole-G0/13,Mollusca,Mactridae,1
 06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,1
 06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,1
@@ -93,7 +82,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/AN2-Sole-G0/50,Mollusca,Bivalvia,8
 06-17/AN2-Sole-G0/50,Arthropoda,Harpacticoida,2
 06-17/AN2-Sole-G0/50,Arthropoda,Diastylis sp,4
-06-17/AN2-Sole-G0/50,Divers,Foraminifera,1
 06-17/AN2-Sole-G0/50,Arthropoda,Ostracoda,1
 06-17/AN2-Sole-G0/51,Arthropoda,Harpacticoida,5
 06-17/AN2-Sole-G0/51,Annelida,Spionidae,1
@@ -129,7 +117,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/AN2-Sole-G0/9,Arthropoda,Harpacticoida,2
 06-17/AN2-Sole-G0/9,Mollusca,Veneridae,5
 06-17/AN2-Sole-G0/9,Mollusca,Pharidae,2
-06-17/AN2-Sole-G0/9,Divers,Foraminifera,1
 06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,2
 06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,1
 06-17/AS2-Sole-G0/3,Arthropoda,Acari,1
@@ -157,7 +144,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/EM2-Sole-G0/1,Annelida,Spionidae,2
 06-17/EM6-Sole-G0/3,Arthropoda,Harpacticoida,5
 06-17/EM6-Sole-G0/3,Annelida,Nephtys sp,3
-06-17/EM6-Sole-G0/3,Divers,Actinopterygii,1
 06-17/CC5-FN1-Sole-G0/1,Annelida,Hediste diversicolor,2
 06-17/CC5-FN1-Sole-G0/1,Mollusca,Bivalvia,1
 06-17/CC5-FN1-Sole-G0/1,Arthropoda,Corophium volutator,1
@@ -166,13 +152,9 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/CC5-FN1-Sole-G0/3,Annelida,Hediste diversicolor,2
 06-17/CC5-FN1-Sole-G0/3,Arthropoda,Gnathiidae,1
 06-17/CC5-FN1-Sole-G0/3,Arthropoda,Corophium volutator,1
-06-17/CC5-FN1-Sole-G0/3,Divers,Foraminifera,3
-06-17/CC5-FN1-Sole-G0/3,Divers,Demospongiae,1
 06-17/CC5-FN1-Sole-G0/4,Annelida,Hediste diversicolor,1
-06-17/CC5-FN1-Sole-G0/4,Divers,Foraminifera,1
 06-17/CC5-FN1-Sole-G0/4,Arthropoda,Crangon crangon,1
 06-17/CC5-FN1-Sole-G0/5,Annelida,Hediste diversicolor,3
-06-17/CC5-FN1-Sole-G0/5,Divers,Demospongiae,1
 06-17/CC5-FN1-Sole-G0/5,Arthropoda,Corophium volutator,1
 06-17/CC7-FN5-Sole-G0/1,Annelida,Spionidae,2
 06-17/CC7-FN5-Sole-G0/1,Mollusca,Bivalvia_larve,1
@@ -187,7 +169,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/CC8-FN8-Sole-G0/3,Arthropoda,Harpacticoida,24
 06-17/CC8-FN8-Sole-G0/3,Mollusca,Kurtiella bidentata,2
 06-17/CC8-FN8-Sole-G0/3,Arthropoda,Gammarus sp,2
-06-17/CC8-FN8-Sole-G0/3,Divers,Bacillariophyceae,2
 06-17/CC8-FN8-Sole-G0/3,Arthropoda,Corophium volutator,1
 06-17/CC8-FN8-Sole-G0/3,Annelida,Nephtys sp,1
 06-17/CC8-FN8-Sole-G0/3,Annelida,Polynoidae,1
@@ -221,20 +202,15 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/FN9-Sole-G0/3,Arthropoda,Corophium volutator,8
 06-17/FN9-Sole-G0/3,Arthropoda,Ostracoda,1
 06-17/FN9-Sole-G0/3,Annelida,Spionidae,1
-06-17/FN9-Sole-G0/3,Divers,Foraminifera,2
 06-17/CC2-FS4-Sole-G0/1,Mollusca,Bivalvia,55
-06-17/CC2-FS4-Sole-G0/1,Divers,Demospongiae,1
 06-17/CC2-FS4-Sole-G0/1,Annelida,Nephtys sp,1
 06-17/CC2-FS4-Sole-G0/1,Annelida,Aphroditidae,1
 06-17/CC2-FS4-Sole-G0/1,Mollusca,Limecola balthica,1
-06-17/CC2-FS4-Sole-G0/1,Divers,Actinopterygii,1
 06-17/CC2-FS4-Sole-G0/1,Arthropoda,Insecta,1
 06-17/CC2-FS4-Sole-G0/2,Annelida,Pygospio elegans,3
 06-17/CC2-FS4-Sole-G0/2,Annelida,Nephtys sp,2
 06-17/CC2-FS4-Sole-G0/2,Mollusca,Bivalvia,3
-06-17/CC2-FS4-Sole-G0/2,Divers,Demospongiae,1
 06-17/CC2-FS4-Sole-G0/3,Annelida,Spionidae,1
-06-17/CC2-FS4-Sole-G0/4,Divers,Bryozoa,1
 06-17/CC2-FS4-Sole-G0/4,Mollusca,Limecola balthica,1
 06-17/CC2-FS4-Sole-G0/4,Mollusca,Bivalvia,1
 06-17/CC2-FS4-Sole-G0/4,Annelida,Pygospio elegans,2
@@ -244,12 +220,9 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/CC2-FS4-Sole-G0/6,Annelida,Spionidae,1
 06-17/FS2-Sole-G0/2,Annelida,Spionidae,3
 06-17/FS2-Sole-G0/2,Arthropoda,Decapoda,1
-06-17/FS2-Sole-G0/2,Divers,Bacillariophyceae,1
 06-17/FS2-Sole-G0/2,Annelida,Polydora ciliata,6
 06-17/FS2-Sole-G0/3,Annelida,Nephtys sp,1
 06-17/FS2-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/FS2-Sole-G0/3,Divers,Foraminifera,1
-06-17/FS2-Sole-G0/4,Divers,Foraminifera,1
 06-17/FS2-Sole-G0/4,Annelida,Polydora ciliata,4
 06-17/FS2-Sole-G0/5,Mollusca,Phaxas pellucidus,3
 06-17/FS2-Sole-G0/5,Annelida,Polydora ciliata,2
@@ -275,10 +248,8 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/FS5-Sole-G0/6,Annelida,Polydora ciliata,1
 09-17/C1-Sole-G0/1,Arthropoda,Corophium volutator,19
 09-17/C1-Sole-G0/1,Annelida,Polydora ciliata,11
-09-17/C1-Sole-G0/1,Divers,Bacillariophyceae,3
 09-17/C1-Sole-G0/2,Arthropoda,Corophium volutator,28
 09-17/C1-Sole-G0/2,Annelida,Polydora ciliata,14
-09-17/C1-Sole-G0/2,Divers,Bacillariophyceae,3
 09-17/C1-Sole-G0/3,Annelida,Polydora ciliata,3
 09-17/C1-Sole-G0/3,Arthropoda,Corophium volutator,6
 09-17/C1-Sole-G0/4,Annelida,Polydora ciliata,13
@@ -293,7 +264,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 09-17/C1-Sole-G0/6,Arthropoda,Corophium volutator,1
 10-17/C1-Sole-G0/1,Arthropoda,Corophium volutator,9
 10-17/C1-Sole-G0/1,Annelida,Polydora ciliata,16
-10-17/C1-Sole-G0/1,Divers,Bacillariophyceae,2
 10-17/C1-Sole-G0/2,Arthropoda,Corophium volutator,79
 10-17/C1-Sole-G0/2,Annelida,Polydora ciliata,3
 10-17/C1-Sole-G0/2,Mollusca,Bivalvia_larve,1
@@ -301,14 +271,10 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/C1-Sole-G0/3,Annelida,Polydora ciliata,21
 10-17/C1-Sole-G0/3,Arthropoda,Crangon crangon,2
 10-17/C1-Sole-G0/3,Annelida,Boccardiella ligerica,1
-10-17/C1-Sole-G0/3,Divers,Bacillariophyceae,10
-10-17/C1-Sole-G0/3,Divers,Bacillariophyceae,1
 10-17/C2-Sole-G0/1,Arthropoda,Corophium volutator,52
 10-17/C2-Sole-G0/1,Annelida,Polydora ciliata,2
 10-17/C2-Sole-G0/1,Annelida,Boccardiella ligerica,1
-10-17/C2-Sole-G0/1,Divers,Bacillariophyceae,1
 4-10-17/C7-Sole-G0/1,Arthropoda,Corophium volutator,3
-4-10-17/C7-Sole-G0/1,Divers,Bacillariophyceae,2
 4-10-17/C7-Sole-G0/1,Annelida,Polydora ciliata,49
 4-10-17/C7-Sole-G0/1,Annelida,Pseudopolydora pulchra,1
 4-10-17/C7-Sole-G0/2,Annelida,Polydora ciliata,42
@@ -316,11 +282,8 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/C7-Sole-G0/2,Annelida,Alitta succinea,1
 4-10-17/C7-Sole-G0/2,Arthropoda,Corophium volutator,2
 4-10-17/C7-Sole-G0/2,Annelida,Boccardiella ligerica,1
-4-10-17/C7-Sole-G0/2,Divers,Bacillariophyceae,5
 4-10-17/C7-Sole-G0/2,Mollusca,Abra alba,2
 4-10-17/C7-Sole-G0/3,Annelida,Polydora ciliata,20
-4-10-17/C7-Sole-G0/3,Divers,Bacillariophyceae,3
-4-10-17/C7-Sole-G0/3,Divers,Plantae,NA
 4-10-17/C7-Sole-G0/3,Annelida,Nereididae,1
 4-10-17/C7-Sole-G0/3,Mollusca,Kurtiella bidentata,1
 4-10-17/C7-Sole-G0/3,Annelida,Phyllodocidae,1
@@ -328,19 +291,15 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/C7-Sole-G0/4,Annelida,Polydora ciliata,51
 4-10-17/C7-Sole-G0/4,Arthropoda,Arthropoda,1
 4-10-17/C7-Sole-G0/4,Mollusca,Kurtiella bidentata,2
-4-10-17/C7-Sole-G0/4,Divers,Bacillariophyceae,2
 4-10-17/C7-Sole-G0/4,Annelida,Nereididae,1
 4-10-17/C7-Sole-G0/5,Annelida,Polydora ciliata,14
 4-10-17/C7-Sole-G0/5,Annelida,Nereididae,1
-4-10-17/C7-Sole-G0/5,Divers,Bacillariophyceae,1
 4-10-17/C7-Sole-G0/5,Arthropoda,Arthropoda,1
 4-10-17/C7-Sole-G0/6,Annelida,Polydora ciliata,13
-4-10-17/C7-Sole-G0/6,Divers,Bacillariophyceae,1
 4-10-17/C7-Sole-G0/6,Arthropoda,Crangon crangon,1
 4-10-17/C7-Sole-G0/7,Annelida,Polydora ciliata,30
 4-10-17/C7-Sole-G0/7,Annelida,Nereididae,1
 4-10-17/C7-Sole-G0/7,Arthropoda,Corophium volutator,1
-4-10-17/C7-Sole-G0/7,Divers,Bacillariophyceae,2
 4-10-17/C7-Sole-G0/8,Annelida,Polydora ciliata,3
 4-10-17/C7-Sole-G0/8,Annelida,Nereididae,1
 09-17/AN1-Sole-G0/5,Annelida,Nephtys sp,1
@@ -350,52 +309,38 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/AN1-Sole-G0/2,Annelida,Nephtys sp,1
 10-17/AN1-Sole-G0/2,Annelida,Owenia fusiformis,1
 10-17/AN1-Sole-G0/2,Annelida,Lanice conchilega,2
-10-17/AN1-Sole-G0/2,Divers,Bacillariophyceae,1
 10-17/AN1-Sole-G0/2,Annelida,Melinna palmata,2
 10-17/AN1-Sole-G0/2,Annelida,Polydora ciliata,1
 10-17/AN1-Sole-G0/2,Annelida,Phyllodocidae,1
 10-17/AN1-Sole-G0/2,Arthropoda,Crangon crangon,1
 10-17/AN1-Sole-G0/2,Arthropoda,Brachyura,1
-10-17/AN1-Sole-G0/2,Divers,Hydrozoa,1
-09-17/AN2-Sole-G0/1,Echinodermata,Ophiurida,1
-09-17/AN2-Sole-G0/1,Divers,Plantae,NA
 09-17/AN2-Sole-G0/1,Arthropoda,Crangonidae,1
 09-17/AN2-Sole-G0/1,Annelida,Aphroditiformia,1
 09-17/AN2-Sole-G0/1,Annelida,Ampharetidae,1
 09-17/AN2-Sole-G0/1,Annelida,Spionidae,1
-09-17/AN2-Sole-G0/3,Divers,Plantae,NA
 09-17/AN2-Sole-G0/3,Annelida,Nephtys sp,1
 10-17/AN2-Sole-G0/1,Arthropoda,Diastylis bradyi,16
 10-17/AN2-Sole-G0/1,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/1,Divers,Plantae,NA
 10-17/AN2-Sole-G0/1,Annelida,Phyllodocidae,1
 10-17/AN2-Sole-G0/1,Arthropoda,Ostracoda,1
 10-17/AN2-Sole-G0/1,Arthropoda,Pariambus typicus,2
 10-17/AN2-Sole-G0/1,Arthropoda,Liocarcinus sp,1
-10-17/AN2-Sole-G0/1,Echinodermata,Ophiurida,1
-10-17/AN2-Sole-G0/1,Divers,Bacillariophyceae,5
 10-17/AN2-Sole-G0/1,Mollusca,Spisula subtruncata,2
 10-17/AN2-Sole-G0/1,Annelida,Owenia fusiformis,1
 10-17/AN2-Sole-G0/1,Annelida,Pholoe inornata,1
 10-17/AN2-Sole-G0/1,Annelida,Melinna palmata,1
-10-17/AN2-Sole-G0/2,Divers,Plantae,NA
 10-17/AN2-Sole-G0/2,Annelida,Phyllodocidae,1
 10-17/AN2-Sole-G0/2,Arthropoda,Crangon crangon,1
 10-17/AN2-Sole-G0/2,Annelida,Owenia fusiformis,1
 10-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,2
 10-17/AN2-Sole-G0/2,Annelida,Lagis koreni,1
-10-17/AN2-Sole-G0/2,Divers,Bacillariophyceae,1
 10-17/AN2-Sole-G0/2,Mollusca,Bivalvia,14
 10-17/AN2-Sole-G0/3,Mollusca,Bivalvia,6
 10-17/AN2-Sole-G0/3,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/3,Divers,Plantae,NA
 10-17/AN2-Sole-G0/3,Arthropoda,Arthropoda,1
 4-10-17/AN2-Sole-G0/4,Annelida,Melinna palmata,2
 4-10-17/AN2-Sole-G0/4,Arthropoda,Copepoda,1
 4-10-17/AN2-Sole-G0/4,Annelida,Polydora ciliata,1
-09-17/AN3-Sole-G0/3,Divers,Plantae,NA
-10-17/AN3-Sole-G0/1,Divers,Plantae,NA
-10-17/AN3-Sole-G0/1,Echinodermata,Ophiurida,1
 10-17/AN3-Sole-G0/1,Annelida,Phyllodocidae,1
 10-17/AN3-Sole-G0/1,Arthropoda,Amphipoda,1
 10-17/AN3-Sole-G0/1,Arthropoda,Crangon crangon,3
@@ -416,28 +361,20 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/AS4-Sole-G0/2a,Annelida,Nephtys sp,1
 10-17/AS4-Sole-G0/2a,Arthropoda,Diastylis sp,6
 10-17/AS4-Sole-G0/2a,Arthropoda,Pseudocuma (Pseudocuma) longicorne,1
-10-17/AS4-Sole-G0/2b,Divers,Plantae,NA
 10-17/AS4-Sole-G0/2b,Annelida,Annelida,1
 10-17/AS4-Sole-G0/2b,Arthropoda,Diastylis bradyi,8
 10-17/AS4-Sole-G0/2b,Arthropoda,Crangon crangon,1
-10-17/AS4-Sole-G0/2b,Divers,Bacillariophyceae,2
 10-17/AS4-Sole-G0/2b,Mollusca,Bivalvia,1
 10-17/AS4-Sole-G0/5,Arthropoda,Diastylis bradyi,5
 10-17/AS4-Sole-G0/5,Arthropoda,Ostracoda,1
 10-17/AS4-Sole-G0/5,Mollusca,Mya sp,4
 10-17/AS4-Sole-G0/5,Arthropoda,Crangonidae,1
 10-17/AS4-Sole-G0/5,Arthropoda,Perioculodes longimanus,1
-10-17/AS4-Sole-G0/5,Divers,Plantae,NA
 10-17/AS5-sole-G0/3,Arthropoda,Arthropoda,2
 10-17/AS5-sole-G0/3,Arthropoda,Amphipoda,1
 10-17/AS5-sole-G0/3,Annelida,Annelida,1
-10-17/AS5-sole-G0/3,Divers,Plantae,NA
-10-17/AS5-sole-G0/3,Echinodermata,Ophiurida,1
-10-17/AS5-sole-G0/3,Divers,Bacillariophyceae,1
 10-17/AS5-Sole-G0/5,Annelida,Phyllodocidae,1
 10-17/AS5-Sole-G0/5,Arthropoda,Ostracoda,1
-10-17/AS5-Sole-G0/5,Divers,Bacillariophyceae,1
-10-17/AS5-sole-G0/6,Divers,Plantae,NA
 10-17/AS5-sole-G0/6,Annelida,Phyllodocidae,1
 10-17/AS5-sole-G0/6,Annelida,Annelida,1
 10-17/AS5-sole-G0/6,Annelida,Ampharetidae,1
@@ -446,34 +383,27 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/AS5-Sole-G0/8,Annelida,Owenia fusiformis,1
 10-17/AS5-Sole-G0/8,Arthropoda,Ostracoda,1
 10-17/AS5-Sole-G0/8,Arthropoda,Leucothoe incisa,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Divers,Plantae,NA
 10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Lagis koreni,1
 10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Portunidae,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Divers,Bacillariophyceae,4
 10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Crangon crangon,1
 10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Ampharetidae,1
 10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Melinna palmata,1
 10-17/CC3-FN5-Sole-G0/1,Annelida,Annelida,1
 10-17/CC3-FN5-Sole-G0/1,Arthropoda,Corophium volutator,1
 10-17/CC3-FN5-Sole-G0/1,Arthropoda,Crangon crangon,2
-10-17/CC3-FN5-Sole-G0/1,Divers,Bacillariophyceae,1
 10-17/CC3-FN5-Sole-G0/2,Arthropoda,Corophium volutator,20
 10-17/CC3-FN5-Sole-G0/2,Annelida,Polydora ciliata,5
 10-17/CC3-FN5-Sole-G0/2,Annelida,Nephtys sp,1
 10-17/CC3-FN5-Sole-G0/2,Annelida,Hediste diversicolor,1
-10-17/CC3-FN5-Sole-G0/2,Divers,Bacillariophyceae,1
 10-17/CC3-FN5-Sole-G0/3,Annelida,Polydora ciliata,5
-10-17/CC3-FN5-Sole-G0/3,Divers,Bacillariophyceae,1
 10-17/CC3-FN5-Sole-G0/4,Mollusca,Bivalvia,1
 10-17/CC3-FN5-Sole-G0/4,Annelida,Polydora ciliata,14
 10-17/CC3-FN5-Sole-G0/4,Arthropoda,Crangon crangon,1
 10-17/CC3-FN5-Sole-G0/4,Arthropoda,Corophium volutator,2
-10-17/CC3-FN5-Sole-G0/4,Divers,Bacillariophyceae,19
 10-17/CC3-FN5-Sole-G0/5,Annelida,Annelida,1
 10-17/CC3-FN5-Sole-G0/6,Annelida,Nereididae,1
 10-17/CC3-FN5-Sole-G0/6,Mollusca,Bivalvia,1
 10-17/CC5-FN11-Sole-G0/1,Mollusca,Bivalvia,3
-10-17/CC5-FN11-Sole-G0/1,Divers,Plantae,NA
 10-17/CC5-FN11-Sole-G0/1,Arthropoda,Corophium volutator,3
 10-17/CC5-FN11-Sole-G0/1,Annelida,Ampharete lindstroemi,1
 10-17/CC5-FN11-Sole-G0/1,Annelida,Hediste diversicolor,1
@@ -482,24 +412,19 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/CC5-FN11-Sole-G0/1,Annelida,Phyllodocidae,1
 4-10-17/FN1-Sole-G0/1,Annelida,Boccardiella ligerica,4
 4-10-17/FN1-Sole-G0/4,Annelida,Hediste diversicolor,2
-4-10-17/FN1-Sole-G0/4,Divers,Bacillariophyceae,1
 4-10-17/FN1-Sole-G0/4,Annelida,Nephtys sp,1
 4-10-17/FN1-Sole-G0/4,Arthropoda,Arthropoda,1
 4-10-17/FN1-Sole-G0/5,Annelida,Hediste diversicolor,2
 4-10-17/FN1-Sole-G0/5,Arthropoda,Crangon crangon,1
-4-10-17/FN1-Sole-G0/5,Divers,Plantae,NA
-4-10-17/FN1-Sole-G0/5,Divers,Bacillariophyceae,1
 4-10-17/FN1-Sole-G0/5,Arthropoda,Corophium volutator,1
 10-17/FN3-Sole-G0/1,Arthropoda,Crangon crangon,14
 10-17/FN3-Sole-G0/1,Arthropoda,Ampelisca sp,1
 10-17/FN3-Sole-G0/1,Arthropoda,Cyathura carinata,2
 10-17/FN3-Sole-G0/1,Mollusca,Bivalvia,13
 10-17/FN3-Sole-G0/1,Annelida,Hediste diversicolor,4
-10-17/FN3-Sole-G0/1,Divers,Bacillariophyceae,4
 10-17/FN3-Sole-G0/1,Arthropoda,Corophium volutator,2
 4-10-17/FN8-Sole-G0/11,Annelida,Nereididae,1
 4-10-17/FN8-Sole-G0/11,Annelida,Polydora ciliata,2
-4-10-17/FN8-Sole-G0/11,Divers,Bacillariophyceae,1
 4-10-17/FN8-Sole-G0/11,Arthropoda,Corophium volutator,2
 4-10-17/FN8-Sole-G0/17,Annelida,Nereididae,1
 4-10-17/FN8-Sole-G0/17,Annelida,Aphroditiformia,1
@@ -507,7 +432,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/FN8-Sole-G0/21,Annelida,Nereididae,1
 4-10-17/FN8-Sole-G0/22,Annelida,Nereididae,1
 4-10-17/FN8-Sole-G0/22,Annelida,Polydora ciliata,3
-4-10-17/FN8-Sole-G0/22,Divers,Hydrozoa,1
 4-10-17/FN8-Sole-G0/22,Mollusca,Bivalvia,NA
 4-10-17/FN8-Sole-G0/22,Arthropoda,Crangon crangon,1
 4-10-17/FN8-Sole-G0/22,Arthropoda,Corophium volutator,1
@@ -516,13 +440,10 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/FN8-Sole-G0/23,Annelida,Nereididae,1
 4-10-17/FN8-Sole-G0/24,Annelida,Polydora ciliata,1
 4-10-17/FN8-Sole-G0/24,Mollusca,Bivalvia,1
-4-10-17/FN8-Sole-G0/24,Divers,Plantae,NA
 4-10-17/FN8-Sole-G0/25,Arthropoda,Crangon crangon,3
-4-10-17/FN8-Sole-G0/25,Divers,Plantae,2
 4-10-17/FN8-Sole-G0/25,Arthropoda,Corophium volutator,15
 4-10-17/FN8-Sole-G0/25,Annelida,Polydora ciliata,5
 4-10-17/FN8-Sole-G0/25,Annelida,Hediste diversicolor,2
-4-10-17/FN8-Sole-G0/25,Echinodermata,Ophiurida,1
 4-10-17/FN8-Sole-G0/25,Arthropoda,Carcinus maenas,1
 4-10-17/FN8-Sole-G0/25,Annelida,Sabellaria spinulosa,1
 4-10-17/FN8-Sole-G0/25,Arthropoda,Ostracoda,3
@@ -531,75 +452,57 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/FN8-Sole-G0/26,Annelida,Spionidae,1
 4-10-17/FN8-Sole-G0/6,Annelida,Nephtys sp,1
 4-10-17/FN8-Sole-G0/6,Annelida,Polydora ciliata,3
-4-10-17/FN8-Sole-G0/6,Divers,Plantae,NA
 4-10-17/FN8-Sole-G0/6,Arthropoda,Arthropoda,1
 10-17/FN9-Sole-G0/1,Annelida,Hediste diversicolor,1
 10-17/FN9-Sole-G0/1,Arthropoda,Corophium volutator,6
 10-17/FN9-Sole-G0/1,Arthropoda,Cyathura carinata,6
-10-17/FN9-Sole-G0/1,Divers,Plantae,1
 10-17/FN9-Sole-G0/1,Annelida,Nephtys sp,1
 10-17/FN9-Sole-G0/1,Annelida,Polydora ciliata,1
 10-17/FN9-Sole-G0/1,Arthropoda,eurytemora affinis,2
 10-17/FN9-Sole-G0/1,Arthropoda,Ostracoda,1
-10-17/FN9-Sole-G0/1,Divers,Bacillariophyceae,1
 10-17/FN9-Sole-G0/1,Arthropoda,Crangon crangon,1
 4-10-17/FN9-Sole-G0/1,Arthropoda,Corophium volutator,26
 4-10-17/FN9-Sole-G0/1,Arthropoda,Cyathura carinata,1
-4-10-17/FN9-Sole-G0/1,Divers,Plantae,NA
 10-17/FS0-Sole-G0/1,Annelida,Phyllodocidae,1
 10-17/FS0-Sole-G0/1,Annelida,Nereididae,1
 10-17/FS0-Sole-G0/1,Annelida,Polydora ciliata,4
-3-10-17/FS1-Sole-G0/1,Divers,Plantae,NA
 3-10-17/FS1-Sole-G0/1,Annelida,Polydora ciliata,2
 3-10-17/FS1-Sole-G0/1,Annelida,Lagis koreni,6
 3-10-17/FS1-Sole-G0/1,Arthropoda,Arthropoda,1
 3-10-17/FS1-Sole-G0/1,Mollusca,Bivalvia,2
-3-10-17/FS1-Sole-G0/2,Divers,Plantae,NA
 3-10-17/FS1-Sole-G0/2,Annelida,Lagis koreni,5
 3-10-17/FS1-Sole-G0/2,Annelida,Polydora ciliata,3
 3-10-17/FS1-Sole-G0/2,Arthropoda,Crangon crangon,1
 3-10-17/FS1-Sole-G0/3,Annelida,Polydora ciliata,3
 3-10-17/FS1-Sole-G0/3,Annelida,Lagis koreni,3
-3-10-17/FS1-Sole-G0/3,Divers,Plantae,NA
 3-10-17/FS1-Sole-G0/3,Arthropoda,Crangon crangon,1
 3-10-17/FS1-Sole-G0/3,Annelida,Ampharetidae,1
 3-10-17/FS1-Sole-G0/3,Arthropoda,Ostracoda,1
-3-10-17/FS1-Sole-G0/3,Divers,Hydrozoa,1
 3-10-17/FS1-Sole-G0/4,Annelida,Polydora ciliata,1
-3-10-17/FS1-Sole-G0/4,Divers,Bacillariophyceae,2
 10-17/FS3-Sole-G0/1,Annelida,Polydora ciliata,11
 10-17/FS3-Sole-G0/1,Annelida,Nephtys sp,1
 10-17/FS3-Sole-G0/1,Arthropoda,Arthropoda,1
 10-17/FS3-Sole-G0/1,Annelida,Polynoidae,1
-10-17/FS3-Sole-G0/10,Divers,Plantae,NA
 10-17/FS3-Sole-G0/10,Arthropoda,Arthropoda,1
 10-17/FS3-Sole-G0/10,Annelida,Nereididae,3
 10-17/FS3-Sole-G0/10,Annelida,Polydora ciliata,5
 10-17/FS3-Sole-G0/2,Annelida,Polydora ciliata,24
-10-17/FS3-Sole-G0/2,Divers,Bacillariophyceae,2
 10-17/FS3-Sole-G0/3,Annelida,Nereididae,1
 10-17/FS3-Sole-G0/3,Annelida,Polydora ciliata,3
 10-17/FS3-Sole-G0/4,Mollusca,Bivalvia,1
-10-17/FS3-Sole-G0/4,Echinodermata,Ophiurida,1
-10-17/FS3-Sole-G0/4,Divers,Plantae,NA
 10-17/FS3-Sole-G0/4,Annelida,Polydora ciliata,1
 10-17/FS3-Sole-G0/5,Mollusca,Bivalvia,2
 10-17/FS3-Sole-G0/5,Annelida,Annelida,1
 10-17/FS3-Sole-G0/6,Mollusca,Bivalvia,2
-10-17/FS3-Sole-G0/6,Divers,Plantae,NA
-10-17/FS3-Sole-G0/6,Echinodermata,Ophiurida,1
 10-17/FS3-Sole-G0/6,Annelida,Polydora ciliata,4
 10-17/FS3-Sole-G0/6,Arthropoda,Arthropoda,1
-10-17/FS3-Sole-G0/7,Divers,Plantae,NA
 10-17/FS3-Sole-G0/7,Annelida,Polydora ciliata,9
-10-17/FS3-Sole-G0/7,Divers,Bacillariophyceae,3
 10-17/FS3-Sole-G0/7,Annelida,Phyllodocidae,1
 10-17/FS3-Sole-G0/7,Arthropoda,Arthropoda,1
 10-17/FS3-Sole-G0/7,Mollusca,Bivalvia,1
 10-17/FS3-Sole-G0/8,Mollusca,Bivalvia,1
 10-17/FS3-Sole-G0/8,Annelida,Hediste diversicolor,1
 3-10-17/FS4-Sole-G0/1,Annelida,Lagis koreni,1
-3-10-17/FS4-Sole-G0/1,Divers,Plantae,NA
 3-10-17/FS4-Sole-G0/1,Annelida,Nephtys sp,2
 3-10-17/FS4-Sole-G0/1,Annelida,Polynoidae,1
 3-10-17/FS4-Sole-G0/1,Annelida,Polydora ciliata,2
@@ -609,13 +512,10 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 3-10-17/FS4-Sole-G0/1,Annelida,Phyllodocidae,1
 10-17/FS5-Sole-G0/1,Annelida,Phyllodocidae,1
 10-17/FS5-Sole-G0/1,Annelida,Polydora ciliata,12
-10-17/FS5-Sole-G0/1,Divers,Bacillariophyceae,12
 10-17/FS5-Sole-G0/4,Annelida,Nereididae,1
 10-17/FS5-Sole-G0/4,Annelida,Phyllodocidae,1
 10-17/FS5-Sole-G0/6,Mollusca,Bivalvia,5
-10-17/FS5-Sole-G0/6,Divers,Plantae,NA
 10-17/FS5-Sole-G0/6,Annelida,Polydorinae,1
-10-17/FS5-Sole-G0/6,Divers,Bacillariophyceae,1
 3-10-17/FS5-Sole-G0/1,Mollusca,Bivalvia,3
 3-10-17/FS5-Sole-G0/2,Annelida,Spionidae,1
 4-10-17/FN9-Sole-G0/2,Arthropoda,Cyathura carinata,8
@@ -632,13 +532,9 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 4-10-17/FN1-Sole-G0/3,Annelida,Nephtys sp,1
 06-17/C2-Sole-G0/2,Annelida,Polydora ciliata,1
 06-17/C2-Sole-G0/2,Arthropoda,Harpacticoida,37
-06-17/C2-Sole-G0/2,Divers,Bacillariophyceae,1
 06-17/C1-Sole-G0/1,Arthropoda,Harpacticoida,123
 06-17/C1-Sole-G0/1,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/1,Divers,Foraminifera,1
 06-17/C1-Sole-G0/2,Annelida,Polydora ciliata,3
-06-17/C1-Sole-G0/2,Divers,Plantae,1
-06-17/C1-Sole-G0/2,Divers,Bacillariophyceae,2
 06-17/C1-Sole-G0/2,Arthropoda,Halacaridae,1
 06-17/C1-Sole-G0/3,Arthropoda,Harpacticoida,11
 06-17/C1-Sole-G0/3,Annelida,Polydora ciliata,1
@@ -647,7 +543,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C1-Sole-G0/5,Arthropoda,Harpacticoida,163
 06-17/C1-Sole-G0/5,Arthropoda,Halacaridae,2
 06-17/C1-Sole-G0/8,Annelida,Annelida,1
-06-17/C1-Sole-G0/8,Divers,Prorocentrales,1
 06-17/C1-Sole-G0/8,Annelida,Boccardiella ligerica,1
 06-17/C1-Sole-G0/9,Annelida,Annelida,1
 06-17/C1-Sole-G0/9,Annelida,Polydora ciliata,5
@@ -658,7 +553,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C1-Sole-G0/11,Arthropoda,Arthropoda,1
 06-17/C1-Sole-G0/13,Arthropoda,Harpacticoida,2
 06-17/C1-Sole-G0/13,Annelida,Polydora ciliata,6
-06-17/C1-Sole-G0/13,Divers,Bacillariophyceae,1
 06-17/FS0-Sole-G0/2,Annelida,Polydora ciliata,1
 06-17/FS3-Sole-G0/14,Annelida,Polydora ciliata,3
 10-17/CC3-FN5-Sole-G0/16,Arthropoda,Crangon crangon,3
@@ -667,7 +561,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/FN5-Sole-G0/2,Annelida,Nephtys sp,1
 10-17/CC3-FN5-Sole-G0/15,Arthropoda,Crangon crangon,2
 10-17/CC3-FN5-Sole-G0/15,Annelida,Polydora ciliata,14
-10-17/CC3-FN5-Sole-G0/15,Divers,Bacillariophyceae,2
 4-10-17/FN5-Sole-G0/4,Annelida,Nephtys sp,1
 4-10-17/FN5-Sole-G0/4,Arthropoda,Harpacticoida,2
 4-10-17/FN5-Sole-G0/4,Arthropoda,Crangon crangon,1
@@ -683,14 +576,12 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/CC3-FN5-Sole-G0/13,Annelida,Polydora ciliata,4
 10-17/CC3-FN5-Sole-G0/13,Annelida,Hediste diversicolor,1
 10-17/CC3-FN5-Sole-G0/13,Arthropoda,Harpacticoida,4
-10-17/CC3-FN5-Sole-G0/13,Divers,Bacillariophyceae,1
 10-17/CC3-FN5-Sole-G0/13,Arthropoda,Corophiidae,1
 4-10-17/FN5-Sole-G0/2,Annelida,Polydora ciliata,3
 4-10-17/FN5-Sole-G0/1,Annelida,Nephtys sp,1
 4-10-17/FN5-Sole-G0/1,Mollusca,Bivalvia,1
 4-10-17/FN5-Sole-G0/1,Annelida,Polydora ciliata,1
 10-17/CC3-FN5-Sole-G0/10,Annelida,Nephtys sp,1
-10-17/CC3-FN5-Sole-G0/10,Divers,Nematoda 2,1
 10-17/CC3-FN5-Sole-G0/10,Annelida,Glycera sp,1
 10-17/CC3-FN5-Sole-G0/10,Arthropoda,Corophium volutator,3
 10-17/CC3-FN5-Sole-G0/10,Annelida,Polydora ciliata,5
@@ -710,13 +601,10 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C7-Sole-G0/15,Arthropoda,Sessilia,1
 06-17/C7-Sole-G0/5,Annelida,Polydora ciliata,6
 06-17/C7-Sole-G0/5,Annelida,Streblospio benedicti,1
-06-17/C7-Sole-G0/5,Divers,Foraminifera,1
 06-17/C7-Sole-G0/14,Annelida,Polydora ciliata,6
 06-17/C7-Sole-G0/12,Annelida,Spionidae,1
 06-17/C7-Sole-G0/12,Annelida,Polydora ciliata,10
 06-17/C7-Sole-G0/12,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/12,Divers,Bacillariophyceae,1
-06-17/C7-Sole-G0/4,Divers,Nematoda 3,2
 06-17/C7-Sole-G0/4,Annelida,Polydora ciliata,1
 06-17/C7-Sole-G0/3,Arthropoda,Ostracoda,1
 06-17/C7-Sole-G0/3,Arthropoda,Sessilia,2
@@ -724,20 +612,13 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/C7-Sole-G0/3,Mollusca,Nucula sp,1
 06-17/C7-Sole-G0/3,Arthropoda,Sessilia_larva,1
 06-17/C7-Sole-G0/1,Annelida,Polydora ciliata,3
-06-17/C7-Sole-G0/1,Divers,Foraminifera,1
 06-17/C7-Sole-G0/11,Annelida,Polydora ciliata,24
-06-17/C7-Sole-G0/11,Divers,Hydrozoa,1
 06-17/C7-Sole-G0/11,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/11,Divers,Bacillariophyceae,1
-06-17/C7-Sole-G0/11,Divers,Foraminifera,1
-06-17/C7-Sole-G0/10,Divers,Foraminifera,2
 06-17/C7-Sole-G0/10,Annelida,Polydora ciliata,4
 06-17/C7-Sole-G0/10,Arthropoda,Sessilia,1
 06-17/C7-Sole-G0/2,Annelida,Polydora ciliata,4
-06-17/C7-Sole-G0/2,Divers,Cyanobacteria,1
 06-17/C7-Sole-G0/2,Annelida,Nereididae,1
 06-17/C7-Sole-G0/9,Annelida,Polydora ciliata,5
-06-17/C7-Sole-G0/9,Divers,Bacillariophyceae,1
 10-17/FS3bis-Sole-G0/7,Mollusca,Cerastoderma edule,18
 10-17/FS3bis-Sole-G0/7,Mollusca,Bivalvia,10
 3-10-17/FS3-Sole-G0/2,Annelida,Nereididae,1
@@ -759,7 +640,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/FS3bis-Sole-G0/5,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/18,Mollusca,Bivalvia,24
 10-17/FS3bis-Sole-G0/18,Annelida,Polydora ciliata,4
-10-17/FS3bis-Sole-G0/18,Divers,Nematoda 2,2
 10-17/FS3bis-Sole-G0/3,Mollusca,Bivalvia,6
 10-17/FS3bis-Sole-G0/3,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/19,Annelida,Polydora ciliata,9
@@ -767,14 +647,12 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/FS3bis-Sole-G0/20,Annelida,Polydora ciliata,1
 10-17/FS3bis-Sole-G0/20,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/20,Mollusca,Bivalvia,7
-10-17/FS3bis-Sole-G0/6,Divers,Actinopterygii,4
 10-17/FS3bis-Sole-G0/6,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/13,Mollusca,Bivalvia,3
 10-17/FS3bis-Sole-G0/21,Mollusca,Bivalvia,7
 10-17/FS3bis-Sole-G0/21,Annelida,Polydora ciliata,1
 10-17/FS3bis-Sole-G0/21,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/8,Annelida,Polydora ciliata,6
-10-17/FS3bis-Sole-G0/8,Divers,Bacillariophyceae,2
 10-17/FS3bis-Sole-G0/10,Annelida,Polydora ciliata,7
 10-17/FS3bis-Sole-G0/10,Annelida,Nereididae,1
 10-17/FS3bis-Sole-G0/25,Annelida,Nereididae,2
@@ -795,7 +673,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/FN8-Sole-G0/2,Arthropoda,Ostracoda,1
 06-17/FN8-Sole-G0/2,Mollusca,Cerastoderma edule,1
 06-17/FN8-Sole-G0/2,Arthropoda,Copepoda,1
-06-17/FN8-Sole-G0/2,Divers,Plantae,1
 06-17/FN8-Sole-G0/1,Arthropoda,Pontocrates sp,1
 06-17/FN8-Sole-G0/1,Annelida,Spionidae,1
 06-17/FN8-Sole-G0/1,Arthropoda,Sessilia,2
@@ -825,13 +702,11 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 10-17/AN2-Sole-G0/4,Annelida,Owenia fusiformis,7
 10-17/AN2-Sole-G0/4,Arthropoda,Diastylis sp,3
 10-17/AN2-Sole-G0/4,Annelida,Ampharetidae,1
-10-17/AN2-Sole-G0/4,Divers,Hydrozoa,1
 10-17/AN2-Sole-G0/7,Annelida,Owenia fusiformis,2
 10-17/AN2-Sole-G0/7,Annelida,Lanice conchilega,3
 10-17/AN2-Sole-G0/7,Mollusca,Bivalvia,2
 10-17/AS4-Sole-G0/1a,Arthropoda,Caridea,1
 10-17/AS4-Sole-G0/1a,Arthropoda,Diastylis sp,3
-10-17/AS4-Sole-G0/1a,Divers,Plantae,1
 10-17/AS4-Sole-G0/1a,Annelida,Nephtys sp,1
 10-17/AN2-Sole-G0/5,Annelida,Lanice conchilega,1
 09-17/AN3-Sole-G0/4,Annelida,Magelona sp,1
@@ -841,7 +716,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 09-17/AN3-Sole-G0/4,Annelida,Nephtys sp,1
 09-17/AN3-Sole-G0/4,Annelida,Spionidae,1
 09-17/AN3-Sole-G0/4,Annelida,Polydora ciliata,23
-09-17/AN3-Sole-G0/4,Divers,Foraminifera,13
 09-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,2
 09-17/AN2-Sole-G0/2,Arthropoda,Crangon crangon,1
 09-17/AN2-Sole-G0/2,Annelida,Annelida,1
@@ -852,7 +726,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 09-17/AN1-Sole-G0/1,Arthropoda,Monocorophium insidiosum,1
 06-17/FN8-Sole-G0/4,Annelida,Spionidae,4
 06-17/FN8-Sole-G0/4,Mollusca,Cerastoderma edule,8
-06-17/FN8-Sole-G0/4,Divers,Bacillariophyceae,5
 06-17/FN8-Sole-G0/4,Arthropoda,Gastrosaccus spinifer,2
 06-17/FN8-Sole-G0/4,Arthropoda,Sessilia,1
 06-17/FN8-Sole-G0/4,Arthropoda,Ostracoda,1
@@ -863,7 +736,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/CC8-FN8-Sole-G0/10,Mollusca,Bivalvia,8
 06-17/CC8-FN8-Sole-G0/10,Annelida,Polynoidae,1
 06-17/CC8-FN8-Sole-G0/10,Arthropoda,Pariambus typicus,2
-06-17/CC8-FN8-Sole-G0/10,Divers,Foraminifera,1
 06-17/CC1-FS5-Sole-G0/3,Mollusca,Cerastoderma edule,1
 06-17/CC1-FS5-Sole-G0/3,Annelida,Spionidae,1
 06-17/CC1-FS5-Sole-G0/4,Annelida,Spionidae,1
@@ -876,7 +748,6 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/FN8-Sole-G0/5,Annelida,Pygospio elegans,2
 06-17/FN8-Sole-G0/5,Arthropoda,Harpacticoida,4
 06-17/FN8-Sole-G0/5,Arthropoda,Ostracoda,2
-06-17/FN8-Sole-G0/5,Divers,Foraminifera,1
 06-17/FN8-Sole-G0/5,Mollusca,Bivalvia,1
 06-17/FN8-Sole-G0/5,Arthropoda,Sessilia,1
 06-17/FN8-Sole-G0/7,Annelida,Pygospio elegans,1
@@ -889,4 +760,3 @@ Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
 06-17/FN8-Sole-G0/3,Arthropoda,Harpacticoida,1
 06-17/FN8-Sole-G0/3,Arthropoda,Sessilia,1
 06-17/FN8-Sole-G0/3,Arthropoda,Ostracoda,1
-06-17/FN8-Sole-G0/3,Divers,Plantae,1

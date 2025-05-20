@@ -31,7 +31,8 @@ content_to_delete <- c("Déchet", "Parasite", "RAS", "Divers", "Divers_débris",
 
 stomac_soles <- stomac_soles |>
   filter(Statut %!in% content_to_delete) |>
-  filter(ScientificName_accepted %!in% content_to_delete)
+  filter(ScientificName_accepted %!in% content_to_delete) |>
+  filter(Faunistic_grp %in% c("Annelida", "Arthropoda", "Mollusca"))
 
 ## Deal with data class
 stomac_soles$N_tot_in_tractus <- as.numeric(stomac_soles$N_tot_in_tractus)
