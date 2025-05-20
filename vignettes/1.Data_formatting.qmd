@@ -63,7 +63,7 @@ Outputs :
 ## 1.5. Compound selection
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.4.compound_selection.R")
+rstudioapi::navigateToFile("../data-raw/1.5.compound_selection.R")
 ```
 
 Outputs :
@@ -76,7 +76,7 @@ Outputs :
 ## 1.6. Contaminant concentrations for selected compounds
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.5.data_computation_selected_compounds.R")
+rstudioapi::navigateToFile("../data-raw/1.6.data_computation_selected_compounds.R")
 ```
 
 Outputs :
@@ -99,7 +99,7 @@ Outputs :
 ## 1.7. Stomach content
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.6.data_stomach_content.R")
+rstudioapi::navigateToFile("../data-raw/1.7.data_stomach_content.R")
 ```
 
 Outputs :
@@ -111,7 +111,7 @@ Outputs :
 ## 1.8. Isotopic data
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.7.data_isotopes.R")
+rstudioapi::navigateToFile("../data-raw/1.8.data_isotopes.R")
 ```
 
 Outputs :
