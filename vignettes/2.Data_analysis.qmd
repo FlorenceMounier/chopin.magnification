@@ -8,9 +8,10 @@ format: html
 #| include: false
 library(chopin.magnification)
 library(tidyverse)
+library(FSA)
 ```
 
-## Diet composition
+## 1. Diet composition
 
 ```{r}
 taxa <- stomac_soles |> distinct(Faunistic_grp) |>  pull()
@@ -22,6 +23,59 @@ for (taxon in 1:length(taxa)) {
 names(diet) <- taxa
 
 usethis::use_data(diet, overwrite = TRUE)
+```
+
+## 2. Lipid contents
+
+Dataset:
+```{r}
+soles_lipid <- soles_contam |> select(lipid_percent_dw) |>  
+  mutate(species = "Solea_solea") |> 
+  rename(lip_dw_percent = lipid_percent_dw)
+benthos_lipid <- benthos_contam |> select(species, lip_dw_percent)
+metadata <- full_join(benthos_metadata, soles_metadata)
+lipid <- full_join(soles_lipid, benthos_lipid) |> left_join(metadata) |> drop_na()
+lipid$grp <- factor(lipid$grp)
+```
+
+Descriptive statistics:
+```{r}
+min(lipid$lip_dw_percent) # 0.75
+max(lipid$lip_dw_percent) # 7
+lipid |> summarise(median(lip_dw_percent), .by = grp)
+```
+
+
+Tests between taxa:
+```{r}
+dunn_lipid <- dunnTest(lip_dw_percent ~ grp, data = lipid, method = "bonferroni")
+res_dunn_grp <- dunn_lipid$res |> select(Comparison, P.adj) |> 
+  mutate(P.adj = round(P.adj, digits = 3))
+res_dunn_grp
+```
+
+
+```{r}
+# Annotations for boxplots
+counts <- lipid |>
+  summarise(n = sum(!is.na(lip_dw_percent)), .by = c(grp))
+
+# Boxplots
+ggplot_lipid <- ggplot(lipid) +
+  aes(x = grp, y = lip_dw_percent, fill = grp) +
+  geom_boxplot() +
+  labs(x = NULL, y = "Lipid content (%dw)", fill = "Taxon") +
+  geom_text(
+    data = counts,
+    aes(x = c(1, 2, 3, 4),
+        y = max(lipid$lip_dw_percent)*1.1,
+        label = paste0("n=", n)),
+    inherit.aes = FALSE, hjust = 0.5, vjust = 1
+  )
+
+# Save plot
+ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg",
+       width = 5, height = 3)
 ```
 
 
