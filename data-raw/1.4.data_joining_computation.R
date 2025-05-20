@@ -33,6 +33,10 @@ sub_soles_contam <- soles_contam |>
 ## Join datasets
 contam <- full_join(sub_benthos_contam, sub_soles_contam)
 
+#-----------------------------------------------------------
+# Join metadata
+
+metadata <- full_join(soles_metadata, benthos_metadata)
 
 #-----------------------------------------------------------
 # Calculation of concentrations normalized by the sum within a family (ng/g dw)
@@ -130,3 +134,4 @@ write_csv(x = contam, file = "data-raw/contam.csv")
 # Output data
 
 usethis::use_data(contam, overwrite = TRUE)
+usethis::use_data(metadata, overwrite = TRUE)
