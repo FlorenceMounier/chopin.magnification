@@ -63,7 +63,7 @@ Outputs :
 - data/PFAS
 - data/HBCDD
 
-## 1.5. Ddata computation for selected compounds
+## 1.5. Contaminant concentrations for selected compounds
 
 ```{r}
 rstudioapi::navigateToFile("../data-raw/1.5.data_computation_selected_compounds.R")
@@ -85,3 +85,15 @@ Outputs :
 
 - data/HBCDD_lab
 - data/log_Kow_HBCDD
+
+## 1.6. Stomach content
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.6.data_stomach_content.R")
+```
+
+Outputs :
+
+- data-raw/stomac_soles.csv
+- data/stomac_soles
+- data/table_species
