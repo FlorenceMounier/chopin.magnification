@@ -251,13 +251,13 @@ benthos_contam$sommePCBdioxineL_ng_glw = apply(benthos_contam[,paste(inter_dioxi
 
 # HBCDD
 for(c in 1:length(HBCDD_ALL)){
-  benthos_contam[,paste(HBCDD_ALL[c],"_ng_glw_censored",sep="")] <- benthos_contam[,paste(HBCDD_ALL[c],"_ng_gdw_censored",sep="")]/(benthos_contam$lip_dw_percent/100)
+  benthos_contam[,paste(HBCDD_ALL[c],"_ng_glw",sep="")] <- benthos_contam[,paste(HBCDD_ALL[c],"_ng_gdw_censored",sep="")]/(benthos_contam$lip_dw_percent/100)
 }
 benthos_contam$sommeHBCDD_ALL_ng_glw = apply(benthos_contam[,paste(HBCDD_ALL,"_ng_glw",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 # HBCDD censored
 for(c in 1:length(HBCDD)){
-  benthos_contam[,paste(HBCDD[c],"_ng_glw",sep="")] <- benthos_contam[,paste(HBCDD[c],"_ng_gdw",sep="")]/(benthos_contam$lip_dw_percent/100)
+  benthos_contam[,paste(HBCDD[c],"_ng_glw_censored",sep="")] <- benthos_contam[,paste(HBCDD[c],"_ng_gdw",sep="")]/(benthos_contam$lip_dw_percent/100)
 }
 benthos_contam$sommeHBCDD_ng_glw_censored = apply(benthos_contam[,paste(HBCDD,"_ng_glw_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
