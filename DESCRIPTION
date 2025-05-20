@@ -16,10 +16,14 @@ Depends:
 Imports: 
     magrittr
 Suggests: 
+    FSA,
+    ggthemes,
     knitr,
     rmarkdown,
     rstudioapi,
+    tidyverse,
     usethis
+Config/fusen/version: 0.7.1
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

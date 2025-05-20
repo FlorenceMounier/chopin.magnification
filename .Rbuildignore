@@ -11,3 +11,4 @@
 ^codecov\.yml$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^chopin\.magnification\.Rproj$

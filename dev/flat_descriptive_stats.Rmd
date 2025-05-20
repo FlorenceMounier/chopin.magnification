@@ -1,0 +1,106 @@
+---
+title: "Descriptive statistics"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# Functions
+
+```{r function-mean_plus}
+#' mean_plus Calculation of the rounded mean excluding missing values
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return mean value
+#' @export
+
+mean_plus <- function(x){
+      round(mean(x, na.rm = TRUE), digits = 2)
+}
+```
+
+```{r function-median_plus}
+#' median_plus Calculation of the rounded median excluding missing values
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return median value
+#' @export
+
+median_plus <- function(x){
+      round(median(x, na.rm = TRUE), digits = 2)
+}
+```
+
+```{r function-min_plus}
+#' min_plus Calculation of the rounded minimum excluding missing values
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return minimal value
+#' @export
+
+min_plus <- function(x){
+      round(min(x, na.rm = TRUE), digits = 2)
+}
+```
+
+```{r function-max_plus}
+#' max_plus Calculation of the rounded maximum excluding missing values
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return maximal value
+#' @export
+
+max_plus <- function(x){
+      round(max(x, na.rm = TRUE), digits = 2)
+}
+```
+
+
+```{r function-stats_mean}
+#' stats_mean Calculation of the mean, min and max values of a vector
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return character `mean[min-max]`
+#' @export
+
+stats_mean <- function(x){
+  paste0(mean_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+}
+```
+
+```{r function-stats_median}
+#' stats_median Calculation of the median, min and max values of a vector
+#'
+#' @param vector Vector containing values to be summarized
+#'
+#' @return character `median[min-max]`
+#' @export
+
+stats_median <- function(x){
+  paste0(median_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+}
+```
+
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_descriptive_stats.Rmd", 
+               vignette_name = NA, check = FALSE)
+```
+

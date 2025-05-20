@@ -1,0 +1,15 @@
+flat_descriptive_stats.Rmd:
+  path: dev/flat_descriptive_stats.Rmd
+  state: active
+  R: R/mean_plus.R
+  tests: []
+  vignettes: []
+  inflate:
+    flat_file: dev/flat_descriptive_stats.Rmd
+    vignette_name: .na
+    open_vignette: true
+    check: false
+    document: true
+    overwrite: ask
+    clean: ask
+    codecov: false
