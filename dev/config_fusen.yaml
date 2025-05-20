@@ -1,7 +1,9 @@
 flat_descriptive_stats.Rmd:
   path: dev/flat_descriptive_stats.Rmd
   state: active
-  R: R/mean_plus.R
+  R:
+  - R/mean_plus.R
+  - R/get_stats.R
   tests: []
   vignettes: []
   inflate:

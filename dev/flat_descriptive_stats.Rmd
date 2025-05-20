@@ -95,6 +95,24 @@ stats_median <- function(x){
 }
 ```
 
+# get_stats
+
+```{r function-get_stats}
+#' get_stats Calculation of the median, min and max values of a vector from a dataset
+#' 
+#' @param type character "Benthos" or "Soles"
+#' @param contam character ex: name and unit for a chemical concentrations
+#' @param vector vector ex: chemical concentration for a chemical
+#'
+#' @return tibble chemical, type, median, min, max
+#' 
+#' @export
+get_stats <- function(type, contam, vector){
+  res <- tibble::tibble("chemical" = contam, "type" = type, 
+                "median" = median_plus(vector), "min" = min_plus(vector), "max" = max_plus(vector))
+  return(res)
+}
+```
 
 
 ```{r development-inflate, eval=FALSE}
