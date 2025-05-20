@@ -50,7 +50,7 @@ Outputs :
 - data/soles_contam
 
 
-## 1.4. Compound selection
+## 1.5. Compound selection
 
 ```{r}
 rstudioapi::navigateToFile("../data-raw/1.4.compound_selection.R")
@@ -63,7 +63,7 @@ Outputs :
 - data/PFAS
 - data/HBCDD
 
-## 1.5. Contaminant concentrations for selected compounds
+## 1.6. Contaminant concentrations for selected compounds
 
 ```{r}
 rstudioapi::navigateToFile("../data-raw/1.5.data_computation_selected_compounds.R")
@@ -86,7 +86,7 @@ Outputs :
 - data/HBCDD_lab
 - data/log_Kow_HBCDD
 
-## 1.6. Stomach content
+## 1.7. Stomach content
 
 ```{r}
 rstudioapi::navigateToFile("../data-raw/1.6.data_stomach_content.R")
@@ -98,7 +98,7 @@ Outputs :
 - data/stomac_soles
 - data/table_species
 
-## 1.7. Isotopic data
+## 1.8. Isotopic data
 
 ```{r}
 rstudioapi::navigateToFile("../data-raw/1.7.data_isotopes.R")
