@@ -101,8 +101,14 @@ soles_contam$sommePFAS_ng_gww_censored = apply(soles_contam[,paste(PFAS,"_ng_gww
 benthos_contam$sommeHBCDD_ng_gdw = apply(benthos_contam[,paste(HBCDD,"_ng_gdw",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 benthos_contam[, paste(HBCDD, "normalised_sum_ng_gdw", sep = "_")] <- benthos_contam[, paste(HBCDD, "_ng_gdw", sep = "")] / benthos_contam$sommeHBCDD_ng_gdw
 
+benthos_contam$sommeHBCDD_ng_gdw_censored = apply(benthos_contam[,paste(HBCDD,"_ng_gdw_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+benthos_contam[, paste(HBCDD, "normalised_sum_ng_gdw_censored", sep = "_")] <- benthos_contam[, paste(HBCDD, "_ng_gdw_censored", sep = "")] / benthos_contam$sommeHBCDD_ng_gdw_censored
+
 soles_contam$sommeHBCDD_ng_gdw = apply(soles_contam[,paste(HBCDD,"_ng_gdw",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 soles_contam[, paste(HBCDD, "normalised_sum_ng_gdw", sep = "_")] <- soles_contam[, paste(HBCDD, "_ng_gdw", sep = "")] / soles_contam$sommeHBCDD_ng_gdw
+
+soles_contam$sommeHBCDD_ng_gdw_censored = apply(soles_contam[,paste(HBCDD,"_ng_gdw_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+soles_contam[, paste(HBCDD, "normalised_sum_ng_gdw_censored", sep = "_")] <- soles_contam[, paste(HBCDD, "_ng_gdw_censored", sep = "")] / soles_contam$sommeHBCDD_ng_gdw_censored
 
 # Calculations of concentrations and their sum in ng/glw
 for(c in 1:length(HBCDD)){
@@ -111,9 +117,19 @@ for(c in 1:length(HBCDD)){
 benthos_contam$sommeHBCDD_ng_glw = apply(benthos_contam[,paste(HBCDD,"_ng_glw",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 for(c in 1:length(HBCDD)){
+  benthos_contam[,paste(HBCDD[c],"_ng_glw_censored",sep="")] = benthos_contam[,paste(HBCDD[c],"_ng_gdw_censored",sep="")]/(benthos_contam$lip_dw_percent/100)
+}
+benthos_contam$sommeHBCDD_ng_glw_censored = apply(benthos_contam[,paste(HBCDD,"_ng_glw_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+
+for(c in 1:length(HBCDD)){
   soles_contam[,paste(HBCDD[c],"_ng_glw",sep="")] = soles_contam[,paste(HBCDD[c],"_ng_gdw",sep="")]/(soles_contam$lipid_percent_dw/100)
 }
 soles_contam$sommeHBCDD_ng_glw = apply(soles_contam[,paste(HBCDD,"_ng_glw",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+
+for(c in 1:length(HBCDD)){
+  soles_contam[,paste(HBCDD[c],"_ng_glw_censored",sep="")] = soles_contam[,paste(HBCDD[c],"_ng_gdw_censored",sep="")]/(soles_contam$lipid_percent_dw/100)
+}
+soles_contam$sommeHBCDD_ng_glw_censored = apply(soles_contam[,paste(HBCDD,"_ng_glw_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 # Calculations of concentrations and their sum in ng/gww
 for(c in 1:length(HBCDD)){
@@ -122,9 +138,19 @@ for(c in 1:length(HBCDD)){
 benthos_contam$sommeHBCDD_ng_gww = apply(benthos_contam[,paste(HBCDD,"_ng_gww",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 for(c in 1:length(HBCDD)){
+  benthos_contam[,paste(HBCDD[c],"_ng_gww_censored",sep="")] = benthos_contam[,paste(HBCDD[c],"_ng_gdw_censored",sep="")]*(benthos_contam$dw_percent/100)
+}
+benthos_contam$sommeHBCDD_ng_gww_censored = apply(benthos_contam[,paste(HBCDD,"_ng_gww_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+
+for(c in 1:length(HBCDD)){
   soles_contam[,paste(HBCDD[c],"_ng_gww",sep="")] = soles_contam[,paste(HBCDD[c],"_ng_gdw",sep="")]*((100-soles_contam$water_percent)/100)
 }
 soles_contam$sommeHBCDD_ng_gww = apply(soles_contam[,paste(HBCDD,"_ng_gww",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
+
+for(c in 1:length(HBCDD)){
+  soles_contam[,paste(HBCDD[c],"_ng_gww_censored",sep="")] = soles_contam[,paste(HBCDD[c],"_ng_gdw_censored",sep="")]*((100-soles_contam$water_percent)/100)
+}
+soles_contam$sommeHBCDD_ng_gww_censored = apply(soles_contam[,paste(HBCDD,"_ng_gww_censored",sep="")], MARGIN = 1, FUN = sum, na.rm = TRUE)
 
 # --------------------------------------------------------------
 # Save dataset
