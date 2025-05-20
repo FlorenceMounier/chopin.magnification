@@ -49,6 +49,16 @@ Outputs :
 - data-raw/soles_contam.csv
 - data/soles_contam
 
+## 1.4. Data joining and concentrationss computation
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.4.data_joining_computation.R")
+```
+
+Outputs :
+
+- data-raw/contam.csv
+- data/contam
 
 ## 1.5. Compound selection
 
