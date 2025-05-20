@@ -8,11 +8,13 @@ format: html
 #| include: false
 library(chopin.magnification)
 library(tidyverse)
+library(ggthemes)
 library(FSA)
 ```
 
 ## 1. Diet composition
 
+Data computation:
 ```{r}
 taxa <- stomac_soles |> distinct(Faunistic_grp) |>  pull()
 abundance_tot <- sum(stomac_soles$N_tot_in_tractus, na.rm = T)
@@ -25,30 +27,61 @@ names(diet) <- taxa
 usethis::use_data(diet, overwrite = TRUE)
 ```
 
+Pie chart:
+```{r}
+gg_color_hue <- function(n) {
+  hues = seq(15, 375, length = n + 1)
+  hcl(h = hues, l = 65, c = 100)[1:n]
+}
+colors = gg_color_hue(4)
+
+gg_diet <- tibble("taxon" = names(diet), "diet" = diet)
+ggplot_diet <- ggplot(gg_diet) +
+  aes(x = "", y = diet, fill = taxon) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar("y", start=0) +
+  scale_fill_manual(values = c(colors[4], colors[3], colors[2])) +
+  labs(fill = "Taxon") +
+  theme_minimal() +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.border = element_blank(),
+    panel.grid = element_blank(),
+    axis.ticks = element_blank()
+  ) +
+  theme(axis.text.x=element_blank()) +
+  geom_text(aes(y = diet/3 + c(0, cumsum(diet)[-length(diet)])), 
+            label = paste(round(diet*100, digits = 0), "%"), size=5)
+
+# Save plot
+ggsave(plot = ggplot_diet, filename = "results/data_analysis/1.ggplot_diet.jpg",
+       width = 5, height = 3)
+```
+
+
 ## 2. Lipid contents
 
 Dataset:
 ```{r}
-soles_lipid <- soles_contam |> select(lipid_percent_dw) |>  
-  mutate(species = "Solea_solea") |> 
-  rename(lip_dw_percent = lipid_percent_dw)
-benthos_lipid <- benthos_contam |> select(species, lip_dw_percent)
-metadata <- full_join(benthos_metadata, soles_metadata)
-lipid <- full_join(soles_lipid, benthos_lipid) |> left_join(metadata) |> drop_na()
-lipid$grp <- factor(lipid$grp)
+lipid <- contam |>
+  select(species, lipid_percent_dw) |>
+  full_join(metadata) |> 
+  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes"))) |> 
+  drop_na()
 ```
 
 Descriptive statistics:
 ```{r}
-min(lipid$lip_dw_percent) # 0.75
-max(lipid$lip_dw_percent) # 7
-lipid |> summarise(median(lip_dw_percent), .by = grp)
+min(lipid$lipid_percent_dw) # 0.75
+max(lipid$lipid_percent_dw) # 7
+lipid |> summarise(median(lipid_percent_dw), .by = grp)
 ```
 
 
 Tests between taxa:
 ```{r}
-dunn_lipid <- dunnTest(lip_dw_percent ~ grp, data = lipid, method = "bonferroni")
+dunn_lipid <- dunnTest(lipid_percent_dw ~ grp, data = lipid, method = "bonferroni")
 res_dunn_grp <- dunn_lipid$res |> select(Comparison, P.adj) |> 
   mutate(P.adj = round(P.adj, digits = 3))
 res_dunn_grp
@@ -58,17 +91,18 @@ res_dunn_grp
 ```{r}
 # Annotations for boxplots
 counts <- lipid |>
-  summarise(n = sum(!is.na(lip_dw_percent)), .by = c(grp))
+  group_by(grp) |> 
+  summarise(n = sum(!is.na(lipid_percent_dw)))
 
 # Boxplots
 ggplot_lipid <- ggplot(lipid) +
-  aes(x = grp, y = lip_dw_percent, fill = grp) +
+  aes(x = grp, y = lipid_percent_dw, fill = grp) +
   geom_boxplot() +
   labs(x = NULL, y = "Lipid content (%dw)", fill = "Taxon") +
   geom_text(
     data = counts,
     aes(x = c(1, 2, 3, 4),
-        y = max(lipid$lip_dw_percent)*1.1,
+        y = max(lipid$lipid_percent_dw)*1.1,
         label = paste0("n=", n)),
     inherit.aes = FALSE, hjust = 0.5, vjust = 1
   )
@@ -77,5 +111,44 @@ ggplot_lipid <- ggplot(lipid) +
 ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg",
        width = 5, height = 3)
 ```
+
+
+## 3. Overall levels
+
+```{r}
+benthos <- contam |> filter(species != "Solea_solea")
+soles <- contam |> filter(species == "Solea_solea")
+
+sum_levels_ng_gdw <- rbind(
+      get_stats(type = "Benthos", contam = "PCB (ng/gdw)", benthos$sommePCB_ng_gdw), 
+      get_stats(type = "Soles", contam = "PCB (ng/gdw)", soles$sommePCB_ng_gdw),
+      get_stats(type = "Benthos", contam = "PFAS (ng/gdw)", benthos$sommePFAS_ng_gdw), 
+      get_stats(type = "Soles", contam = "PFAS (ng/gdw)", soles$sommePFAS_ng_gdw),
+      get_stats(type = "Benthos", contam = "HBCDD (ng/gdw)", benthos$sommeHBCDD_ng_gdw),
+      get_stats(type = "Soles", contam = "HBCDD (ng/gdw)", soles$sommeHBCDD_ng_gdw)
+      )
+
+sum_levels_ng_gww <- rbind(
+      get_stats(type = "Benthos", contam = "PCB (ng/gww)", benthos$sommePCB_ng_gww), 
+        get_stats(type = "Soles", contam = "PCB (ng/gww)", soles$sommePCB_ng_gww),
+      get_stats(type = "Benthos", contam = "PFAS (ng/gww)", benthos$sommePFAS_ng_gww), 
+      get_stats(type = "Soles", contam = "PFAS (ng/gww)", soles$sommePFAS_ng_gww),
+      get_stats(type = "Benthos", contam = "HBCDD (ng/gww)", benthos$sommeHBCDD_ng_gww),
+      get_stats(type = "Soles", contam = "HBCDD (ng/gww)", soles$sommeHBCDD_ng_gww)
+      )
+
+sum_levels_ng_glw <- rbind(
+      get_stats(type = "Benthos", contam = "PCB (ng/glw)", benthos$sommePCB_ng_glw), 
+      get_stats(type = "Soles", contam = "PCB (ng/glw)", soles$sommePCB_ng_glw),
+      get_stats(type = "Benthos", contam = "HBCDD (ng/glw)", benthos$sommeHBCDD_ng_glw),
+      get_stats(type = "Soles", contam = "HBCDD (ng/glw)", soles$sommeHBCDD_ng_glw)
+      )
+
+sum_levels <- rbind(sum_levels_ng_gdw, sum_levels_ng_gww, sum_levels_ng_glw)
+
+# Save dataset
+write_csv(x = sum_levels, file = "results/data_analysis/3.sum_levels.csv")
+```
+
 
 
