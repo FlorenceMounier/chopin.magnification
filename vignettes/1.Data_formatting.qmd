@@ -97,3 +97,14 @@ Outputs :
 - data-raw/stomac_soles.csv
 - data/stomac_soles
 - data/table_species
+
+## 1.7. Isotopic data
+
+```{r}
+rstudioapi::navigateToFile("../data-raw/1.7.data_isotopes.R")
+```
+
+Outputs :
+
+- data-raw/isotopes.csv
+- data/isotopes
