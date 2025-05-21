@@ -42,7 +42,7 @@ for(l in 1:length(feeding_mode)){
 # Add variable "labels" for graph species labels
 
 prey_labels <- list(
-  "Bivalves" = c(
+  "Bivalvia" = c(
     "Abra a." = "Abra_alba",
     "Spisula s." = "Spisula_subtruncata",
     "Limecola b." = "Limecola_balthica",
@@ -53,14 +53,14 @@ prey_labels <- list(
     "Nucula n." = "Nucula_nitidosa",
     "Ensis d." = "Ensis_directus"
   ),
-  "Polychetes" = c(
+  "Polychaeta" = c(
     "Nephtys sp." = "Nephtys_sp",
     "Owenia f." = "Owenia_fusiformis",
     "Lagis k." = "Lagis_koreni",
     "Lanice c." = "Lanice_conchilega",
     "Hediste d." = "Hediste_diversicolor"
   ),
-  "Crustaces" = c("Crangon c." = "Crangon_crangon", "Corophium v." =
+  "Crustacea" = c("Crangon c." = "Crangon_crangon", "Corophium v." =
                     "Corophium_volutator")
 )
 benthos_contam$labels = rep.int(NA, times = dim(benthos_contam)[1])
@@ -74,12 +74,12 @@ for(l in 1:length(prey_labels)){
 # Add variable "grp" for species taxa
 
 prey_taxa = list(
-  "Bivalves" = c("Abra_alba","Spisula_subtruncata", "Limecola_balthica",
+  "Bivalvia" = c("Abra_alba","Spisula_subtruncata", "Limecola_balthica",
                  "Cerastoderma_edule", "Donax_vittatus", "Corbula_gibba",
                  "Scrobicularia_plana","Nucula_nitidosa","Ensis_directus"),
-  "Polychetes" = c("Nephtys_sp", "Owenia_fusiformis", "Lagis_koreni",
+  "Polychaeta" = c("Nephtys_sp", "Owenia_fusiformis", "Lagis_koreni",
                    "Lanice_conchilega", "Hediste_diversicolor"),
-  "Crustaces" = c("Crangon_crangon", "Corophium_volutator")
+  "Crustacea" = c("Crangon_crangon", "Corophium_volutator")
 )
 
 benthos_contam$grp = rep.int(NA, times = dim(benthos_contam)[1])

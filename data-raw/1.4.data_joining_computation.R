@@ -38,7 +38,7 @@ sub_soles_contam <- soles_contam |>
 ## Join datasets
 contam <- full_join(sub_benthos_contam, sub_soles_contam) |>
   left_join(metadata) |>
-  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes")))
+  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalvia", "Crustacea", "Polychaeta")))
 
 
 #-----------------------------------------------------------

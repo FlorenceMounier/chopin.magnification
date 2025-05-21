@@ -149,3 +149,51 @@ sum_levels <- rbind(sum_levels_ng_gdw, sum_levels_ng_gww, sum_levels_ng_glw)
 # Save dataset
 write_csv(x = sum_levels, file = "results/data_analysis/3.sum_levels.csv")
 ```
+
+
+## 4. Total levels by species
+
+```{r}
+ggdata_sumfamily_species <- contam |> 
+  select(species, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
+  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw), 
+                names_to = "family", values_to = "sum_ng_gdw") |> 
+  mutate(family = family |>  str_remove("somme"),
+         family = family |>  str_remove("_ng_gdw"),
+         family = factor(family, levels = c("PCB", "PFAS", "HBCDD")))
+
+# Annotations for plot
+counts <- ggdata_sumfamily_species |>
+  group_by(family, grp) |> 
+  summarise(counts = sum(!is.na(sum_ng_gdw)))
+maxs <- ggdata_sumfamily_species |>
+  group_by(family) |> 
+  summarise(maxs = max(sum_ng_gdw, na.rm = TRUE))
+gg_text <- full_join(counts, maxs)
+
+ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
+  aes(x = grp, y = sum_ng_gdw, fill = alim, col = alim) +
+  geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.7) +
+  facet_wrap(vars(family), nrow = 1, scales = "free_y") +
+  # add median value
+  stat_summary(inherit.aes = FALSE, aes(x = grp, y = sum_ng_gdw),
+    fun = median, geom = "crossbar", size = 0.5, width = .5) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  theme(legend.position = "bottom") +
+  labs(x = NULL, y = "Sum concentrations (ng/g dw)", fill = "Feeding mode") +
+  guides(color = FALSE)+
+  geom_text(
+    data = gg_text,
+    aes(x = rep.int(1:4, times = 3),
+        y = maxs*1.1,
+        label = paste0("n=", counts)),
+    inherit.aes = FALSE, hjust = 0.5, vjust = 1
+  )
+
+ggsave(
+  filename = "results/data_analysis/4.ggplot_contamination_sumfamily_species.jpg",
+  plot = ggplot_sumfamily_species, width = 20, height = 10, units = "cm"
+)
+```
+
+
