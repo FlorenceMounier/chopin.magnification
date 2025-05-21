@@ -10,6 +10,8 @@ library(chopin.magnification)
 library(tidyverse)
 library(writexl)
 library(patchwork)
+library(ggrepel)
+library(ggbreak)
 library(FSA)
 ```
 
@@ -352,7 +354,7 @@ ggplot_lipid <- ggplot_lipid_PCB + ggplot_lipid_HBCDD
 ggsave("results/data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
 ```
 
-# 7. Median contamination profiles in soles and their prey
+# 7. Average contamination profiles in soles and their prey
 
 ```{r}
 contam_profile <- contam |> 
@@ -393,3 +395,54 @@ contam_profile_report <- contam_profile |>
 writexl::write_xlsx(x = contam_profile_report, path = "results/data_analysis/7.contamination_profile.xlsx")
 ```
 
+# 8. Physico-chemical properties and contamination profiles
+
+```{r}
+contam_profile_prop <- left_join(contam_profile, contam_prop)
+```
+
+```{r}
+contam_profile_prop_PCB <- contam_profile_prop |> 
+  filter(family == "PCB", type == "Sole") |>
+  mutate(logKow = as.numeric(logKow)) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB")))
+
+ggplot_contam_profile_prop_PCB <- ggplot(contam_profile_prop_PCB) +
+  aes(x = logKow, y = percent, size = sub_family_TAG, color = sub_family_TAG) +
+  geom_point() +
+  geom_text_repel(aes(label = chemical), size = 3, 
+                  point.padding = 1, max.overlaps = 20) +
+  labs(y = "Percentage of total concentrations (ng/g dw)", 
+       size = "Chlorine substitution", color = "Chlorine substitution")
+ggplot_contam_profile_prop_PCB
+
+ggsave("results/data_analysis/8.contam_profiles_prop_PCB.jpg",
+       ggplot_contam_profile_prop_PCB, width = 6, height = 4, dpi = 300)
+```
+
+
+```{r}
+contam_profile_prop_PFAS <- contam_profile_prop |> 
+  filter(family == "PFAS", type == "Sole") |>
+  mutate(n_C = as.numeric(n_C))
+
+ggplot_contam_profile_prop_PFAS <- ggplot(contam_profile_prop_PFAS) +
+  aes(x = n_C, y = percent, size = sub_family_TAG, color = sub_family_TAG) +
+  geom_point() +
+  geom_text_repel(data = points_to_label_bottom,
+                  aes(label = chemical), size = 3,
+                  point.padding = 1, max.overlaps = 20) +
+    geom_text_repel(data = points_to_label_up,
+                  aes(label = chemical), size = 3,
+                  point.padding = 1, max.overlaps = 20) +
+  labs(y = "Percentage of total concentrations (ng/g dw)",
+       x = "Carbon chain length",
+       size = "Sub-family", color = "Sub-family")
+
+ggplot_contam_profile_prop_PFAS
+
+ggsave("results/data_analysis/8.contam_profiles_prop_PFAS.jpg",
+       ggplot_contam_profile_prop_PFAS, width = 6, height = 6, dpi = 300)
+```
