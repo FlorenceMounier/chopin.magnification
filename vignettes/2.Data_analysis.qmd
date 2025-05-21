@@ -352,4 +352,44 @@ ggplot_lipid <- ggplot_lipid_PCB + ggplot_lipid_HBCDD
 ggsave("results/data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
 ```
 
+# 7. Median contamination profiles in soles and their prey
+
+```{r}
+contam_profile <- contam |> 
+  mutate(type = case_when(species == "Solea_solea" ~ "Sole",
+                          TRUE ~ "Prey")) |> 
+  select(species, type, ends_with("normalised_sum_ng_gdw")) |> 
+  group_by(type) |> 
+  summarise(across(.cols = -c(species), .fns = ~ mean(.x, na.rm = TRUE)*100), .groups = "drop") |> 
+  pivot_longer(cols = -type, names_to = "chemical", values_to = "percent") |> 
+  mutate(chemical = chemical |> str_remove("_normalised_sum_ng_gdw"),
+         family = case_when(str_starts(chemical, "CB") ~ "PCB",
+                            str_detect(chemical, "HBCDD") ~ "HBCDD",
+                            TRUE ~ "PFAS")) |> 
+  mutate(family = factor(family, levels = c("PCB", "PFAS", "HBCDD")),
+         type = factor(type, levels = c("Sole", "Prey"))) |> 
+  group_by(family)  |> 
+  mutate(chemical = fct_reorder(chemical, percent, .fun = min)) |>  # order chemical by percent values
+  ungroup()
+
+ggplot_profile <- ggplot(contam_profile) +
+  aes(x = chemical, y = percent, fill = type) +
+  geom_col(position = "dodge") +
+  facet_wrap(vars(family), nrow = 1, scales = "free_y") +
+  labs(x = NULL, y = "Percentage of total concentrations (ng/g dw)", fill = NULL) +
+  theme(legend.position = "bottom") +
+  coord_flip()
+ggplot_profile
+
+ggsave("results/data_analysis/7.contamination_profiles.jpg", ggplot_profile, width = 8, height = 4, dpi = 300)
+```
+
+```{r}
+contam_profile_report <- contam_profile |> 
+  mutate(percent = round(percent, digits = 1)) |> 
+  pivot_wider(names_from = type, values_from = percent) |> 
+  select(-family)
+
+writexl::write_xlsx(x = contam_profile_report, path = "results/data_analysis/7.contamination_profile.xlsx")
+```
 
