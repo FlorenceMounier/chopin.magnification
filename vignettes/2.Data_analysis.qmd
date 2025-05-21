@@ -9,6 +9,7 @@ format: html
 library(chopin.magnification)
 library(tidyverse)
 library(writexl)
+library(patchwork)
 library(FSA)
 ```
 
@@ -112,8 +113,9 @@ ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg
 ```
 
 
-## 3. Overall levels
+## 3. Total levels by family
 
+Table of statistics for each taxon and feeding mode in ng/g dw, ng/g ww and ng/d lw:
 ```{r}
 sub_data <- list("Soles" = contam |> filter(species == "Solea_solea"), 
                  "Prey" = contam |> filter(species != "Solea_solea"), 
@@ -168,11 +170,11 @@ sum_levels <- list("sum_levels_ng_gdw" = sum_levels_ng_gdw,
 write_xlsx(x = sum_levels, path = "results/data_analysis/3.sum_levels.xlsx")
 ```
 
-## 4. Total levels by species
+## 4. Total levels by taxon and feeding mode
 
 Plot of the total levels (sum in ng/g dw) in the different taxa and feeding mode:
 ```{r}
-ggdata_sumfamily_species <- contam |> 
+ggdata_sumfamily_taxalim <- contam |> 
   select(species, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
   pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw), 
                 names_to = "family", values_to = "sum_ng_gdw") |> 
@@ -181,15 +183,15 @@ ggdata_sumfamily_species <- contam |>
          family = factor(family, levels = c("PCB", "PFAS", "HBCDD")))
 
 # Annotations for plot
-counts <- ggdata_sumfamily_species |>
+counts <- ggdata_sumfamily_taxalim |>
   group_by(family, grp) |> 
   summarise(counts = sum(!is.na(sum_ng_gdw)))
-maxs <- ggdata_sumfamily_species |>
+maxs <- ggdata_sumfamily_taxalim |>
   group_by(family) |> 
   summarise(maxs = max(sum_ng_gdw, na.rm = TRUE))
 gg_text <- full_join(counts, maxs)
 
-ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
+ggplot_sumfamily_taxalim <- ggplot(ggdata_sumfamily_taxalim) +
   aes(x = grp, y = sum_ng_gdw, fill = alim, col = alim) +
   geom_dotplot(binaxis = 'y', stackdir = 'center', dotsize = 0.7) +
   facet_wrap(vars(family), nrow = 1, scales = "free_y") +
@@ -199,7 +201,7 @@ ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
   theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
   theme(legend.position = "bottom") +
   labs(x = NULL, y = "Sum concentrations (ng/g dw)", fill = "Feeding mode") +
-  guides(color = FALSE)+
+  guides(color = FALSE) +
   geom_text(
     data = gg_text,
     aes(x = rep.int(1:4, times = 3),
@@ -209,8 +211,8 @@ ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
   )
 
 ggsave(
-  filename = "results/data_analysis/4.ggplot_contamination_sumfamily_species.jpg",
-  plot = ggplot_sumfamily_species, width = 20, height = 10, units = "cm"
+  filename = "results/data_analysis/4.ggplot_contamination_sumfamily_taxalim.jpg",
+  plot = ggplot_sumfamily_taxalim, width = 20, height = 10, units = "cm"
 )
 ```
 
@@ -263,3 +265,91 @@ names(res_dunn_alim) <- c("Comparison", "PCB", "PFAS", "HBCDD")
 
 writexl::write_xlsx(x = res_dunn_alim, path = "results/data_analysis/4.test_dunn_alim.xlsx")
 ```
+
+# 5. Total levels by species
+
+Plot of the total levels (sum in ng/g dw) in the different species:
+```{r}
+ggdata_sumfamily_species <- contam |> 
+  select(labels, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
+  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw), 
+                names_to = "family", values_to = "sum_ng_gdw") |> 
+  mutate(family = family |>  str_remove("somme"),
+         family = family |>  str_remove("_ng_gdw"),
+         family = factor(family, levels = c("PCB", "PFAS", "HBCDD")))
+
+ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
+  aes(x = labels, y = sum_ng_gdw, fill = grp, color = grp, shape = alim) +
+  geom_point() +
+  facet_wrap(vars(family), nrow = 1, scales = "free_y") +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  theme(legend.position = "bottom") +
+  labs(x = NULL, y = "Sum concentrations (ng/g dw)", color = "Taxon", shape = "Feeding mode") +
+  guides(fill = FALSE, shape = guide_legend(nrow=2), color = guide_legend(nrow=2))
+
+
+ggsave(
+  filename = "results/data_analysis/5.ggplot_contamination_sumfamily_species.jpg",
+  plot = ggplot_sumfamily_species, width = 20, height = 10, units = "cm"
+)
+```
+
+# 6. Total levels in PCBs and HBCDD isomers versur lipid content
+
+```{r}
+my_colors <- c(
+  "#1b9e77", # teal
+  "#d95f02", # orange
+  "#7570b3", # purple
+  "#e7298a", # pink
+  "#66a61e", # olive green
+  "#e6ab02", # mustard
+  "#a6761d", # brown
+  "#666666", # gray
+  "#1f78b4", # blue
+  "#b2df8a", # light green
+  "#fb9a99", # salmon
+  "#fdbf6f", # light orange
+  "#cab2d6", # lavender
+  "#ffff99", # light yellow
+  "#b15928", # dark brown
+  "#8dd3c7", # pale turquoise
+  "#ff69b4"  # hot pink
+)
+```
+
+There is a significant positive correlation between lipid content and PCB contamination levels (Spearman's test: p-value = 5×10⁻⁴, ρ = 0.43). However, some species appear to deviate from this general trend. For example, Crangon crangon shows highly variable lipid levels without a corresponding increase in PCB contamination. Conversely, Limecola balthica exhibits relatively stable lipid content despite a wide range of PCB concentrations.
+
+```{r}
+cor.test(x = contam$lipid_percent_dw, y = contam$sommePCB_ng_gdw, method = "spearman")
+```
+
+```{r}
+ggplot_lipid_PCB <- ggplot(contam) +
+  aes(x = lipid_percent_dw, y = sommePCB_ng_gdw, color = labels) +
+  geom_point() +
+  scale_color_manual(values = my_colors) +
+  labs(title = "PCB", x = "Lipid content (%dw)", y = "Sum concentrations (ng/g dw)", color = NULL)
+ggplot_lipid_PCB
+```
+
+There is a weak but significant negative correlation between lipid content and contamination levels of HBCDD isomers (Spearman's test: p-value = 0.01, ρ = -0.38). Below 4% lipid content (dw), contamination levels appear particularly variable, with notable differences among species.
+```{r}
+cor.test(x = contam$lipid_percent_dw, y = contam$sommeHBCDD_ng_gdw, method = "spearman")
+```
+
+```{r}
+ggplot_lipid_HBCDD <- ggplot(contam) +
+  aes(x = lipid_percent_dw, y = sommeHBCDD_ng_gdw, color = labels) +
+  geom_point() +
+  scale_color_manual(values = my_colors) +
+  labs(title = "HBCDD", x = "Lipid content (%dw)", y = "Sum concentrations (ng/g dw)", color = NULL)
+ggplot_lipid_HBCDD
+```
+
+```{r}
+ggplot_lipid <- ggplot_lipid_PCB + ggplot_lipid_HBCDD
+ggsave("results/data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
+```
+
+
