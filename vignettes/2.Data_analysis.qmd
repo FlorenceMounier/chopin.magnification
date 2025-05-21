@@ -115,9 +115,53 @@ ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg
 ## 3. Overall levels
 
 ```{r}
-prey <- contam |> filter(species != "Solea_solea")
-soles <- contam |> filter(species == "Solea_solea")
+sub_data <- list("Soles" = contam |> filter(species == "Solea_solea"), 
+                 "Prey" = contam |> filter(species != "Solea_solea"), 
+                 "Bivalves" = contam |> filter(grp == "Bivalvia"), 
+                 "Crustaceans" = contam |> filter(grp == "Crustacea"), 
+                 "Polychaetes" = contam |> filter(grp == "Polychaeta"), 
+                 "Suspensivores" = contam |> filter(alim == "Suspensivore"), 
+                 "Deposivores" = contam |> filter(alim == "Deposivore"), 
+                 "Omnivores" = contam |> filter(alim == "Omnivore"))
+```
 
+
+```{r}
+families <- c("PCB", "PFAS", "HBCDD")
+
+sum_levels_ng_gdw <- c()
+for(family in families){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_gdw <- rbind(sum_levels_ng_gdw,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/gdw)"),
+                                       sub_data[[type]][, paste0("somme", family, "_ng_gdw")] |> pull()))
+  }
+}
+
+sum_levels_ng_gww <- c()
+for(family in families){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_gww <- rbind(sum_levels_ng_gww,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/gww)"),
+                                       sub_data[[type]][, paste0("somme", family, "_ng_gww")] |> pull()))
+  }
+}
+
+sum_levels_ng_glw <- c()
+for(family in families[c(1,3)]){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_glw <- rbind(sum_levels_ng_glw,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/glw)"),
+                                       sub_data[[type]][, paste0("somme", family, "_ng_glw")] |> pull()))
+  }
+}
+```
+
+
+```{r}
 sum_levels_ng_gdw <- rbind(
       get_stats(type = "Prey", contam = "PCB (ng/gdw)", prey$sommePCB_ng_gdw), 
       get_stats(type = "Soles", contam = "PCB (ng/gdw)", soles$sommePCB_ng_gdw),
