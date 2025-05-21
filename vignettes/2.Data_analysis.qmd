@@ -35,8 +35,8 @@ gg_color_hue <- function(n) {
 }
 colors = gg_color_hue(4)
 
-gg_diet <- tibble("taxon" = names(diet), "diet" = diet)
-ggplot_diet <- ggplot(gg_diet) +
+ggdata_diet <- tibble("taxon" = names(diet), "diet" = diet)
+ggplot_diet <- ggplot(ggdata_diet) +
   aes(x = "", y = diet, fill = taxon) +
   geom_bar(width = 1, stat = "identity") +
   coord_polar("y", start=0) +
@@ -67,7 +67,6 @@ Dataset:
 lipid <- contam |>
   select(species, lipid_percent_dw) |>
   full_join(metadata) |> 
-  # mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalves", "Crustaces", "Polychetes"))) |> 
   drop_na()
 ```
 
@@ -98,7 +97,7 @@ counts <- lipid |>
 ggplot_lipid <- ggplot(lipid) +
   aes(x = grp, y = lipid_percent_dw, fill = grp) +
   geom_boxplot() +
-  labs(x = NULL, y = "Lipid content (%dw)", fill = "Taxon") +
+  labs(x = NULL, y = "Lipid content (%dw)", fill = "Taxa") +
   geom_text(
     data = counts,
     aes(x = c(1, 2, 3, 4),
@@ -116,31 +115,31 @@ ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg
 ## 3. Overall levels
 
 ```{r}
-benthos <- contam |> filter(species != "Solea_solea")
+prey <- contam |> filter(species != "Solea_solea")
 soles <- contam |> filter(species == "Solea_solea")
 
 sum_levels_ng_gdw <- rbind(
-      get_stats(type = "Benthos", contam = "PCB (ng/gdw)", benthos$sommePCB_ng_gdw), 
+      get_stats(type = "Prey", contam = "PCB (ng/gdw)", prey$sommePCB_ng_gdw), 
       get_stats(type = "Soles", contam = "PCB (ng/gdw)", soles$sommePCB_ng_gdw),
-      get_stats(type = "Benthos", contam = "PFAS (ng/gdw)", benthos$sommePFAS_ng_gdw), 
+      get_stats(type = "Prey", contam = "PFAS (ng/gdw)", prey$sommePFAS_ng_gdw), 
       get_stats(type = "Soles", contam = "PFAS (ng/gdw)", soles$sommePFAS_ng_gdw),
-      get_stats(type = "Benthos", contam = "HBCDD (ng/gdw)", benthos$sommeHBCDD_ng_gdw),
+      get_stats(type = "Prey", contam = "HBCDD (ng/gdw)", prey$sommeHBCDD_ng_gdw),
       get_stats(type = "Soles", contam = "HBCDD (ng/gdw)", soles$sommeHBCDD_ng_gdw)
       )
 
 sum_levels_ng_gww <- rbind(
-      get_stats(type = "Benthos", contam = "PCB (ng/gww)", benthos$sommePCB_ng_gww), 
+      get_stats(type = "Prey", contam = "PCB (ng/gww)", prey$sommePCB_ng_gww), 
         get_stats(type = "Soles", contam = "PCB (ng/gww)", soles$sommePCB_ng_gww),
-      get_stats(type = "Benthos", contam = "PFAS (ng/gww)", benthos$sommePFAS_ng_gww), 
+      get_stats(type = "Prey", contam = "PFAS (ng/gww)", prey$sommePFAS_ng_gww), 
       get_stats(type = "Soles", contam = "PFAS (ng/gww)", soles$sommePFAS_ng_gww),
-      get_stats(type = "Benthos", contam = "HBCDD (ng/gww)", benthos$sommeHBCDD_ng_gww),
+      get_stats(type = "Prey", contam = "HBCDD (ng/gww)", prey$sommeHBCDD_ng_gww),
       get_stats(type = "Soles", contam = "HBCDD (ng/gww)", soles$sommeHBCDD_ng_gww)
       )
 
 sum_levels_ng_glw <- rbind(
-      get_stats(type = "Benthos", contam = "PCB (ng/glw)", benthos$sommePCB_ng_glw), 
+      get_stats(type = "Prey", contam = "PCB (ng/glw)", prey$sommePCB_ng_glw), 
       get_stats(type = "Soles", contam = "PCB (ng/glw)", soles$sommePCB_ng_glw),
-      get_stats(type = "Benthos", contam = "HBCDD (ng/glw)", benthos$sommeHBCDD_ng_glw),
+      get_stats(type = "Prey", contam = "HBCDD (ng/glw)", prey$sommeHBCDD_ng_glw),
       get_stats(type = "Soles", contam = "HBCDD (ng/glw)", soles$sommeHBCDD_ng_glw)
       )
 
@@ -153,6 +152,7 @@ write_csv(x = sum_levels, file = "results/data_analysis/3.sum_levels.csv")
 
 ## 4. Total levels by species
 
+Plot of the total levels (sum in ng/g dw) in the different taxa and feeding mode:
 ```{r}
 ggdata_sumfamily_species <- contam |> 
   select(species, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
@@ -196,4 +196,52 @@ ggsave(
 )
 ```
 
+Test taxa effect:
 
+```{r}
+# PCB in ng/g lw
+kruskal.test(sommePCB_ALL_ng_glw ~ grp, data = contam) # p-value < 0.05
+# PFAS in ng/g dw
+kruskal.test(sommePFAS_ALL_ng_gdw ~ grp, data = contam) # p-value < 0.05
+# HBCDD in ng/g lw
+kruskal.test(sommeHBCDD_ALL_ng_glw ~ grp, data = contam) # p-value < 0.05
+```
+
+```{r}
+dunn_PCB_grp <- dunnTest(sommePCB_ALL_ng_glw ~ grp, data = contam |> drop_na(sommePCB_ALL_ng_glw))
+dunn_PFAS_grp <- dunnTest(sommePFAS_ALL_ng_gdw ~ grp, data = contam |> drop_na(sommePFAS_ALL_ng_gdw))
+dunn_HBCDD_grp <- dunnTest(sommeHBCDD_ALL_ng_glw ~ grp, data = contam |> drop_na(sommeHBCDD_ALL_ng_glw))
+
+res_dunn_grp <- dunn_PCB_grp$res |> select(Comparison, P.adj) |>
+  full_join(dunn_PFAS_grp$res  |> select(Comparison, P.adj), by = "Comparison") |>
+  full_join(dunn_HBCDD_grp$res  |> select(Comparison, P.adj), by = "Comparison") |> 
+  mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
+names(res_dunn_grp) <- c("Comparison", "PCB", "PFAS", "HBCDD")
+
+writexl::write_xlsx(x = res_dunn_grp, path = "results/data_analysis/4.test_dunn_taxa.xlsx")
+```
+
+Test feeding mode effect:
+
+```{r}
+# PCB in ng/g lw
+kruskal.test(sommePCB_ALL_ng_glw ~ alim, data = contam) # p-value = 0.14
+# PFAS in ng/g dw
+kruskal.test(sommePFAS_ALL_ng_gdw ~ alim, data = contam) # p-value < 0.05
+# HBCDD in ng/g lw
+kruskal.test(sommeHBCDD_ALL_ng_glw ~ alim, data = contam) # p-value < 0.05
+```
+
+```{r}
+dunn_PCB_alim <- dunnTest(sommePCB_ALL_ng_glw ~ alim, data = contam |> drop_na(sommePCB_ALL_ng_glw))
+dunn_PFAS_alim <- dunnTest(sommePFAS_ALL_ng_gdw ~ alim, data = contam |> drop_na(sommePFAS_ALL_ng_gdw))
+dunn_HBCDD_alim <- dunnTest(sommeHBCDD_ALL_ng_glw ~ alim, data = contam |> drop_na(sommeHBCDD_ALL_ng_glw))
+
+res_dunn_alim <- dunn_PCB_alim$res |> select(Comparison, P.adj) |>
+  full_join(dunn_PFAS_alim$res  |> select(Comparison, P.adj), by = "Comparison") |>
+  full_join(dunn_HBCDD_alim$res  |> select(Comparison, P.adj), by = "Comparison") |> 
+  mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
+names(res_dunn_alim) <- c("Comparison", "PCB", "PFAS", "HBCDD")
+
+writexl::write_xlsx(x = res_dunn_alim, path = "results/data_analysis/4.test_dunn_alim.xlsx")
+```
