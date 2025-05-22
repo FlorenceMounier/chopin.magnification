@@ -298,28 +298,6 @@ ggsave(
 
 # 6. Total levels in PCBs and HBCDD isomers versur lipid content
 
-```{r}
-my_colors <- c(
-  "#1b9e77", # teal
-  "#d95f02", # orange
-  "#7570b3", # purple
-  "#e7298a", # pink
-  "#66a61e", # olive green
-  "#e6ab02", # mustard
-  "#a6761d", # brown
-  "#666666", # gray
-  "#1f78b4", # blue
-  "#b2df8a", # light green
-  "#fb9a99", # salmon
-  "#fdbf6f", # light orange
-  "#cab2d6", # lavender
-  "#ffff99", # light yellow
-  "#b15928", # dark brown
-  "#8dd3c7", # pale turquoise
-  "#ff69b4"  # hot pink
-)
-```
-
 There is a significant positive correlation between lipid content and PCB contamination levels (Spearman's test: p-value = 5×10⁻⁴, ρ = 0.43). However, some species appear to deviate from this general trend. For example, Crangon crangon shows highly variable lipid levels without a corresponding increase in PCB contamination. Conversely, Limecola balthica exhibits relatively stable lipid content despite a wide range of PCB concentrations.
 
 ```{r}
