@@ -414,12 +414,17 @@ ggplot_contam_profile_prop_PCB <- ggplot(contam_profile_prop_PCB) +
   geom_point() +
   geom_text_repel(aes(label = chemical), size = 3, 
                   point.padding = 1, max.overlaps = 20) +
-  labs(y = "Percentage of total concentrations (ng/g dw)", 
+  theme(legend.position = "bottom") +
+  theme(
+    legend.text = element_text(size = 8),
+    legend.title = element_text(size = 8)
+  ) +
+  labs(title = "PCB", y = "Percentage of total concentrations (ng/g dw)", 
        size = "Chlorine substitution", color = "Chlorine substitution")
 ggplot_contam_profile_prop_PCB
 
 ggsave("results/data_analysis/8.contam_profiles_prop_PCB.jpg",
-       ggplot_contam_profile_prop_PCB, width = 6, height = 4, dpi = 300)
+       ggplot_contam_profile_prop_PCB, width = 6, height = 5, dpi = 300)
 ```
 
 
@@ -431,13 +436,9 @@ contam_profile_prop_PFAS <- contam_profile_prop |>
 ggplot_contam_profile_prop_PFAS <- ggplot(contam_profile_prop_PFAS) +
   aes(x = n_C, y = percent, size = sub_family_TAG, color = sub_family_TAG) +
   geom_point() +
-  geom_text_repel(data = points_to_label_bottom,
-                  aes(label = chemical), size = 3,
+  geom_text_repel(aes(label = chemical), size = 3,
                   point.padding = 1, max.overlaps = 20) +
-    geom_text_repel(data = points_to_label_up,
-                  aes(label = chemical), size = 3,
-                  point.padding = 1, max.overlaps = 20) +
-  labs(y = "Percentage of total concentrations (ng/g dw)",
+  labs(title = "PFAS", y = "Percentage of total concentrations (ng/g dw)",
        x = "Carbon chain length",
        size = "Sub-family", color = "Sub-family")
 
@@ -446,3 +447,4 @@ ggplot_contam_profile_prop_PFAS
 ggsave("results/data_analysis/8.contam_profiles_prop_PFAS.jpg",
        ggplot_contam_profile_prop_PFAS, width = 6, height = 6, dpi = 300)
 ```
+
