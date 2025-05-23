@@ -382,7 +382,6 @@ contam_profile_prop <- left_join(contam_profile, contam_prop)
 ```{r}
 contam_profile_prop_PCB <- contam_profile_prop |> 
   filter(family == "PCB", type == "Sole") |>
-  mutate(logKow = as.numeric(logKow)) |> 
   mutate(sub_family_TAG = factor(sub_family_TAG, 
                                  levels = c("tri-CB", "tetra-CB", "penta-CB", 
                                             "hexa-CB", "hepta-CB")))

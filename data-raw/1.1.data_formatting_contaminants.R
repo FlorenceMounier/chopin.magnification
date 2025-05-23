@@ -16,6 +16,7 @@ contam_prop <- read_excel("inst/CHOPIN_CAPES_RAW_DATABASE.xlsx",
                     sheet= "INFO_contam")
 contam_prop <- contam_prop[,-9]
 contam_prop$LOQ_biote <- round(as.numeric(contam_prop$LOQ_biote), digits = 2)
+contam_prop$logKow <- as.numeric(contam_prop$logKow)
 
 #-----------------------------------------------------------
 # Read the list of studied chemicals and their properties
