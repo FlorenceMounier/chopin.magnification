@@ -301,5 +301,7 @@ ggplot_BMFs_compare
 ```
 ```{r}
 ggsave(plot = ggplot_BMFs_compare, filename = "results/BMF_computation_PCB/4.ggplot_BMFs_compare.jpg", width = 20, height = 15, units = "cm")
+
 ```
+
 
