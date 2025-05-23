@@ -148,7 +148,7 @@ ggplot_BMF_PCB_species_all
 ```
 ```{r}
 ggsave(
-  filename = "results/BMF_computation_PCB/2.ggplot_BMF_PCB_species_all.jpg",
+  filename = "results/BMF_computation_PCB/2.ggplot_BMF_PCB_ng_glw_species_all.jpg",
   plot = ggplot_BMF_PCB_species_all, width = 30, height = 20, units = "cm"
 )
 ```
