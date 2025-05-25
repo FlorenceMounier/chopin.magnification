@@ -1,0 +1,203 @@
+---
+title: "3.1.BMF_species_PCB_ng_glw"
+format: html
+---
+
+```{r}
+#| message: false
+#| include: false
+library(chopin.magnification)
+library(tidyverse)
+library(writexl)
+```
+
+
+# 1. Species statistics on contamination levels
+
+## Species statistics on contamination levels for PCB congeners
+
+```{r}
+contam_PCB_ng_glw_species_stats <- contam_PCB_ng_glw |> 
+  group_by(type, grp, labels, species) |> 
+  summarise(across(
+    starts_with("CB"),
+    list(
+      min = ~ quantile(.x, probs = 0.25, na.rm = TRUE),
+      median = ~ median(.x, na.rm = TRUE),
+      max = ~ quantile(.x, probs = 0.75, na.rm = TRUE)
+    ),
+    .names = "{.col}_{.fn}"
+  ),
+  .groups = "drop") |> 
+  pivot_longer(cols = starts_with("CB"), 
+               names_to = c("PCB", ".value"), 
+               names_sep = "_")
+
+contam_PCB_ng_glw_species_stats
+```
+
+```{r}
+# Save dataset
+write_xlsx(x = contam_PCB_ng_glw_species_stats, path = "results/BMF_computation_PCB_ng_glw/1.1.contam_PCB_ng_glw_species_stats.xlsx")
+```
+
+## Species statistics on contamination levels for sum PCB 
+
+```{r}
+contam_sumPCB_ng_glw_species_stats <- contam_sumPCB_ng_glw |> 
+  group_by(type, grp, labels, species) |> 
+  summarise(min = quantile(sommePCB_ng_glw, probs = 0.25, digits = 2),
+            median = median_plus(sommePCB_ng_glw),
+            max = quantile(sommePCB_ng_glw, probs = 0.75, digits = 2),
+            .groups = "drop")
+```
+
+```{r}
+# Save dataset
+write_xlsx(x = contam_sumPCB_ng_glw_species_stats, path = "results/BMF_computation_PCB_ng_glw/1.1.contam_sumPCB_ng_glw_species_stats.xlsx")
+```
+
+
+# 2. BMF species computation
+
+## BMF species statistics for PCB congeners
+```{r}
+# Isolate prey and sole contamination statistics
+contam_PCB_ng_glw_species_stats_prey <- contam_PCB_ng_glw_species_stats |> 
+  filter(type == "Prey")
+contam_PCB_ng_glw_species_stats_sole <- contam_PCB_ng_glw_species_stats |> 
+  filter(type == "Sole")
+
+# Create base table for BMFs species
+BMF_PCB_ng_glw_species <- contam_PCB_ng_glw_species_stats_prey
+
+# Number of prey
+n_prey <- length(BMF_PCB_ng_glw_species |> distinct(species) |> pull())
+
+# Replicate sole stats of contamination next to prey stats of contamination
+BMF_PCB_ng_glw_species$min_sole <- rep.int(
+  contam_PCB_ng_glw_species_stats_sole$min, 
+  times = n_prey)
+BMF_PCB_ng_glw_species$median_sole <- rep.int(
+  contam_PCB_ng_glw_species_stats_sole$median, 
+  times = n_prey)
+BMF_PCB_ng_glw_species$max_sole <- rep.int(
+  contam_PCB_ng_glw_species_stats_sole$max, 
+  times = n_prey)
+
+# Compute BMF stats from prey and sole stats of contamination
+BMF_species_PCB_ng_glw <- BMF_PCB_ng_glw_species |> 
+  mutate(BMF_min = min_sole / max,
+         BMF_median = median_sole / median,
+         BMF_max = max_sole / min)
+```
+
+## BMF species statistics for sum PCB
+```{r}
+# Isolate prey and sole contamination statistics
+contam_sumPCB_ng_glw_species_stats_prey <- contam_sumPCB_ng_glw_species_stats |> 
+  filter(type == "Prey")
+contam_sumPCB_ng_glw_species_stats_sole <- contam_sumPCB_ng_glw_species_stats |>  
+  filter(type == "Sole")
+
+# Create base table for BMFs species
+BMF_sumPCB_ng_glw_species <- contam_sumPCB_ng_glw_species_stats_prey
+
+# Replicate sole stats of contamination next to prey stats of contamination
+BMF_sumPCB_ng_glw_species$min_sole <- rep.int(
+  contam_sumPCB_ng_glw_species_stats_sole$min, 
+  times = n_prey)
+BMF_sumPCB_ng_glw_species$median_sole <- rep.int(
+  contam_sumPCB_ng_glw_species_stats_sole$median, 
+  times = n_prey)
+BMF_sumPCB_ng_glw_species$max_sole <- rep.int(
+  contam_sumPCB_ng_glw_species_stats_sole$max, 
+  times = n_prey)
+
+# Compute BMF stats from prey and sole stats of contamination
+BMF_species_sumPCB_ng_glw <- BMF_sumPCB_ng_glw_species |> 
+  mutate(PCB = "sumCB") |> 
+  mutate(BMF_min = min_sole / max,
+         BMF_median = median_sole / median,
+         BMF_max = max_sole / min)
+
+```
+
+## BMF species statistics for all PCB
+
+```{r}
+BMF_species_all_PCB_ng_glw <- full_join(BMF_species_PCB_ng_glw, BMF_species_sumPCB_ng_glw)
+
+write_xlsx(
+  x = BMF_species_all_PCB_ng_glw, 
+  path = "results/BMF_computation_PCB_ng_glw/1.2.BMF_species_PCB_all_ng_glw.xlsx")
+```
+
+
+## Graph BMFs for all species & all CBs
+```{r}
+ggplot_BMF_species_PCB_all <- ggplot(BMF_species_all_PCB_ng_glw) +
+  aes(x = labels, y = log(BMF_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_species_PCB_all
+```
+
+```{r}
+ggsave(
+  filename = "results/BMF_computation_PCB_ng_glw/1.2.ggplot_BMF_species_PCB_all_ng_glw.jpg",
+  plot = ggplot_BMF_species_PCB_all, width = 30, height = 20, units = "cm"
+)
+```
+
+# 3. Mean BMF species computation
+
+## Mean BMF computation for PCB congeners
+```{r}
+BMF_species_PCB_ng_glw_summarised <- BMF_species_PCB_ng_glw |> 
+  group_by(PCB) |> 
+  summarise(min = min_plus(BMF_min),
+            median = mean_plus(BMF_median),
+            max = max_plus(BMF_max)) |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(logKow = as.numeric(logKow)) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB")))
+
+BMF_species_PCB_ng_glw_summarised
+```
+
+
+```{r}
+write_xlsx(x = BMF_species_PCB_ng_glw_summarised, 
+           path = "results/BMF_computation_PCB_ng_glw/1.3.BMF_species_PCB_ng_glw_summarised.xlsx")
+```
+
+## Graph Mean BMF per CBs
+```{r}
+ggplot_BMF_species_PCB_ng_glw_summarised <- ggplot(BMF_species_PCB_ng_glw_summarised) +
+  aes(x = logKow, y = log(median), colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = log(min), ymax = log(max)), width = 0.1) +
+  geom_hline(yintercept = 0) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Log BMF species")
+
+ggplot_BMF_species_PCB_ng_glw_summarised
+```
+
+```{r}
+ggsave(
+  filename = "results/BMF_computation_PCB_ng_glw/1.3.ggplot_BMF_species_PCB_ng_glw_summarised.jpg",
+  plot = ggplot_BMF_species_PCB_ng_glw_summarised, width = 20, height = 15, units = "cm"
+)
+```
