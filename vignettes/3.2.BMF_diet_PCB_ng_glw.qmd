@@ -1,0 +1,146 @@
+---
+title: "3.2.BMF_diet_PCB_ng_glw"
+format: html
+---
+
+```{r}
+#| message: false
+#| include: false
+library(chopin.magnification)
+library(tidyverse)
+library(writexl)
+```
+
+
+# 0. Proportions of each prey "grp" in sole's diet
+```{r}
+diet_comp <- tibble(taxon = c("Polychaeta", "Crustacea", "Bivalvia"),
+                    diet_portion = diet)
+```
+
+
+# 1. Taxon statistics on contamination levels
+
+## Taxon statistics on contamination levels for PCB congeners
+```{r}
+contam_PCB_ng_glw_taxon_stats <- contam_PCB_ng_glw |> 
+  group_by(type, grp) |> 
+  summarise(across(
+    starts_with("CB"),
+    list(
+      min = ~ quantile(.x, probs = 0.25, na.rm = TRUE),
+      median = ~ median(.x, na.rm = TRUE),
+      max = ~ quantile(.x, probs = 0.75, na.rm = TRUE)
+    ),
+    .names = "{.col}_{.fn}"
+  ),
+  .groups = "drop") |> 
+  pivot_longer(cols = starts_with("CB"), 
+               names_to = c("PCB", ".value"), 
+               names_sep = "_")
+
+contam_PCB_ng_glw_taxon_stats
+```
+
+## Taxon statistics on contamination levels for sum PCB
+```{r}
+contam_sumPCB_ng_glw_taxon_stats <- contam_sumPCB_ng_glw |> 
+  group_by(type, grp) |> 
+  summarise(min = quantile(sommePCB_ng_glw, probs = 0.25, digits = 2),
+            median = median_plus(sommePCB_ng_glw),
+            max = quantile(sommePCB_ng_glw, probs = 0.75, digits = 2),
+            .groups = "drop") |> 
+  mutate(PCB = "sumPCB")
+
+contam_sumPCB_ng_glw_taxon_stats
+```
+
+## Taxon statistics on contamination levels for all PCB type
+```{r}
+contam_all_PCB_ng_glw_taxon_stats <- full_join(
+  contam_PCB_ng_glw_taxon_stats,
+  contam_sumPCB_ng_glw_taxon_stats)
+
+contam_all_PCB_ng_glw_taxon_stats
+```
+
+```{r}
+# Save dataset
+write_xlsx(x = contam_all_PCB_ng_glw_taxon_stats, path = "results/BMF_computation_PCB_ng_glw/2.contam_all_PCB_ng_glw_taxon_stats.xlsx")
+```
+
+## Diet statistics on contamination levels for all PCB type
+```{r}
+contam_all_PCB_ng_glw_diet_stats <- contam_all_PCB_ng_glw_taxon_stats |>
+  filter(type == "Prey") |> 
+  left_join(diet_comp, by = c("grp" = "taxon")) |>
+  mutate(across(
+    .cols = c(min, median, max),
+    ~ .x * diet_portion
+  )) |> 
+  group_by(PCB) |> 
+  summarise(across(
+    .cols = c(min, median, max),
+    ~ sum(.x))) |> 
+  arrange(PCB)
+
+contam_all_PCB_ng_glw_diet_stats
+```
+
+# 2. BMF diet computation
+
+### Get sole contamination stats
+```{r}
+contam_all_PCB_ng_glw_diet_stats_sole <- contam_all_PCB_ng_glw_taxon_stats |>
+  filter(type == "Sole") |> 
+  select(-type, -grp) |> 
+  arrange(PCB)
+
+ contam_all_PCB_ng_glw_diet_stats_sole
+```
+
+### Compute diet BMFs
+```{r}
+BMF_diet_all_PCB_ng_glw <- full_join(contam_all_PCB_ng_glw_diet_stats_sole, contam_all_PCB_ng_glw_diet_stats,
+           by = "PCB", suffix = c("_sole", "_diet")) |> 
+   mutate(BMF_diet_min = min_sole / max_diet,
+          BMF_diet_median = median_sole / median_diet,
+          BMF_diet_max = max_sole / min_diet) |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) 
+
+BMF_diet_all_PCB_ng_glw
+```
+
+```{r}
+usethis::use_data(BMF_diet_all_PCB_ng_glw, overwrite = TRUE)
+```
+
+```{r}
+write_xlsx(x = BMF_diet_all_PCB_ng_glw, 
+           path = "results/BMF_computation_PCB_ng_glw/2.BMF_diet_all_PCB_ng_glw.xlsx")
+```
+
+## Graph BMFs per CBs
+```{r}
+ggplot_BMF_diet_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
+  filter(PCB != "sumPCB") |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB"))) |> 
+  ggplot() +
+  aes(x = logKow, y = log(BMF_diet_median), colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = log(BMF_diet_min), ymax = log(BMF_diet_max)), width = 0.05) +
+  geom_hline(yintercept = 0) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Log BMF diet")
+
+ggplot_BMF_diet_PCB_ng_glw
+```
+
+```{r}
+ggsave(
+  filename = "results/BMF_computation_PCB_ng_glw/2.ggplot_BMF_diet_PCB_ng_glw.jpg",
+  plot = ggplot_BMF_diet_PCB_ng_glw, width = 20, height = 15, units = "cm"
+)
+```
