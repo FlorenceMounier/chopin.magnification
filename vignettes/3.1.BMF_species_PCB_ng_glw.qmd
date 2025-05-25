@@ -36,11 +36,6 @@ contam_PCB_ng_glw_species_stats <- contam_PCB_ng_glw |>
 contam_PCB_ng_glw_species_stats
 ```
 
-```{r}
-# Save dataset
-write_xlsx(x = contam_PCB_ng_glw_species_stats, path = "results/BMF_computation_PCB_ng_glw/1.1.contam_PCB_ng_glw_species_stats.xlsx")
-```
-
 ## Species statistics on contamination levels for sum PCB 
 
 ```{r}
@@ -49,88 +44,68 @@ contam_sumPCB_ng_glw_species_stats <- contam_sumPCB_ng_glw |>
   summarise(min = quantile(sommePCB_ng_glw, probs = 0.25, digits = 2),
             median = median_plus(sommePCB_ng_glw),
             max = quantile(sommePCB_ng_glw, probs = 0.75, digits = 2),
-            .groups = "drop")
+            .groups = "drop") |> 
+  mutate(PCB = "sumPCB")
+
+contam_sumPCB_ng_glw_species_stats
+```
+
+## Species statistics on contamination levels for all PCB type
+
+```{r}
+contam_all_PCB_ng_glw_species_stats <- full_join(
+  contam_PCB_ng_glw_species_stats,
+  contam_sumPCB_ng_glw_species_stats)
+
+contam_all_PCB_ng_glw_species_stats
 ```
 
 ```{r}
 # Save dataset
-write_xlsx(x = contam_sumPCB_ng_glw_species_stats, path = "results/BMF_computation_PCB_ng_glw/1.1.contam_sumPCB_ng_glw_species_stats.xlsx")
+write_xlsx(x = contam_all_PCB_ng_glw_species_stats, path = "results/BMF_computation_PCB_ng_glw/1.1.contam_all_PCB_ng_glw_species_stats.xlsx")
 ```
 
 
 # 2. BMF species computation
 
-## BMF species statistics for PCB congeners
+## BMF species statistics for all PCB type
 ```{r}
 # Isolate prey and sole contamination statistics
-contam_PCB_ng_glw_species_stats_prey <- contam_PCB_ng_glw_species_stats |> 
-  filter(type == "Prey")
-contam_PCB_ng_glw_species_stats_sole <- contam_PCB_ng_glw_species_stats |> 
-  filter(type == "Sole")
+contam_all_PCB_ng_glw_species_stats_prey <- contam_all_PCB_ng_glw_species_stats |> 
+  filter(type == "Prey") |> 
+  arrange(grp, species, PCB)
+contam_all_PCB_ng_glw_species_stats_sole <- contam_all_PCB_ng_glw_species_stats |> 
+  filter(type == "Sole") |> 
+  arrange(PCB)
 
 # Create base table for BMFs species
-BMF_PCB_ng_glw_species <- contam_PCB_ng_glw_species_stats_prey
+BMF_all_PCB_ng_glw_species <- contam_all_PCB_ng_glw_species_stats_prey
 
 # Number of prey
-n_prey <- length(BMF_PCB_ng_glw_species |> distinct(species) |> pull())
+n_prey <- length(BMF_all_PCB_ng_glw_species |> distinct(species) |> pull())
 
 # Replicate sole stats of contamination next to prey stats of contamination
-BMF_PCB_ng_glw_species$min_sole <- rep.int(
-  contam_PCB_ng_glw_species_stats_sole$min, 
+BMF_all_PCB_ng_glw_species$min_sole <- rep.int(
+  contam_all_PCB_ng_glw_species_stats_sole$min, 
   times = n_prey)
-BMF_PCB_ng_glw_species$median_sole <- rep.int(
-  contam_PCB_ng_glw_species_stats_sole$median, 
+BMF_all_PCB_ng_glw_species$median_sole <- rep.int(
+  contam_all_PCB_ng_glw_species_stats_sole$median, 
   times = n_prey)
-BMF_PCB_ng_glw_species$max_sole <- rep.int(
-  contam_PCB_ng_glw_species_stats_sole$max, 
+BMF_all_PCB_ng_glw_species$max_sole <- rep.int(
+  contam_all_PCB_ng_glw_species_stats_sole$max, 
   times = n_prey)
 
 # Compute BMF stats from prey and sole stats of contamination
-BMF_species_PCB_ng_glw <- BMF_PCB_ng_glw_species |> 
+BMF_species_all_PCB_ng_glw <- BMF_all_PCB_ng_glw_species |> 
   mutate(BMF_min = min_sole / max,
          BMF_median = median_sole / median,
          BMF_max = max_sole / min)
 ```
 
-## BMF species statistics for sum PCB
 ```{r}
-# Isolate prey and sole contamination statistics
-contam_sumPCB_ng_glw_species_stats_prey <- contam_sumPCB_ng_glw_species_stats |> 
-  filter(type == "Prey")
-contam_sumPCB_ng_glw_species_stats_sole <- contam_sumPCB_ng_glw_species_stats |>  
-  filter(type == "Sole")
-
-# Create base table for BMFs species
-BMF_sumPCB_ng_glw_species <- contam_sumPCB_ng_glw_species_stats_prey
-
-# Replicate sole stats of contamination next to prey stats of contamination
-BMF_sumPCB_ng_glw_species$min_sole <- rep.int(
-  contam_sumPCB_ng_glw_species_stats_sole$min, 
-  times = n_prey)
-BMF_sumPCB_ng_glw_species$median_sole <- rep.int(
-  contam_sumPCB_ng_glw_species_stats_sole$median, 
-  times = n_prey)
-BMF_sumPCB_ng_glw_species$max_sole <- rep.int(
-  contam_sumPCB_ng_glw_species_stats_sole$max, 
-  times = n_prey)
-
-# Compute BMF stats from prey and sole stats of contamination
-BMF_species_sumPCB_ng_glw <- BMF_sumPCB_ng_glw_species |> 
-  mutate(PCB = "sumCB") |> 
-  mutate(BMF_min = min_sole / max,
-         BMF_median = median_sole / median,
-         BMF_max = max_sole / min)
-
-```
-
-## BMF species statistics for all PCB
-
-```{r}
-BMF_species_all_PCB_ng_glw <- full_join(BMF_species_PCB_ng_glw, BMF_species_sumPCB_ng_glw)
-
 write_xlsx(
   x = BMF_species_all_PCB_ng_glw, 
-  path = "results/BMF_computation_PCB_ng_glw/1.2.BMF_species_PCB_all_ng_glw.xlsx")
+  path = "results/BMF_computation_PCB_ng_glw/1.2.BMF_species_all_PCB_ng_glw.xlsx")
 ```
 
 
