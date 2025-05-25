@@ -111,12 +111,14 @@ BMF_diet_all_PCB_ng_glw
 ```
 
 ```{r}
-usethis::use_data(BMF_diet_all_PCB_ng_glw, overwrite = TRUE)
+write_xlsx(x = BMF_diet_all_PCB_ng_glw, 
+           path = "results/BMF_computation_PCB_ng_glw/2.BMF_diet_all_PCB_ng_glw.xlsx")
 ```
 
 ```{r}
-write_xlsx(x = BMF_diet_all_PCB_ng_glw, 
-           path = "results/BMF_computation_PCB_ng_glw/2.BMF_diet_all_PCB_ng_glw.xlsx")
+BMF_diet_all_PCB_ng_glw_compare <- BMF_diet_all_PCB_ng_glw |> 
+  select(PCB, starts_with("BMF"))
+usethis::use_data(BMF_diet_all_PCB_ng_glw_compare, overwrite = TRUE)
 ```
 
 ## Graph BMFs per CBs
