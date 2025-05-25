@@ -131,23 +131,17 @@ ggsave(
 
 ## Mean BMF computation for PCB congeners
 ```{r}
-BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw |> 
-  filter(PCB != "sumPCB") |> 
+BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw |>
   group_by(PCB) |> 
   summarise(min = min_plus(BMF_min),
             median = mean_plus(BMF_median),
-            max = max_plus(BMF_max)) |> 
-  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
-  mutate(logKow = as.numeric(logKow)) |> 
-  mutate(sub_family_TAG = factor(sub_family_TAG, 
-                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
-                                            "hexa-CB", "hepta-CB")))
+            max = max_plus(BMF_max))
 
 BMF_species_PCB_ng_glw_summarised
 ```
 
 ```{r}
-usethis::use_data(BMF_species_PCB_ng_glw_summarised)
+usethis::use_data(BMF_species_PCB_ng_glw_summarised, overwrite = TRUE)
 ```
 
 ```{r}
@@ -157,7 +151,14 @@ write_xlsx(x = BMF_species_PCB_ng_glw_summarised,
 
 ## Graph Mean BMF per CBs
 ```{r}
-ggplot_BMF_species_PCB_ng_glw_summarised <- ggplot(BMF_species_PCB_ng_glw_summarised) +
+ggplot_BMF_species_PCB_ng_glw_summarised <- BMF_species_PCB_ng_glw_summarised |> 
+  filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(logKow = as.numeric(logKow)) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB"))) |> 
+  ggplot() +
   aes(x = logKow, y = log(median), colour = sub_family_TAG) +
   geom_point() +
   geom_errorbar(aes(ymin = log(min), ymax = log(max)), width = 0.1) +
