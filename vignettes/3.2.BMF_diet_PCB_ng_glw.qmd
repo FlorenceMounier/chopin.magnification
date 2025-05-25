@@ -105,8 +105,7 @@ BMF_diet_all_PCB_ng_glw <- full_join(contam_all_PCB_ng_glw_diet_stats_sole, cont
            by = "PCB", suffix = c("_sole", "_diet")) |> 
    mutate(BMF_diet_min = min_sole / max_diet,
           BMF_diet_median = median_sole / median_diet,
-          BMF_diet_max = max_sole / min_diet) |> 
-  left_join(contam_prop, by = c("PCB" = "chemical")) 
+          BMF_diet_max = max_sole / min_diet) 
 
 BMF_diet_all_PCB_ng_glw
 ```
@@ -124,6 +123,7 @@ write_xlsx(x = BMF_diet_all_PCB_ng_glw,
 ```{r}
 ggplot_BMF_diet_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
   filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
   mutate(sub_family_TAG = factor(sub_family_TAG, 
                                  levels = c("tri-CB", "tetra-CB", "penta-CB", 
                                             "hexa-CB", "hepta-CB"))) |> 
