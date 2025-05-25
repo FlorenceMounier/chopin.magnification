@@ -92,6 +92,8 @@ BMF_species_all_PCB_ng_glw <- BMF_all_PCB_ng_glw_species |>
   mutate(BMF_min = min_sole / max,
          BMF_median = median_sole / median,
          BMF_max = max_sole / min)
+
+BMF_species_all_PCB_ng_glw
 ```
 
 ```{r}
@@ -129,7 +131,8 @@ ggsave(
 
 ## Mean BMF computation for PCB congeners
 ```{r}
-BMF_species_PCB_ng_glw_summarised <- BMF_species_PCB_ng_glw |> 
+BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw |> 
+  filter(PCB != "sumPCB") |> 
   group_by(PCB) |> 
   summarise(min = min_plus(BMF_min),
             median = mean_plus(BMF_median),
@@ -143,6 +146,9 @@ BMF_species_PCB_ng_glw_summarised <- BMF_species_PCB_ng_glw |>
 BMF_species_PCB_ng_glw_summarised
 ```
 
+```{r}
+usethis::use_data(BMF_species_PCB_ng_glw_summarised)
+```
 
 ```{r}
 write_xlsx(x = BMF_species_PCB_ng_glw_summarised, 
