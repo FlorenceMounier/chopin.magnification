@@ -15,7 +15,6 @@ library(writexl)
 # 1. Species statistics on contamination levels
 
 ## Species statistics on contamination levels for PCB congeners
-
 ```{r}
 contam_PCB_ng_glw_species_stats <- contam_PCB_ng_glw |> 
   group_by(type, grp, labels, species) |> 
@@ -37,7 +36,6 @@ contam_PCB_ng_glw_species_stats
 ```
 
 ## Species statistics on contamination levels for sum PCB 
-
 ```{r}
 contam_sumPCB_ng_glw_species_stats <- contam_sumPCB_ng_glw |> 
   group_by(type, grp, labels, species) |> 
@@ -51,7 +49,6 @@ contam_sumPCB_ng_glw_species_stats
 ```
 
 ## Species statistics on contamination levels for all PCB type
-
 ```{r}
 contam_all_PCB_ng_glw_species_stats <- full_join(
   contam_PCB_ng_glw_species_stats,
