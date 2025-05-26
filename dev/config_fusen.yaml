@@ -15,6 +15,21 @@ flat_descriptive_stats.Rmd:
     overwrite: ask
     clean: ask
     codecov: false
+flat_fct_reorder_contam.Rmd:
+  path: dev/flat_fct_reorder_contam.Rmd
+  state: active
+  R: R/fct_reorder_pcb.R
+  tests: tests/testthat/test-fct_reorder_pcb.R
+  vignettes: []
+  inflate:
+    flat_file: dev/flat_fct_reorder_contam.Rmd
+    vignette_name: .na
+    open_vignette: true
+    check: false
+    document: true
+    overwrite: ask
+    clean: ask
+    codecov: false
 flat_fct_reorder_species.Rmd:
   path: dev/flat_fct_reorder_species.Rmd
   state: active

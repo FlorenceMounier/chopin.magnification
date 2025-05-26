@@ -91,7 +91,8 @@ BMF_all_PCB_ng_glw_species$max_sole <- rep.int(
 BMF_species_all_PCB_ng_glw <- BMF_all_PCB_ng_glw_species |> 
   mutate(BMF_min = min_sole / max,
          BMF_median = median_sole / median,
-         BMF_max = max_sole / min)
+         BMF_max = max_sole / min) |> 
+  fct_reorder_PCB()
 
 BMF_species_all_PCB_ng_glw
 ```
