@@ -43,25 +43,25 @@ for(l in 1:length(feeding_mode)){
 
 prey_labels <- list(
   "Bivalvia" = c(
-    "Abra a." = "Abra_alba",
-    "Spisula s." = "Spisula_subtruncata",
-    "Limecola b." = "Limecola_balthica",
-    "Cerastoderma e." = "Cerastoderma_edule",
-    "Donax v." = "Donax_vittatus",
-    "Corbula g." = "Corbula_gibba",
-    "Scrobicularia p." = "Scrobicularia_plana",
-    "Nucula n." = "Nucula_nitidosa",
-    "Ensis d." = "Ensis_directus"
+    "A. alba" = "Abra_alba",
+    "S. subtruncata" = "Spisula_subtruncata",
+    "L. balthica" = "Limecola_balthica",
+    "C. edule" = "Cerastoderma_edule",
+    "D. vittatus" = "Donax_vittatus",
+    "C. gibba" = "Corbula_gibba",
+    "S. plana" = "Scrobicularia_plana",
+    "N. nitidosa" = "Nucula_nitidosa",
+    "E. directus" = "Ensis_directus"
   ),
   "Polychaeta" = c(
     "Nephtys sp." = "Nephtys_sp",
-    "Owenia f." = "Owenia_fusiformis",
-    "Lagis k." = "Lagis_koreni",
-    "Lanice c." = "Lanice_conchilega",
-    "Hediste d." = "Hediste_diversicolor"
+    "O. fusiformis" = "Owenia_fusiformis",
+    "L. koreni" = "Lagis_koreni",
+    "L. conchilega" = "Lanice_conchilega",
+    "H. diversicolor" = "Hediste_diversicolor"
   ),
-  "Crustacea" = c("Crangon c." = "Crangon_crangon", "Corophium v." =
-                    "Corophium_volutator")
+  "Crustacea" = c("C. crangon" = "Crangon_crangon",
+                  "C. volutator" = "Corophium_volutator")
 )
 benthos_contam$labels = rep.int(NA, times = dim(benthos_contam)[1])
 for(l in 1:length(prey_labels)){
