@@ -128,6 +128,32 @@ ggsave(
 )
 ```
 
+## Graph BMFs for all species & sumPCB
+
+```{r}
+ggplot_BMF_species_sumPCB <- BMF_species_all_PCB_ng_glw |> 
+  filter(PCB == "sumPCB") |> 
+  ggplot() +
+  aes(x = labels, y = log(BMF_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_species_sumPCB
+```
+```{r}
+ggsave(
+  filename = "results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_sumPCB_ng_glw.jpg",
+  plot = ggplot_BMF_species_sumPCB, width = 20, height = 15, units = "cm"
+)
+```
+
 # 3. Mean BMF species computation
 
 ## Mean BMF computation for PCB congeners
