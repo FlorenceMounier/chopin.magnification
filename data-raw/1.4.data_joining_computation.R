@@ -16,21 +16,7 @@ library(tidyverse)
 # Join metadata
 
 metadata <- full_join(soles_metadata, benthos_metadata) |>
-  arrange(grp, alim, species) |>
-  mutate(species = factor(species,
-                          levels = c("Solea_solea", "Limecola_balthica", "Nucula_nitidosa", "Scrobicularia_plana",
-                                     "Abra_alba", "Cerastoderma_edule", "Corbula_gibba", "Donax_vittatus",
-                                     "Ensis_directus", "Spisula_subtruncata", "Corophium_volutator",
-                                     "Crangon_crangon", "Lagis_koreni", "Lanice_conchilega", "Hediste_diversicolor",
-                                     "Nephtys_sp", "Owenia_fusiformis")),
-         labels = factor(labels,
-                         levels = c("S. solea", "Limecola b.", "Nucula n.", "Scrobicularia p.",
-                                    "Abra a.", "Cerastoderma e.", "Corbula g.", "Donax v.", "Ensis d.",
-                                    "Spisula s.", "Corophium v.", "Crangon c.", "Lagis k.", "Lanice c.",
-                                    "Hediste d.", "Nephtys sp.", "Owenia f.")),
-         grp = factor(grp,
-                      levels = c("Actinopterygii", "Bivalvia", "Crustacea", "Polychaeta")),
-         alim = factor(alim, levels = c("Omnivore", "Deposivore", "Suspensivore")))
+  fct_reorder_species()
 
 #-----------------------------------------------------------
 # Join data of contamination for soles and benthos
@@ -47,12 +33,13 @@ sub_soles_contam <- soles_contam |>
             length_TL_cm, length_TL_cm_sd, length_SL_cm, mass_tot_gww,
             mass_tot_gww_sd, FultonK_gwwTL3, FultonK_sd_gwwTL3, water_percent,
             "a-HBCDD_pg_gdw", "b-HBCDD_pg_gdw", "g-HBCDD_pg_gdw")) |>
-  mutate(species = soles_metadata$species, alim = soles_metadata$alim,
-         labels = soles_metadata$labels, grp = soles_metadata$grp)
+  mutate(species = soles_metadata$species)
 
 ## Join datasets
 contam <- full_join(sub_benthos_contam, sub_soles_contam) |>
-  left_join(metadata)
+  select(species, labels, grp, alim, everything()) |>
+  left_join(metadata) |>
+  fct_reorder_species()
 
 
 #-----------------------------------------------------------
