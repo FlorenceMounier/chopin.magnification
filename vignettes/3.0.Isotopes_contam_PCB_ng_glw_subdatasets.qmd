@@ -22,7 +22,7 @@ contam_PCB_ng_glw <- contam |>
   drop_na(CB153_ng_glw)
 names(contam_PCB_ng_glw) <- names(contam_PCB_ng_glw) |> str_remove("_ng_glw")
 
-usethis::use_data(contam_PCB_ng_glw)
+usethis::use_data(contam_PCB_ng_glw, overwrite = TRUE)
 ```
 
 ## Subdataset of isotopes and sum PCB contamination levels for each species
@@ -33,6 +33,6 @@ contam_sumPCB_ng_glw <- contam |>
                           TRUE ~ "Prey")) |>
   drop_na(sommePCB_ng_glw)
 
-usethis::use_data(contam_sumPCB_ng_glw)
+usethis::use_data(contam_sumPCB_ng_glw, overwrite = TRUE)
 ```
 
