@@ -16,6 +16,5 @@ data with reordered factor column
 fct_reorder_PCB Reorder PCB factor
 }
 \examples{
-library(chopin.magnification)
-levels(fct_reorder_PCB(BMF_species_all_PCB_ng_glw)$PCB)
+levels(fct_reorder_PCB(BMF_species_all_PCB_ng_glw_compare)$PCB)
 }

@@ -8,12 +8,11 @@
 #' @export
 #'
 #' @examples
-#' library(chopin.magnification)
-#' levels(fct_reorder_PCB(BMF_species_all_PCB_ng_glw)$PCB)
+#' levels(fct_reorder_PCB(BMF_species_all_PCB_ng_glw_compare)$PCB)
 fct_reorder_PCB <- function(data) {
   
   reordered_data <- data |> 
-    mutate(PCB = factor(PCB, levels = c(
+    dplyr::mutate(PCB = factor(PCB, levels = c(
       "sumPCB", "CB28", "CB31", "CB44", "CB49", "CB52", 
       "CB101", "CB105", "CB110", "CB118", "CB128", "CB132", 
       "CB138", "CB149", "CB153", "CB156", "CB170", "CB180")))

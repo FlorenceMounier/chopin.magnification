@@ -12,7 +12,7 @@
 #' levels(fct_reorder_species(contam)$species)
 fct_reorder_species <- function(data) {
   reordered_data <- data |> 
-    mutate(species = factor(species,
+    dplyr::mutate(species = factor(species,
                           levels = c("Solea_solea", "Limecola_balthica", "Nucula_nitidosa", "Scrobicularia_plana",
                                      "Abra_alba", "Cerastoderma_edule", "Corbula_gibba", "Donax_vittatus",
                                      "Ensis_directus", "Spisula_subtruncata", "Corophium_volutator",
