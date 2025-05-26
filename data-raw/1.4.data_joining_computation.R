@@ -33,7 +33,8 @@ sub_soles_contam <- soles_contam |>
             length_TL_cm, length_TL_cm_sd, length_SL_cm, mass_tot_gww,
             mass_tot_gww_sd, FultonK_gwwTL3, FultonK_sd_gwwTL3, water_percent,
             "a-HBCDD_pg_gdw", "b-HBCDD_pg_gdw", "g-HBCDD_pg_gdw")) |>
-  mutate(species = soles_metadata$species)
+  mutate(species = soles_metadata$species, labels = soles_metadata$labels,
+         grp = soles_metadata$grp, alim = soles_metadata$alim)
 
 ## Join datasets
 contam <- full_join(sub_benthos_contam, sub_soles_contam) |>
