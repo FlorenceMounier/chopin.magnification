@@ -15,7 +15,22 @@ library(tidyverse)
 #-----------------------------------------------------------
 # Join metadata
 
-metadata <- full_join(soles_metadata, benthos_metadata)
+metadata <- full_join(soles_metadata, benthos_metadata) |>
+  arrange(grp, alim, species) |>
+  mutate(species = factor(species,
+                          levels = c("Solea_solea", "Limecola_balthica", "Nucula_nitidosa", "Scrobicularia_plana",
+                                     "Abra_alba", "Cerastoderma_edule", "Corbula_gibba", "Donax_vittatus",
+                                     "Ensis_directus", "Spisula_subtruncata", "Corophium_volutator",
+                                     "Crangon_crangon", "Lagis_koreni", "Lanice_conchilega", "Hediste_diversicolor",
+                                     "Nephtys_sp", "Owenia_fusiformis")),
+         labels = factor(labels,
+                         levels = c("S. solea", "Limecola b.", "Nucula n.", "Scrobicularia p.",
+                                    "Abra a.", "Cerastoderma e.", "Corbula g.", "Donax v.", "Ensis d.",
+                                    "Spisula s.", "Corophium v.", "Crangon c.", "Lagis k.", "Lanice c.",
+                                    "Hediste d.", "Nephtys sp.", "Owenia f.")),
+         grp = factor(grp,
+                      levels = c("Actinopterygii", "Bivalvia", "Crustacea", "Polychaeta")),
+         alim = factor(alim, levels = c("Omnivore", "Deposivore", "Suspensivore")))
 
 #-----------------------------------------------------------
 # Join data of contamination for soles and benthos
@@ -37,8 +52,7 @@ sub_soles_contam <- soles_contam |>
 
 ## Join datasets
 contam <- full_join(sub_benthos_contam, sub_soles_contam) |>
-  left_join(metadata) |>
-  mutate(grp = factor(grp, levels = c("Actinopterygii", "Bivalvia", "Crustacea", "Polychaeta")))
+  left_join(metadata)
 
 
 #-----------------------------------------------------------
