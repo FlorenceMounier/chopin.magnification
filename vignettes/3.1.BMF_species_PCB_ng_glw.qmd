@@ -150,7 +150,7 @@ ggplot_BMF_species_sumPCB
 ```{r}
 ggsave(
   filename = "results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_sumPCB_ng_glw.jpg",
-  plot = ggplot_BMF_species_sumPCB, width = 20, height = 15, units = "cm"
+  plot = ggplot_BMF_species_sumPCB, width = 15, height = 10, units = "cm"
 )
 ```
 
@@ -205,6 +205,6 @@ ggplot_BMF_species_PCB_ng_glw_summarised
 ```{r}
 ggsave(
   filename = "results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_PCB_ng_glw_summarised.jpg",
-  plot = ggplot_BMF_species_PCB_ng_glw_summarised, width = 20, height = 15, units = "cm"
+  plot = ggplot_BMF_species_PCB_ng_glw_summarised, width = 15, height = 10, units = "cm"
 )
 ```
