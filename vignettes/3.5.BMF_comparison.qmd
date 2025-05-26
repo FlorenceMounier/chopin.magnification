@@ -15,18 +15,7 @@ library(writexl)
 # BMF comparison
 
 ```{r}
-BMF_diet <- BMF_diet_all_PCB_ng_glw_compare |> 
-  rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |> 
-  mutate(type = "diet")
-```
-
-```{r}
-BMF_species <- BMF_species_PCB_ng_glw_summarised |> 
-  mutate(type = "species")
-```
-
-```{r}
-BMF_compare <- full_join(BMF_species, BMF_diet)
+BMF_compare <- full_join(BMF_species_all_PCB_ng_glw_compare, BMF_diet_all_PCB_ng_glw_compare)
 ```
 
 
