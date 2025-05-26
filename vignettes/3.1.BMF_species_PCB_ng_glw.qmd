@@ -147,7 +147,7 @@ BMF_species_all_PCB_ng_glw_compare <- BMF_species_PCB_ng_glw_summarised |>
 
 
 ```{r}
-usethis::use_data(BMF_species_all_PCB_ng_glw_compare, overwrite = TRUE)
+# usethis::use_data(BMF_species_all_PCB_ng_glw_compare, overwrite = TRUE)
 ```
 
 ```{r}
