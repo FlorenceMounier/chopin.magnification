@@ -24,8 +24,8 @@ pkgload::load_all(export_all = FALSE)
 #' @return mean value
 #' @export
 
-mean_plus <- function(x){
-      round(mean(x, na.rm = TRUE), digits = 2)
+mean_plus <- function(vector){
+      round(mean(vector, na.rm = TRUE), digits = 2)
 }
 ```
 
@@ -35,10 +35,11 @@ mean_plus <- function(x){
 #' @param vector Vector containing values to be summarized
 #'
 #' @return median value
+#' @importFrom stats median
 #' @export
 
-median_plus <- function(x){
-      round(median(x, na.rm = TRUE), digits = 2)
+median_plus <- function(vector){
+      round(median(vector, na.rm = TRUE), digits = 2)
 }
 ```
 
@@ -50,8 +51,8 @@ median_plus <- function(x){
 #' @return minimal value
 #' @export
 
-min_plus <- function(x){
-      round(min(x, na.rm = TRUE), digits = 2)
+min_plus <- function(vector){
+      round(min(vector, na.rm = TRUE), digits = 2)
 }
 ```
 
@@ -63,8 +64,8 @@ min_plus <- function(x){
 #' @return maximal value
 #' @export
 
-max_plus <- function(x){
-      round(max(x, na.rm = TRUE), digits = 2)
+max_plus <- function(vector){
+      round(max(vector, na.rm = TRUE), digits = 2)
 }
 ```
 
@@ -77,8 +78,8 @@ max_plus <- function(x){
 #' @return character `mean[min-max]`
 #' @export
 
-stats_mean <- function(x){
-  paste0(mean_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+stats_mean <- function(vector){
+  paste0(mean_plus(vector), "[", min_plus(vector), "-", max_plus(vector), "]")
 }
 ```
 
@@ -90,8 +91,8 @@ stats_mean <- function(x){
 #' @return character `median[min-max]`
 #' @export
 
-stats_median <- function(x){
-  paste0(median_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+stats_median <- function(vector){
+  paste0(median_plus(vector), "[", min_plus(vector), "-", max_plus(vector), "]")
 }
 ```
 
@@ -105,11 +106,14 @@ stats_median <- function(x){
 #' @param vector vector ex: chemical concentration for a chemical
 #'
 #' @return tibble chemical, type, median, min, max
-#' 
+#'
 #' @export
 get_stats <- function(type, contam, vector){
-  res <- tibble::tibble("chemical" = contam, "type" = type, 
-                "median" = median_plus(vector), "min" = min_plus(vector), "max" = max_plus(vector))
+  res <- tibble::tibble("chemical" = contam, 
+                        "type" = type, 
+                        "median" = median_plus(vector),
+                        "min" = min_plus(vector),
+                        "max" = max_plus(vector))
   return(res)
 }
 ```

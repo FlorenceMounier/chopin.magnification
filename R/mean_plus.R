@@ -7,8 +7,8 @@
 #' @return mean value
 #' @export
 
-mean_plus <- function(x){
-      round(mean(x, na.rm = TRUE), digits = 2)
+mean_plus <- function(vector){
+      round(mean(vector, na.rm = TRUE), digits = 2)
 }
 
 #' median_plus Calculation of the rounded median excluding missing values
@@ -16,10 +16,11 @@ mean_plus <- function(x){
 #' @param vector Vector containing values to be summarized
 #'
 #' @return median value
+#' @importFrom stats median
 #' @export
 
-median_plus <- function(x){
-      round(median(x, na.rm = TRUE), digits = 2)
+median_plus <- function(vector){
+      round(median(vector, na.rm = TRUE), digits = 2)
 }
 
 #' min_plus Calculation of the rounded minimum excluding missing values
@@ -29,8 +30,8 @@ median_plus <- function(x){
 #' @return minimal value
 #' @export
 
-min_plus <- function(x){
-      round(min(x, na.rm = TRUE), digits = 2)
+min_plus <- function(vector){
+      round(min(vector, na.rm = TRUE), digits = 2)
 }
 
 #' max_plus Calculation of the rounded maximum excluding missing values
@@ -40,8 +41,8 @@ min_plus <- function(x){
 #' @return maximal value
 #' @export
 
-max_plus <- function(x){
-      round(max(x, na.rm = TRUE), digits = 2)
+max_plus <- function(vector){
+      round(max(vector, na.rm = TRUE), digits = 2)
 }
 
 #' stats_mean Calculation of the mean, min and max values of a vector
@@ -51,8 +52,8 @@ max_plus <- function(x){
 #' @return character `mean[min-max]`
 #' @export
 
-stats_mean <- function(x){
-  paste0(mean_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+stats_mean <- function(vector){
+  paste0(mean_plus(vector), "[", min_plus(vector), "-", max_plus(vector), "]")
 }
 
 #' stats_median Calculation of the median, min and max values of a vector
@@ -62,6 +63,6 @@ stats_mean <- function(x){
 #' @return character `median[min-max]`
 #' @export
 
-stats_median <- function(x){
-  paste0(median_plus(x), "[", min_plus(x), "-", max_plus(x), "]")
+stats_median <- function(vector){
+  paste0(median_plus(vector), "[", min_plus(vector), "-", max_plus(vector), "]")
 }

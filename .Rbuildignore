@@ -7,6 +7,8 @@
 ^ci/lib$
 ^_pkgdown\.yml$
 ^docs$
+^_site$
+^_freeze$
 ^pkgdown$
 ^codecov\.yml$
 ^.*\.Rproj$

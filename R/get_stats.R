@@ -7,10 +7,13 @@
 #' @param vector vector ex: chemical concentration for a chemical
 #'
 #' @return tibble chemical, type, median, min, max
-#' 
+#'
 #' @export
 get_stats <- function(type, contam, vector){
-  res <- tibble::tibble("chemical" = contam, "type" = type, 
-                "median" = median_plus(vector), "min" = min_plus(vector), "max" = max_plus(vector))
+  res <- tibble::tibble("chemical" = contam, 
+                        "type" = type, 
+                        "median" = median_plus(vector),
+                        "min" = min_plus(vector),
+                        "max" = max_plus(vector))
   return(res)
 }

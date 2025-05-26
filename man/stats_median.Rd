@@ -4,7 +4,7 @@
 \alias{stats_median}
 \title{stats_median Calculation of the median, min and max values of a vector}
 \usage{
-stats_median(x)
+stats_median(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}

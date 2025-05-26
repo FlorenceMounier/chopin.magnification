@@ -4,7 +4,7 @@
 \alias{stats_mean}
 \title{stats_mean Calculation of the mean, min and max values of a vector}
 \usage{
-stats_mean(x)
+stats_mean(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}

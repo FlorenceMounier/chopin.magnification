@@ -4,7 +4,7 @@
 \alias{mean_plus}
 \title{mean_plus Calculation of the rounded mean excluding missing values}
 \usage{
-mean_plus(x)
+mean_plus(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}

@@ -4,7 +4,7 @@
 \alias{min_plus}
 \title{min_plus Calculation of the rounded minimum excluding missing values}
 \usage{
-min_plus(x)
+min_plus(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}

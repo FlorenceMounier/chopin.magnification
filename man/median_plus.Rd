@@ -4,7 +4,7 @@
 \alias{median_plus}
 \title{median_plus Calculation of the rounded median excluding missing values}
 \usage{
-median_plus(x)
+median_plus(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}

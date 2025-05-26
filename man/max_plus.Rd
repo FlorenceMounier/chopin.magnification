@@ -4,7 +4,7 @@
 \alias{max_plus}
 \title{max_plus Calculation of the rounded maximum excluding missing values}
 \usage{
-max_plus(x)
+max_plus(vector)
 }
 \arguments{
 \item{vector}{Vector containing values to be summarized}
