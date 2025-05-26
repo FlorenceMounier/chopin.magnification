@@ -1,12 +1,14 @@
 ---
 title: "1. Data formatting"
-format: html
+format: 
+  html:
+    self-contained: true
 ---
 
 ## 1.1. Contaminants list and properties formatting
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.1.data_formatting_contaminants.R")
+# rstudioapi::navigateToFile("../data-raw/1.1.data_formatting_contaminants.R")
 ```
 
 Outputs :
@@ -29,7 +31,7 @@ Outputs :
 ## 1.2. Benthos data formatting
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.2.data_formatting_benthos.R")
+# rstudioapi::navigateToFile("../data-raw/1.2.data_formatting_benthos.R")
 ```
 
 Outputs :
@@ -41,7 +43,7 @@ Outputs :
 ## 1.3. Soles data formatting
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.3.data_formatting_soles.R")
+# rstudioapi::navigateToFile("../data-raw/1.3.data_formatting_soles.R")
 ```
 
 Outputs :
@@ -52,7 +54,7 @@ Outputs :
 ## 1.4. Data joining and concentrationss computation
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.4.data_joining_computation.R")
+# rstudioapi::navigateToFile("../data-raw/1.4.data_joining_computation.R")
 ```
 
 Outputs :
@@ -63,7 +65,7 @@ Outputs :
 ## 1.5. Compound selection
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.5.compound_selection.R")
+# rstudioapi::navigateToFile("../data-raw/1.5.compound_selection.R")
 ```
 
 Outputs :
@@ -76,7 +78,7 @@ Outputs :
 ## 1.6. Contaminant concentrations for selected compounds
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.6.data_computation_selected_compounds.R")
+# rstudioapi::navigateToFile("../data-raw/1.6.data_computation_selected_compounds.R")
 ```
 
 Outputs :
@@ -85,21 +87,18 @@ Outputs :
 - data-raw/soles_contam.csv
 - data/benthos_contam
 - data/soles_contam
-
 - data/PCB_lab
 - data/log_Kow_PCB
-
 - data/PFAS_lab
 - data/subfamilies_PFAS
 - data/n_C_PFAS
-
 - data/HBCDD_lab
 - data/log_Kow_HBCDD
 
 ## 1.7. Stomach content
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.7.data_stomach_content.R")
+# rstudioapi::navigateToFile("../data-raw/1.7.data_stomach_content.R")
 ```
 
 Outputs :
@@ -111,7 +110,7 @@ Outputs :
 ## 1.8. Isotopic data
 
 ```{r}
-rstudioapi::navigateToFile("../data-raw/1.8.data_isotopes.R")
+# rstudioapi::navigateToFile("../data-raw/1.8.data_isotopes.R")
 ```
 
 Outputs :

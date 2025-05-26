@@ -1,6 +1,8 @@
 ---
 title: "2.Data_analysis"
-format: html
+format: 
+  html:
+    self-contained: true
 ---
 
 ```{r}
@@ -17,20 +19,12 @@ library(FSA)
 
 ## 1. Diet composition
 
-Data computation:
+### Data computation:
 ```{r}
-taxa <- stomac_soles |> distinct(Faunistic_grp) |>  pull()
-abundance_tot <- sum(stomac_soles$N_tot_in_tractus, na.rm = T)
-diet <- c(NA)
-for (taxon in 1:length(taxa)) {
-    diet[taxon] <- sum(stomac_soles[stomac_soles$Faunistic_grp == taxa[taxon], ]$N_tot_in_tractus, na.rm = T) / abundance_tot
-}
-names(diet) <- taxa
-
-usethis::use_data(diet, overwrite = TRUE)
+# rstudioapi::navigateToFile("../data-raw/2.1.diet_composition.R")
 ```
 
-Pie chart:
+### Pie chart:
 ```{r}
 gg_color_hue <- function(n) {
   hues = seq(15, 375, length = n + 1)
@@ -58,7 +52,7 @@ ggplot_diet <- ggplot(ggdata_diet) +
             label = paste(round(diet*100, digits = 0), "%"), size=5)
 
 # Save plot
-ggsave(plot = ggplot_diet, filename = "results/data_analysis/1.ggplot_diet.jpg",
+ggsave(plot = ggplot_diet, filename = "../inst/results/Data_analysis/1.ggplot_diet.jpg",
        width = 5, height = 3)
 ```
 
@@ -110,7 +104,7 @@ ggplot_lipid <- ggplot(lipid) +
   )
 
 # Save plot
-ggsave(plot = ggplot_lipid, filename = "results/data_analysis/2.ggplot_lipid.jpg",
+ggsave(plot = ggplot_lipid, filename = "../inst/results/Data_analysis/2.ggplot_lipid.jpg",
        width = 5, height = 3)
 ```
 
@@ -169,7 +163,7 @@ sum_levels <- list("sum_levels_ng_gdw" = sum_levels_ng_gdw,
                    "sum_levels_ng_glw" = sum_levels_ng_glw)
 
 # Save dataset
-write_xlsx(x = sum_levels, path = "results/data_analysis/3.sum_levels.xlsx")
+write_xlsx(x = sum_levels, path = "../inst/results/Data_analysis/3.sum_levels.xlsx")
 ```
 
 ## 4. Total levels by taxon and feeding mode
@@ -213,7 +207,7 @@ ggplot_sumfamily_taxalim <- ggplot(ggdata_sumfamily_taxalim) +
   )
 
 ggsave(
-  filename = "results/data_analysis/4.ggplot_contamination_sumfamily_taxalim.jpg",
+  filename = "../inst/results/Data_analysis/4.ggplot_contamination_sumfamily_taxalim.jpg",
   plot = ggplot_sumfamily_taxalim, width = 20, height = 10, units = "cm"
 )
 ```
@@ -240,7 +234,7 @@ res_dunn_grp <- dunn_PCB_grp$res |> select(Comparison, P.adj) |>
   mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
 names(res_dunn_grp) <- c("Comparison", "PCB", "PFAS", "HBCDD")
 
-writexl::write_xlsx(x = res_dunn_grp, path = "results/data_analysis/4.test_dunn_taxa.xlsx")
+writexl::write_xlsx(x = res_dunn_grp, path = "../inst/results/Data_analysis/4.test_dunn_taxa.xlsx")
 ```
 
 Test feeding mode effect:
@@ -265,7 +259,7 @@ res_dunn_alim <- dunn_PCB_alim$res |> select(Comparison, P.adj) |>
   mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
 names(res_dunn_alim) <- c("Comparison", "PCB", "PFAS", "HBCDD")
 
-writexl::write_xlsx(x = res_dunn_alim, path = "results/data_analysis/4.test_dunn_alim.xlsx")
+writexl::write_xlsx(x = res_dunn_alim, path = "../inst/results/Data_analysis/4.test_dunn_alim.xlsx")
 ```
 
 # 5. Total levels by species
@@ -291,7 +285,7 @@ ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
 
 
 ggsave(
-  filename = "results/data_analysis/5.ggplot_contamination_sumfamily_species.jpg",
+  filename = "../inst/results/Data_analysis/5.ggplot_contamination_sumfamily_species.jpg",
   plot = ggplot_sumfamily_species, width = 20, height = 10, units = "cm"
 )
 ```
@@ -329,7 +323,7 @@ ggplot_lipid_HBCDD
 
 ```{r}
 ggplot_lipid <- ggplot_lipid_PCB + ggplot_lipid_HBCDD
-ggsave("results/data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
+ggsave("../inst/results/Data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
 ```
 
 # 7. Average contamination profiles in soles and their prey
@@ -361,7 +355,7 @@ ggplot_profile <- ggplot(contam_profile) +
   coord_flip()
 ggplot_profile
 
-ggsave("results/data_analysis/7.contamination_profiles.jpg", ggplot_profile, width = 8, height = 4, dpi = 300)
+ggsave("../inst/results/Data_analysis/7.contamination_profiles.jpg", ggplot_profile, width = 8, height = 4, dpi = 300)
 ```
 
 ```{r}
@@ -370,7 +364,7 @@ contam_profile_report <- contam_profile |>
   pivot_wider(names_from = type, values_from = percent) |> 
   select(-family)
 
-writexl::write_xlsx(x = contam_profile_report, path = "results/data_analysis/7.contamination_profile.xlsx")
+writexl::write_xlsx(x = contam_profile_report, path = "../inst/results/Data_analysis/7.contamination_profile.xlsx")
 ```
 
 # 8. Physico-chemical properties and contamination profiles
@@ -400,7 +394,7 @@ ggplot_contam_profile_prop_PCB <- ggplot(contam_profile_prop_PCB) +
        size = "Chlorine substitution", color = "Chlorine substitution")
 ggplot_contam_profile_prop_PCB
 
-ggsave("results/data_analysis/8.contam_profiles_prop_PCB.jpg",
+ggsave("../inst/results/Data_analysis/8.contam_profiles_prop_PCB.jpg",
        ggplot_contam_profile_prop_PCB, width = 6, height = 5, dpi = 300)
 ```
 
@@ -421,7 +415,7 @@ ggplot_contam_profile_prop_PFAS <- ggplot(contam_profile_prop_PFAS) +
 
 ggplot_contam_profile_prop_PFAS
 
-ggsave("results/data_analysis/8.contam_profiles_prop_PFAS.jpg",
+ggsave("../inst/results/Data_analysis/8.contam_profiles_prop_PFAS.jpg",
        ggplot_contam_profile_prop_PFAS, width = 6, height = 6, dpi = 300)
 ```
 

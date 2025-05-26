@@ -1,0 +1,190 @@
+---
+title: "3.BMFs"
+format: 
+  html:
+    self-contained: true
+    code-fold: true
+    toc: true
+    toc-float: true
+execute:
+  message: false
+  warning: false
+---
+
+```{r}
+#| message: false
+#| include: false
+library(chopin.magnification)
+library(tidyverse)
+library(writexl)
+library(DT)
+```
+
+## 0. Subdatasets for isotopes and PCB in ng/glw
+
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.0.isotopes_contam_PCB_ng_glw_subdatasets.R")
+```
+
+---
+
+## 1. BMF species
+
+### Computation
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.1.BMF_species_PCB_ng_glw.R")
+DT::datatable(BMF_species_all_PCB_ng_glw)
+```
+
+### Graph BMFs for all species & all CBs
+```{r}
+ggplot_BMF_species_PCB_all <- ggplot(BMF_species_all_PCB_ng_glw) +
+  aes(x = labels, y = log(BMF_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_species_PCB_all
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_PCB_all_ng_glw.jpg",
+  plot = ggplot_BMF_species_PCB_all, width = 30, height = 20, units = "cm"
+)
+```
+
+### Graph BMFs for all species & sumPCB
+
+```{r}
+ggplot_BMF_species_sumPCB <- BMF_species_all_PCB_ng_glw |> 
+  filter(PCB == "sumPCB") |> 
+  ggplot() +
+  aes(x = labels, y = log(BMF_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_species_sumPCB
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_sumPCB_ng_glw.jpg",
+  plot = ggplot_BMF_species_sumPCB, width = 15, height = 10, units = "cm"
+)
+```
+
+### Mean BMF species computation
+
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.1.BMF_species_PCB_ng_glw.R")
+DT::datatable(BMF_species_PCB_ng_glw_summarised)
+```
+
+### Graph Mean BMF per CBs
+```{r}
+ggplot_BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw_compare |> 
+  filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(logKow = as.numeric(logKow)) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB"))) |> 
+  ggplot() +
+  aes(x = logKow, y = log(median), colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = log(min), ymax = log(max)), width = 0.1) +
+  geom_hline(yintercept = 0) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Log BMF species")
+
+ggplot_BMF_species_PCB_ng_glw_summarised
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_PCB_ng_glw_summarised.jpg",
+  plot = ggplot_BMF_species_PCB_ng_glw_summarised, width = 15, height = 10, units = "cm"
+)
+```
+
+---
+---
+
+## 2. BMF diet
+
+### Computation
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.2.BMF_diet_PCB_ng_glw.R")
+DT::datatable(BMF_diet_all_PCB_ng_glw)
+```
+
+### Graph BMFs per CBs
+```{r}
+ggplot_BMF_diet_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
+  filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB"))) |> 
+  ggplot() +
+  aes(x = logKow, y = log(BMF_diet_median), colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = log(BMF_diet_min), ymax = log(BMF_diet_max)), width = 0.05) +
+  geom_hline(yintercept = 0) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Log BMF diet")
+
+ggplot_BMF_diet_PCB_ng_glw
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/2.ggplot_BMF_diet_PCB_ng_glw.jpg",
+  plot = ggplot_BMF_diet_PCB_ng_glw, width = 20, height = 15, units = "cm"
+)
+```
+
+---
+---
+
+## 5. BMF comparison
+
+```{r}
+BMF_compare <- full_join(BMF_species_all_PCB_ng_glw_compare, BMF_diet_all_PCB_ng_glw_compare)
+DT::datatable(BMF_compare)
+```
+
+```{r}
+ggplot_BMFs_compare <- ggplot(BMF_compare) +
+  aes(x = PCB, y = log(median), fill = type) +
+  geom_col(position = "dodge") +
+  geom_errorbar(aes(ymin = log(min), ymax = log(max), colour = type), 
+                position = position_dodge(width = 0.9),
+                width = 0.4) +
+  geom_hline(yintercept = 0) +
+  scale_color_manual(values = c("#CB2027", "#009E73")) +
+  labs(x = NULL, y = "Log BMF", fill = "BMF type", color = "BMF type") +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1))
+
+ggplot_BMFs_compare
+```
+
+```{r}
+ggsave(plot = ggplot_BMFs_compare, 
+       filename = "../inst/results/BMF_computation_PCB_ng_glw/5.ggplot_BMFs_compare.jpg", width = 20, height = 15, units = "cm")
+
+```
