@@ -23,6 +23,7 @@ library(chopin.magnification)
 library(tidyverse)
 library(writexl)
 library(DT)
+library(ggpmisc)
 ```
 
 ## 0. Subdatasets for isotopes and PCB in ng/glw
@@ -101,20 +102,33 @@ DT::datatable(BMF_species_PCB_ng_glw_summarised)
 
 ### Graph Mean BMF per CBs
 ```{r}
-ggplot_BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw_compare |> 
+ggdata_BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw_compare |> 
   filter(PCB != "sumPCB") |> 
   left_join(contam_prop, by = c("PCB" = "chemical")) |> 
   mutate(logKow = as.numeric(logKow)) |> 
   mutate(sub_family_TAG = factor(sub_family_TAG, 
                                  levels = c("tri-CB", "tetra-CB", "penta-CB", 
-                                            "hexa-CB", "hepta-CB"))) |> 
-  ggplot() +
-  aes(x = logKow, y = log(median), colour = sub_family_TAG) +
+                                            "hexa-CB", "hepta-CB")))
+```
+
+```{r}
+ggplot_BMF_species_PCB_ng_glw_summarised <- ggplot(ggdata_BMF_species_PCB_ng_glw_summarised) +
+  aes(x = logKow, y = median, colour = sub_family_TAG) +
   geom_point() +
-  geom_errorbar(aes(ymin = log(min), ymax = log(max)), width = 0.1) +
-  geom_hline(yintercept = 0) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.1) +
+  geom_hline(yintercept = 1) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Chlorine substitution", y = "Log BMF species")
+  labs(color = "Chlorine substitution", y = "BMF species") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  stat_poly_eq(
+    inherit.aes = FALSE,
+    data = ggdata_BMF_species_PCB_ng_glw_summarised,
+    aes(x = logKow, y = median,
+        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+    label.x = "left",
+    label.y = "top"
+  )
 
 ggplot_BMF_species_PCB_ng_glw_summarised
 ```
@@ -139,19 +153,34 @@ DT::datatable(BMF_diet_all_PCB_ng_glw)
 
 ### Graph BMFs per CBs
 ```{r}
-ggplot_BMF_diet_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
+ggdata_BMF_diet_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
   filter(PCB != "sumPCB") |> 
   left_join(contam_prop, by = c("PCB" = "chemical")) |> 
   mutate(sub_family_TAG = factor(sub_family_TAG, 
                                  levels = c("tri-CB", "tetra-CB", "penta-CB", 
-                                            "hexa-CB", "hepta-CB"))) |> 
+                                            "hexa-CB", "hepta-CB")))
+```
+
+```{r}
+ggplot_BMF_diet_PCB_ng_glw <- ggdata_BMF_diet_PCB_ng_glw |> 
   ggplot() +
-  aes(x = logKow, y = log(BMF_diet_median), colour = sub_family_TAG) +
+  aes(x = logKow, y = BMF_diet_median, colour = sub_family_TAG) +
   geom_point() +
-  geom_errorbar(aes(ymin = log(BMF_diet_min), ymax = log(BMF_diet_max)), width = 0.05) +
-  geom_hline(yintercept = 0) +
+  geom_errorbar(aes(ymin = BMF_diet_min, ymax = BMF_diet_max), width = 0.05) +
+  geom_hline(yintercept = 1) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Chlorine substitution", y = "Log BMF diet")
+  labs(color = "Chlorine substitution", y = "BMF diet") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  stat_poly_eq(
+    inherit.aes = FALSE,
+    data = ggdata_BMF_diet_PCB_ng_glw,
+    aes(x = logKow, y = BMF_diet_median,
+        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+    label.x = "left",
+    label.y = "top"
+  )
+
 
 ggplot_BMF_diet_PCB_ng_glw
 ```
@@ -159,7 +188,7 @@ ggplot_BMF_diet_PCB_ng_glw
 ```{r}
 ggsave(
   filename = "../inst/results/BMF_computation_PCB_ng_glw/2.ggplot_BMF_diet_PCB_ng_glw.jpg",
-  plot = ggplot_BMF_diet_PCB_ng_glw, width = 20, height = 15, units = "cm"
+  plot = ggplot_BMF_diet_PCB_ng_glw, width = 15, height = 10, units = "cm"
 )
 ```
 
