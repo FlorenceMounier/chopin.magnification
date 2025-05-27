@@ -115,8 +115,6 @@ write_xlsx(x = BMF_diet_all_PCB_ng_glw,
 BMF_diet_all_PCB_ng_glw_compare <- BMF_diet_all_PCB_ng_glw |>
   select(PCB, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |>
-  mutate(type = "diet") |>
-  mutate(across(.cols = where(is.numeric),
-                .fns = ~ round(.x, digits = 2)))
+  mutate(type = "diet")
 
 usethis::use_data(BMF_diet_all_PCB_ng_glw_compare, overwrite = TRUE)
