@@ -54,7 +54,7 @@ ggplot_BMF_species_PCB_all <- ggplot(BMF_species_all_PCB_ng_glw) +
     aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
     position = position_dodge(width = 0.9), width = 0.4) +
   scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
-  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+  labs(x = NULL, y = "Log predator-prey BMF", fill = "Taxon", colour = "Taxon")
 
 ggplot_BMF_species_PCB_all
 ```
@@ -81,7 +81,7 @@ ggplot_BMF_species_sumPCB <- BMF_species_all_PCB_ng_glw |>
     aes(ymin = log(BMF_min), ymax = log(BMF_max), colour = grp), 
     position = position_dodge(width = 0.9), width = 0.4) +
   scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
-  labs(x = NULL, y = "Log BMF species", fill = "Taxon", colour = "Taxon")
+  labs(x = NULL, y = "Log predator-prey BMF", fill = "Taxon", colour = "Taxon")
 
 ggplot_BMF_species_sumPCB
 ```
@@ -118,7 +118,7 @@ ggplot_BMF_species_PCB_ng_glw_summarised <- ggplot(ggdata_BMF_species_PCB_ng_glw
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.1) +
   geom_hline(yintercept = 1) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Chlorine substitution", y = "BMF species") +
+  labs(color = "Chlorine substitution", y = "Predator-prey BMF") +
   geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
   stat_poly_eq(
     inherit.aes = FALSE,
@@ -169,7 +169,7 @@ ggplot_BMF_diet_PCB_ng_glw <- ggdata_BMF_diet_PCB_ng_glw |>
   geom_errorbar(aes(ymin = BMF_diet_min, ymax = BMF_diet_max), width = 0.05) +
   geom_hline(yintercept = 1) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Chlorine substitution", y = "BMF diet") +
+  labs(color = "Chlorine substitution", y = "Diet-based BMF") +
   geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
   stat_poly_eq(
     inherit.aes = FALSE,
@@ -199,11 +199,124 @@ ggsave(
 
 ### Isotopic levels by species
 ```{r}
-ggplot(isotopes) +
+ggplot_isotopes <- ggplot(isotopes) +
   aes(x = labels, y = d15N, colour = grp) +
   geom_boxplot() +
   theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
   labs(x = NULL, colour = "Taxon")
+
+ggplot_isotopes
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_isotopes.jpg",
+  plot = ggplot_isotopes, width = 18, height = 10, units = "cm"
+)
+```
+
+### Computation
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.3.BMF_TL_PCB_ng_glw.R")
+DT::datatable(BMF_TL_species_all_PCB_ng_glw)
+```
+
+### Graph BMFs for all species & all CBs
+```{r}
+ggplot_BMF_TL_species_PCB_all <- ggplot(BMF_TL_species_all_PCB_ng_glw) +
+  aes(x = labels, y = log(BMF_TL_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_TL_min), ymax = log(BMF_TL_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log predator-prey TL-BMF", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_TL_species_PCB_all
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_BMF_TL_species_PCB_all.jpg",
+  plot = ggplot_BMF_TL_species_PCB_all, width = 30, height = 20, units = "cm"
+)
+```
+
+### Graph BMFs for all species & sumPCB
+
+```{r}
+ggplot_BMF_TL_species_sumPCB <- BMF_TL_species_all_PCB_ng_glw |> 
+  filter(PCB == "sumPCB") |> 
+  ggplot() +
+  aes(x = labels, y = log(BMF_TL_median), fill = grp) +
+  geom_col() +
+  facet_wrap(vars(PCB), scales = "free_y") +
+  geom_hline(yintercept = 0) +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1)) +
+  geom_errorbar(
+    aes(ymin = log(BMF_TL_min), ymax = log(BMF_TL_max), colour = grp), 
+    position = position_dodge(width = 0.9), width = 0.4) +
+  scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
+  labs(x = NULL, y = "Log TL-BMF predator-prey", fill = "Taxon", colour = "Taxon")
+
+ggplot_BMF_TL_species_sumPCB
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_BMF_TL_species_sumPCB_ng_glw.jpg",
+  plot = ggplot_BMF_TL_species_sumPCB, width = 15, height = 10, units = "cm"
+)
+```
+
+### Mean BMF species computation
+
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.3.BMF_TL_PCB_ng_glw.R")
+DT::datatable(BMF_TL_species_PCB_ng_glw_summarised)
+```
+
+### Graph Mean BMF per CBs
+```{r}
+ggdata_BMF_TL_species_PCB_ng_glw_summarised <- BMF_TL_species_all_PCB_ng_glw_compare |> 
+  filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(logKow = as.numeric(logKow)) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB")))
+```
+
+```{r}
+ggplot_BMF_TL_species_PCB_ng_glw_summarised <- ggplot(ggdata_BMF_TL_species_PCB_ng_glw_summarised) +
+  aes(x = logKow, y = median, colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.1) +
+  geom_hline(yintercept = 1) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Predator-prey BMF") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  stat_poly_eq(
+    inherit.aes = FALSE,
+    data = ggdata_BMF_TL_species_PCB_ng_glw_summarised,
+    aes(x = logKow, y = median,
+        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+    label.x = "left",
+    label.y = "top"
+  )
+
+ggplot_BMF_TL_species_PCB_ng_glw_summarised
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_BMF_TL_species_PCB_ng_glw_summarised.jpg",
+  plot = ggplot_BMF_TL_species_PCB_ng_glw_summarised, width = 18, height = 10, units = "cm"
+)
 ```
 
 ---
