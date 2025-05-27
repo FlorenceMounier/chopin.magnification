@@ -105,9 +105,9 @@ write_xlsx(
 
 BMF_species_PCB_ng_glw_summarised <- BMF_species_all_PCB_ng_glw |>
   group_by(PCB) |>
-  summarise(min = min_plus(BMF_min),
+  summarise(min = mean_plus(BMF_min),
             median = mean_plus(BMF_median),
-            max = max_plus(BMF_max)) |>
+            max = mean_plus(BMF_max)) |>
   mutate(across(.cols = where(is.numeric),
                 .fns = ~ round(.x, digits = 2)))
 

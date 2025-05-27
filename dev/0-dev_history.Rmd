@@ -87,14 +87,9 @@ gitlabr::use_gitlab_ci(type = "check-coverage-pkgdown")
 # Simulate package installation
 pkgload::load_all()
 
-# Generate documentation and deal with dependencies
-attachment::att_amend_desc()
-
-# Check the package
-devtools::check()
-
-# Add a new flat template
-fusen::add_flat_template("add")
+devtools::build_vignettes() # Build vignettes in /doc
+attachment::att_amend_desc() # Generate documentation and deal with dependencies
+devtools::check() # Check the package
 
 # Inflate all flat files at once
 fusen::inflate_all()

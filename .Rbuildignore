@@ -14,3 +14,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^chopin\.magnification\.Rproj$
+^doc$
+^Meta$

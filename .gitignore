@@ -7,3 +7,5 @@
 .quarto
 *.html
 docs
+/doc/
+/Meta/

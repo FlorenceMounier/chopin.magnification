@@ -1,5 +1,10 @@
 ---
 title: "2.Data_analysis"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{2.Data_analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 format: 
   html:
     self-contained: true
