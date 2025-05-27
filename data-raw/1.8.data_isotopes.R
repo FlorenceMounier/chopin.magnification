@@ -66,7 +66,8 @@ soles_isotopes$alim <- soles_metadata$alim
 #-----------------------------------------------------------
 # Join BENTHOS & SOLES
 
-isotopes <- full_join(benthos_isotopes, soles_isotopes)
+isotopes <- full_join(benthos_isotopes, soles_isotopes)|>
+  fct_reorder_species()
 
 # --------------------------------------------------------------
 # Save dataset
