@@ -30,12 +30,23 @@ TL_species <- isotopes |>
   mutate(TL = trophic_level(d15N_consumer = d15N_median))
 
 # For diet-based BMF_TL
+d15N_median_taxa <- isotopes |>
+  group_by(grp) |>
+  summarise(d15N_median = median(d15N, na.rm = TRUE)) |>
+  pivot_wider(names_from = grp, values_from = d15N_median)
+
 TL_taxa <- isotopes |>
   group_by(grp) |>
   summarise(d15N_median = median(d15N, na.rm = TRUE)) |>
   mutate(TL = trophic_level(d15N_consumer = d15N_median)) |>
   select(-d15N_median) |>
   pivot_wider(names_from = grp, values_from = TL)
+
+d15N_diet <- d15N_median_taxa$Bivalvia * diet["Mollusca"] +
+  d15N_median_taxa$Crustacea * diet[["Arthropoda"]] +
+  d15N_median_taxa$Polychaeta * diet[["Annelida"]]
+names(d15N_diet) <- "diet"
+trophic_level(d15N_diet)
 
 TL_diet <- TL_taxa$Bivalvia * diet["Mollusca"] +
            TL_taxa$Crustacea * diet[["Arthropoda"]] +
