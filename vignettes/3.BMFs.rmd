@@ -181,7 +181,6 @@ ggplot_BMF_diet_PCB_ng_glw <- ggdata_BMF_diet_PCB_ng_glw |>
     label.y = "top"
   )
 
-
 ggplot_BMF_diet_PCB_ng_glw
 ```
 
@@ -297,7 +296,7 @@ ggplot_BMF_TL_species_PCB_ng_glw_summarised <- ggplot(ggdata_BMF_TL_species_PCB_
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.1) +
   geom_hline(yintercept = 1) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Chlorine substitution", y = "Predator-prey BMF") +
+  labs(color = "Chlorine substitution", y = "Predator-prey TL-BMF") +
   geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
   stat_poly_eq(
     inherit.aes = FALSE,
@@ -324,6 +323,51 @@ ggsave(
 
 ## 4. TL-BMF diet
 
+### Computation
+```{r}
+# rstudioapi::navigateToFile("../data-raw/3.3.BMF_TL_PCB_ng_glw.R")
+DT::datatable(BMF_TL_diet_all_PCB_ng_glw)
+```
+
+### Graph BMFs per CBs
+```{r}
+ggdata_BMF_TL_diet_PCB_ng_glw <- BMF_TL_diet_all_PCB_ng_glw |>
+  filter(PCB != "sumPCB") |> 
+  left_join(contam_prop, by = c("PCB" = "chemical")) |> 
+  mutate(sub_family_TAG = factor(sub_family_TAG, 
+                                 levels = c("tri-CB", "tetra-CB", "penta-CB", 
+                                            "hexa-CB", "hepta-CB")))
+```
+
+```{r}
+ggplot_BMF_TL_diet_PCB_ng_glw <- ggdata_BMF_TL_diet_PCB_ng_glw |> 
+  ggplot() +
+  aes(x = logKow, y = BMF_TL_median, colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = BMF_TL_min, ymax = BMF_TL_max), width = 0.05) +
+  geom_hline(yintercept = 1) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Chlorine substitution", y = "Diet-based TL-BMF") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  stat_poly_eq(
+    inherit.aes = FALSE,
+    data = ggdata_BMF_TL_diet_PCB_ng_glw,
+    aes(x = logKow, y = BMF_TL_median,
+        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+    label.x = "left",
+    label.y = "top"
+  )
+
+ggplot_BMF_TL_diet_PCB_ng_glw
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/4.ggplot_BMF_TL_diet_PCB_ng_glw.jpg",
+  plot = ggplot_BMF_TL_diet_PCB_ng_glw, width = 18, height = 10, units = "cm"
+)
+```
 ---
 ---
 
