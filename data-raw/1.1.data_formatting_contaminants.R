@@ -14,7 +14,6 @@ library(tidyverse)
 ## Load data
 contam_prop <- read_excel("inst/CHOPIN_CAPES_RAW_DATABASE.xlsx",
                     sheet= "INFO_contam")
-contam_prop <- contam_prop[,-9]
 contam_prop$LOQ_biote <- round(as.numeric(contam_prop$LOQ_biote), digits = 2)
 contam_prop$logKow <- as.numeric(contam_prop$logKow)
 
@@ -37,11 +36,6 @@ PCB_indicators <- c("CB28", "CB52", "CB101", "CB118", "CB138", "CB153", "CB180")
 PCB_dioxineL <- c("CB77", "CB81", "CB105", "CB114", "CB118", "CB123", "CB126", "CB156", "CB157", "CB167", "CB169", "CB189")
 inter_dioxineL <- intersect(PCB_ALL, PCB_dioxineL)
 
-## HBCDD
-HBCDD_ALL <- wrangle_contam(grp_contam = "HBCDD", grp_type = "family", out_var = "chemical")
-HBCDD_ALL_lab <- wrangle_contam(grp_contam = "HBCDD", grp_type = "family", out_var = "chem_label") # labels for graphics
-log_Kow_HBCDD_ALL <- wrangle_contam(grp_contam = "HBCDD", grp_type = "family", out_var = "logKow")
-
 ## PFAS
 PFAS_ALL <- wrangle_contam(grp_contam = "PFAS", grp_type = "family", out_var = "chemical")
 PFAS_ALL_lab <- wrangle_contam(grp_contam = "PFAS", grp_type = "family", out_var = "chem_label") # labels for graphics
@@ -59,10 +53,6 @@ usethis::use_data(log_Kow_PCB_ALL, overwrite = TRUE)
 usethis::use_data(PCB_indicators, overwrite = TRUE)
 usethis::use_data(PCB_dioxineL, overwrite = TRUE)
 usethis::use_data(inter_dioxineL, overwrite = TRUE)
-
-usethis::use_data(HBCDD_ALL, overwrite = TRUE)
-usethis::use_data(HBCDD_ALL_lab, overwrite = TRUE)
-usethis::use_data(log_Kow_HBCDD_ALL, overwrite = TRUE)
 
 usethis::use_data(PFAS_ALL, overwrite = TRUE)
 usethis::use_data(PFAS_ALL_lab, overwrite = TRUE)

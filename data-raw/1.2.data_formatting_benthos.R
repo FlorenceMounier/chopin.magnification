@@ -164,51 +164,6 @@ benthos_contam <- benthos_contam |>
     )
 
 # --------------------------------------------------------------
-# Handling <LOD values for HBCDD isomers
-
-# Raw data in ng/gdw are not censored
-
-# List of samples with values equal to the LOD for each isomer
-a_HBCDD_LOQ_values_samples <- c("CP14", "CP06", "CP52", "T2 FN8 crevettes", "CP53")
-b_HBCDD_LOQ_values_samples <- c("CP12", "CP14", "CP06", "CP52", "CP41", "CP44", "T2 FN8 crevettes", "CP43", "CP53")
-g_HBCDD_LOQ_values_samples <- c("CP14", "CP06", "CP52", "CP41", "CP44", "T2 FN8 crevettes", "CP53")
-
-benthos_contam <- benthos_contam |>
-  mutate(
-
-    # Isomer alpha
-    `a-HBCDD_ng_gdw_censored` = case_when(
-      is.na(`a-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% a_HBCDD_LOQ_values_samples ~ 0,
-      TRUE ~ `a-HBCDD_ng_gdw`
-    ), `a-HBCDD_cen` = case_when(
-      is.na(`a-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% a_HBCDD_LOQ_values_samples ~ TRUE,
-      TRUE ~ FALSE
-
-    # Isomer beta
-    ), `b-HBCDD_ng_gdw_censored` = case_when(
-      is.na(`b-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% b_HBCDD_LOQ_values_samples ~ 0,
-      TRUE ~ `b-HBCDD_ng_gdw`
-    ), `b-HBCDD_cen` = case_when(
-      is.na(`b-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% b_HBCDD_LOQ_values_samples ~ TRUE,
-      TRUE ~ FALSE
-
-    # Isomer gamma
-    ), `g-HBCDD_ng_gdw_censored` = case_when(
-      is.na(`g-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% g_HBCDD_LOQ_values_samples ~ 0,
-      TRUE ~ `g-HBCDD_ng_gdw`
-    ), `g-HBCDD_cen` = case_when(
-      is.na(`g-HBCDD_ng_gdw`) ~ NA,
-      sample_TAG %in% g_HBCDD_LOQ_values_samples ~ TRUE,
-      TRUE ~ FALSE
-    )
-  )
-
-# --------------------------------------------------------------
 # Output data
 
 usethis::use_data(benthos_metadata, overwrite = TRUE)

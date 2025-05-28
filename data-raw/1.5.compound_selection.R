@@ -61,34 +61,10 @@ PFAS <- detection_PFAS |>
   pull() |>
   str_remove("_ng_gdw_censored")
 
-#-----------------------------------------------------------
-# HBCDD: Calculation of Detection Percentages by Compound
-# Selection = quantification >= 50% in either soles or benthos
-
-detection_HBCDD_benthos <- benthos_contam[,paste0(HBCDD_ALL, "_ng_gdw_censored")] |>
-  drop_na() |>
-  summarise(across(everything(), ~ sum(!is.na(.x) & .x!=0 & !is.nan(.x))/n())) |>
-  pivot_longer(cols = everything(), names_to = "contaminant", values_to = "detection_benthos") |>
-  mutate(detection_benthos = round(detection_benthos*100))
-
-detection_HBCDD_soles <- soles_contam[,paste0(HBCDD_ALL, "_ng_gdw_censored")] |>
-  drop_na() |>
-  summarise(across(everything(), ~ sum(!is.na(.x) & .x!=0)/n())) |>
-  pivot_longer(cols = everything(), names_to = "contaminant", values_to = "detection_soles") |>
-  mutate(detection_soles = round(detection_soles*100))
-
-detection_HBCDD <- full_join(detection_HBCDD_benthos, detection_HBCDD_soles, by = "contaminant")
-
-# Selection = quantification >= 50% in either soles or benthos
-HBCDD <- detection_HBCDD |>
-  filter(detection_benthos >= 50 | detection_soles >= 50) |>
-  select(contaminant) |>
-  pull() |>
-  str_remove("_ng_gdw_censored")
 
 #-----------------------------------------------------------
 # Combined results
-table_detection_rate <- rbind(detection_PCB, detection_PFAS, detection_HBCDD) |>
+table_detection_rate <- rbind(detection_PCB, detection_PFAS) |>
   mutate(contaminant = contaminant |> str_remove("_ng_gdw_censored|_ng_gdw"))
 
 # --------------------------------------------------------------
@@ -100,4 +76,3 @@ write_csv(x = table_detection_rate, file = "data-raw/detection_rates.csv")
 
 usethis::use_data(PCB, overwrite = TRUE)
 usethis::use_data(PFAS, overwrite = TRUE)
-usethis::use_data(HBCDD, overwrite = TRUE)

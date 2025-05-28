@@ -17,10 +17,6 @@ library(readxl)
 soles_contam = read_excel("inst/CHOPIN_CAPES_RAW_DATABASE.xlsx",
                           sheet = "soles")
 
-# HBCDD Unit transformation pg/gdw => ng/gdw
-soles_contam$`a-HBCDD_ng_gdw` = soles_contam$`a-HBCDD_pg_gdw`/1000
-soles_contam$`b-HBCDD_ng_gdw` = soles_contam$`b-HBCDD_pg_gdw`/1000
-soles_contam$`g-HBCDD_ng_gdw` = soles_contam$`g-HBCDD_pg_gdw`/1000
 
 # --------------------------------------------------------------
 # Sole metadata
@@ -105,18 +101,6 @@ soles_contam <- soles_contam |>
     `8:2 diPAP_ng_gdw` = case_when(`8:2 diPAP_ng_gdw_censored` == 0 ~ 0.24/2, TRUE ~ `8:2 diPAP_ng_gdw_censored`)
   )
 
-# --------------------------------------------------------------
-# Handling <LOD values for HBCDD isomers
-
-# Raw data in ng/gdw are not censored and all samples are <LOQ
-
-soles_contam <- soles_contam |>
-  mutate(`a-HBCDD_cen` = TRUE,
-         `a-HBCDD_ng_gdw_censored` = 0,
-         `b-HBCDD_cen` = TRUE,
-         `b-HBCDD_ng_gdw_censored` = 0,
-         `g-HBCDD_cen` = TRUE,
-         `g-HBCDD_ng_gdw_censored` = 0)
 
 # --------------------------------------------------------------
 # Output data
