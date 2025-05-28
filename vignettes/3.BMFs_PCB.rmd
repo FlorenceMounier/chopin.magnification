@@ -1,5 +1,5 @@
 ---
-title: "3.BMFs"
+title: "3.BMFs PCB"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{3.BMFs}
