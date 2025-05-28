@@ -84,7 +84,7 @@ BMF_diet_PFAS_ng_gdw_censored <- full_join(contam_PFAS_ng_gdw_censored_diet_stat
 usethis::use_data(BMF_diet_PFAS_ng_gdw_censored, overwrite = TRUE)
 
 write_xlsx(x = BMF_diet_PFAS_ng_gdw_censored,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/2.BMF_diet_PFAS_ng_gdw_censored.xlsx")
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/1.BMF_diet_PFAS_ng_gdw_censored.xlsx")
 
 BMF_diet_PFAS_ng_gdw_censored_compare <- BMF_diet_PFAS_ng_gdw_censored |>
   select(PFAS, starts_with("BMF")) |>
