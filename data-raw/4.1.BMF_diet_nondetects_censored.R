@@ -24,7 +24,7 @@ data(diet_comp)
 
 # Select censored dataset
 contam_PFAS_ng_gdw_censored <- contam_PFAS_ng_gdw |>
-  select("species", "alim", "labels", "grp", "type", matches("censored")) |>
+  select("grp", "type", matches("censored")) |>
   rename_with(~ str_remove_all(., "_censored"))
 
 # Compute taxon statistics

@@ -24,7 +24,7 @@ data(diet_comp)
 
 # Select uncensored dataset
 contam_PFAS_ng_gdw_halfLOQ <- contam_PFAS_ng_gdw |>
-  select("species", "alim", "labels", "grp", "type", !matches("cen")) |>
+  select("grp", "type", !matches("cen")) |>
   rename(sumPFAS = sommePFAS)
 
 # Compute taxon statistics
