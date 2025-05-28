@@ -1,0 +1,83 @@
+---
+title: "4.BMFs PFAS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{3.BMFs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+format: 
+  html:
+    self-contained: true
+    code-fold: true
+    toc: true
+    toc-float: true
+execute:
+  message: false
+  warning: false
+---
+
+```{r}
+#| message: false
+#| include: false
+library(chopin.magnification)
+library(tidyverse)
+library(writexl)
+library(DT)
+library(ggpmisc)
+```
+
+## 0. Subdatasets for PFAS in ng/gdw
+
+```{r}
+# rstudioapi::navigateToFile("../data-raw/4.0.BMF_diet_nondetects_subdataset.R")
+```
+
+---
+
+## 1. BMF censored
+
+### Computation
+```{r}
+# rstudioapi::navigateToFile("../data-raw/4.1.BMF_diet_nondetects_censored.R")
+DT::datatable(BMF_diet_PFAS_ng_gdw_censored)
+```
+
+### Graph BMFs per PFAS
+```{r}
+ggdata_BMF_diet_PFAS_ng_gdw_censored <- BMF_diet_PFAS_ng_gdw_censored |>
+  filter(PFAS != "sumPFAS") |> 
+  left_join(contam_prop, by = c("PFAS" = "chemical"))
+```
+
+```{r}
+ggplot_BMF_diet_PFAS_ng_gdw_censored <- ggdata_BMF_diet_PFAS_ng_gdw_censored |> 
+  ggplot() +
+  aes(x = n_C, y = BMF_diet_median, colour = sub_family_TAG) +
+  geom_point() +
+  geom_errorbar(aes(ymin = BMF_diet_min, ymax = BMF_diet_max), width = 0.05) +
+  geom_hline(yintercept = 1) +
+  scale_color_manual(values = my_colors) +
+  labs(color = "Sub-family", y = "Diet-based BMF censored") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  stat_poly_eq(
+    inherit.aes = FALSE,
+    data = ggdata_BMF_diet_PFAS_ng_gdw_censored,
+    aes(x = logKow, y = BMF_diet_median,
+        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+    label.x = "left",
+    label.y = "top"
+  )
+
+ggplot_BMF_diet_PFAS_ng_gdw_censored
+```
+
+```{r}
+ggsave(
+  filename = "../inst/results/BMF_computation_PFAS_ng_gdw/1.ggplot_BMF_diet_PFAS_ng_gdw_censored.jpg",
+  plot = ggplot_BMF_diet_PFAS_ng_gdw_censored, width = 18, height = 10, units = "cm"
+)
+```
+
+---
+---
