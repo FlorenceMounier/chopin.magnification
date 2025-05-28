@@ -1,6 +1,6 @@
 ############################################################
 ##   Diet-based BMF computation with non-detects for PFASs
-##                 CENSORED SCENARIO
+##                 HALF LOQ SCENARIO
 ############################################################
 
 
@@ -22,14 +22,13 @@ data(diet_comp)
 #-----------------------------------------------------------
 # 1. Taxon statistics on contamination levels for selected PFASs
 
-# Select censored dataset
-contam_PFAS_ng_gdw_censored <- contam_PFAS_ng_gdw |>
-  select("species", "alim", "labels", "grp", "type", matches("censored")) |>
-  rename_with(~ str_remove_all(., "_censored"))
+# Select uncensored dataset
+contam_PFAS_ng_gdw_halfLOQ <- contam_PFAS_ng_gdw |>
+  select("species", "alim", "labels", "grp", "type", !matches("cen")) |>
+  rename(sumPFAS = sommePFAS)
 
 # Compute taxon statistics
-contam_PFAS_ng_gdw_censored_taxon_stats <- contam_PFAS_ng_gdw_censored |>
-  rename(sumPFAS = sommePFAS) |>
+contam_PFAS_ng_gdw_halfLOQ_taxon_stats <- contam_PFAS_ng_gdw_halfLOQ |>
   group_by(type, grp) |>
     summarise(across(where(is.numeric),
       list(
@@ -45,13 +44,13 @@ contam_PFAS_ng_gdw_censored_taxon_stats <- contam_PFAS_ng_gdw_censored |>
                  names_sep = "_")
 
 # Export dataset as excel file
-write_xlsx(x = contam_PFAS_ng_gdw_censored_taxon_stats,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/1.contam_PFAS_ng_gdw_censored.xlsx")
+write_xlsx(x = contam_PFAS_ng_gdw_halfLOQ_taxon_stats,
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/2.contam_PFAS_ng_gdw_halfLOQ.xlsx")
 
 #-----------------------------------------------------------
 # 2. Diet statistics on contamination levels
 
-contam_PFAS_ng_gdw_censored_diet_stats <- contam_PFAS_ng_gdw_censored_taxon_stats |>
+contam_PFAS_ng_gdw_halfLOQ_diet_stats <- contam_PFAS_ng_gdw_halfLOQ_taxon_stats |>
   filter(type == "Prey") |>
   left_join(diet_comp, by = c("grp" = "taxon")) |>
   mutate(across(.cols = c(min, median, max), ~ .x * diet_portion)) |>
@@ -64,15 +63,15 @@ contam_PFAS_ng_gdw_censored_diet_stats <- contam_PFAS_ng_gdw_censored_taxon_stat
 
 ### Get sole contamination stats
 
-contam_PFAS_ng_gdw_censored_diet_stats_sole <- contam_PFAS_ng_gdw_censored_taxon_stats |>
+contam_PFAS_ng_gdw_halfLOQ_diet_stats_sole <- contam_PFAS_ng_gdw_halfLOQ_taxon_stats |>
   filter(type == "Sole") |>
   select(-type, -grp) |>
   arrange(PFAS)
 
 ### Compute diet BMFs
 
-BMF_diet_PFAS_ng_gdw_censored <- full_join(contam_PFAS_ng_gdw_censored_diet_stats_sole,
-                                  contam_PFAS_ng_gdw_censored_diet_stats,
+BMF_diet_PFAS_ng_gdw_halfLOQ <- full_join(contam_PFAS_ng_gdw_halfLOQ_diet_stats_sole,
+                                  contam_PFAS_ng_gdw_halfLOQ_diet_stats,
                                      by = "PFAS", suffix = c("_sole", "_diet")) |>
   mutate(BMF_diet_min = min_sole / max_diet,
          BMF_diet_median = median_sole / median_diet,
@@ -81,14 +80,14 @@ BMF_diet_PFAS_ng_gdw_censored <- full_join(contam_PFAS_ng_gdw_censored_diet_stat
   mutate(across(.cols = where(is.numeric),
                 .fns = ~ round(.x, digits = 2)))
 
-usethis::use_data(BMF_diet_PFAS_ng_gdw_censored, overwrite = TRUE)
+usethis::use_data(BMF_diet_PFAS_ng_gdw_halfLOQ, overwrite = TRUE)
 
-write_xlsx(x = BMF_diet_PFAS_ng_gdw_censored,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/1.BMF_diet_PFAS_ng_gdw_censored.xlsx")
+write_xlsx(x = BMF_diet_PFAS_ng_gdw_halfLOQ,
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/2.BMF_diet_PFAS_ng_gdw_halfLOQ.xlsx")
 
-BMF_diet_PFAS_ng_gdw_censored_compare <- BMF_diet_PFAS_ng_gdw_censored |>
+BMF_diet_PFAS_ng_gdw_halfLOQ_compare <- BMF_diet_PFAS_ng_gdw_halfLOQ |>
   select(PFAS, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |>
-  mutate(type = "censored")
+  mutate(type = "half-LOQ")
 
-usethis::use_data(BMF_diet_PFAS_ng_gdw_censored_compare, overwrite = TRUE)
+usethis::use_data(BMF_diet_PFAS_ng_gdw_halfLOQ_compare, overwrite = TRUE)

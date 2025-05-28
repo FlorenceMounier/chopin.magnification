@@ -67,6 +67,7 @@ PFAS <- detection_PFAS |>
 table_detection_rate <- rbind(detection_PCB, detection_PFAS) |>
   mutate(contaminant = contaminant |> str_remove("_ng_gdw_censored|_ng_gdw"))
 
+usethis::use_data(table_detection_rate, overwrite = TRUE)
 # --------------------------------------------------------------
 # Save dataset
 write_csv(x = table_detection_rate, file = "data-raw/detection_rates.csv")
