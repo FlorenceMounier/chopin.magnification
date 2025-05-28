@@ -49,6 +49,15 @@ contam_PFAS_ng_gdw_uncensored <- full_join(contam_PFAS_ng_gdw_censored_sole,
 write_xlsx(x = contam_PFAS_ng_gdw_uncensored,
            path = "inst/results/BMF_computation_PFAS_ng_gdw/3.contam_PFAS_ng_gdw_uncensored.xlsx")
 
+# Exploration
+infLOQ_Br_PFOS <- contam_PFAS_ng_gdw_uncensored |>
+  select("grp", "type", contains("Br-PFOS")) |>
+  filter(`Br-PFOS_cen` == TRUE)
+ggplot(infLOQ_Br_PFOS) +
+  aes(y = `Br-PFOS_uncensored`, fill = type) +
+  geom_boxplot() +
+  geom_hline(yintercept = infLOQ_Br_PFOS$`Br-PFOS`[1])
+
 
 #-----------------------------------------------------------
 # 1. Taxon statistics on contamination levels for selected PFASs
@@ -98,9 +107,9 @@ contam_PFAS_ng_gdw_uncensored_diet_stats_sole <- contam_PFAS_ng_gdw_uncensored_t
 
 ### Compute diet BMFs
 
-BMF_diet_PFAS_ng_gdw_uncensored <- full_join(contam_PFAS_ng_gdw_uncensored_diet_stats,
-                                         contam_PFAS_ng_gdw_uncensored_diet_stats_sole,
-                                     by = "PFAS", suffix = c("_sole", "_diet")) |>
+BMF_diet_PFAS_ng_gdw_uncensored <- full_join(contam_PFAS_ng_gdw_uncensored_diet_stats_sole,
+                                             contam_PFAS_ng_gdw_uncensored_diet_stats,
+                                             by = "PFAS", suffix = c("_sole", "_diet")) |>
   mutate(BMF_diet_min = min_sole / max_diet,
          BMF_diet_median = median_sole / median_diet,
          BMF_diet_max = max_sole / min_diet) |>
