@@ -29,9 +29,12 @@ detection_PCB_soles <- soles_contam[,paste0(PCB_ALL, "_ng_gdw")] |>
 
 detection_PCB <- full_join(detection_PCB_benthos, detection_PCB_soles, by = "contaminant")
 
-# Selection = quantification >= 50% in either soles or benthos
+# Selection =
+# (1) quantification >= 50% in either soles or benthos
+# (2) at least >= 20% in soles and benthos
 PCB <- detection_PCB |>
   filter(detection_benthos >= 50 | detection_soles >= 50) |>
+  filter(detection_benthos >= 20 & detection_soles >= 20) |>
   select(contaminant) |>
   pull() |>
   str_remove("_ng_gdw")
@@ -54,9 +57,12 @@ detection_PFAS_soles <- soles_contam[,paste0(PFAS_ALL, "_ng_gdw_censored")]  |>
 
 detection_PFAS <- full_join(detection_PFAS_benthos, detection_PFAS_soles, by = "contaminant")
 
-# Selection = quantification >= 50% in either soles or benthos
+# Selection =
+# (1) quantification >= 50% in either soles or benthos
+# (2) at least >= 20% in soles and benthos
 PFAS <- detection_PFAS |>
   filter(detection_benthos >= 50 | detection_soles >= 50) |>
+  filter(detection_benthos >= 20 & detection_soles >= 20) |>
   select(contaminant) |>
   pull() |>
   str_remove("_ng_gdw_censored")
