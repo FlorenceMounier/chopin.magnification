@@ -49,3 +49,18 @@ flat_fct_reorder_species.Rmd:
     overwrite: ask
     clean: ask
     codecov: false
+flat_nondetects.Rmd:
+  path: dev/flat_nondetects.Rmd
+  state: active
+  R: R/impute_censored_with_truncated_fit.R
+  tests: tests/testthat/test-impute_censored_with_truncated_fit.R
+  vignettes: []
+  inflate:
+    flat_file: dev/flat_nondetects.Rmd
+    vignette_name: .na
+    open_vignette: true
+    check: false
+    document: true
+    overwrite: ask
+    clean: ask
+    codecov: false
