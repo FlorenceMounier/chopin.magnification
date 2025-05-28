@@ -18,8 +18,12 @@ flat_descriptive_stats.Rmd:
 flat_fct_reorder_contam.Rmd:
   path: dev/flat_fct_reorder_contam.Rmd
   state: active
-  R: R/fct_reorder_pcb.R
-  tests: tests/testthat/test-fct_reorder_pcb.R
+  R:
+  - R/fct_reorder_pcb.R
+  - R/fct_reorder_pfas.R
+  tests:
+  - tests/testthat/test-fct_reorder_pcb.R
+  - tests/testthat/test-fct_reorder_pfas.R
   vignettes: []
   inflate:
     flat_file: dev/flat_fct_reorder_contam.Rmd

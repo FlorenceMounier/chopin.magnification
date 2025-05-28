@@ -52,6 +52,41 @@ test_that("fct_reorder_PCB works", {
 })
 ```
 
+# fct_reorder_PFAS
+
+```{r function-fct_reorder_PFAS}
+#' fct_reorder_PFAS Reorder PFAS factor
+#'
+#' @param data dataset with column PFAS
+#'
+#' @return data with reordered factor column
+#' @export
+#'
+#' @examples
+fct_reorder_PFAS <- function(data) {
+  
+  reordered_data <- data |> 
+    dplyr::mutate(PFAS = factor(PFAS, levels = c(
+      "sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", "PFTeDA", 
+      "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", "8:2 FTSA")))
+  
+  return(reordered_data)
+}
+```
+
+```{r examples-fct_reorder_PFAS}
+levels(fct_reorder_PFAS(BMF_diet_PFAS_ng_gdw_compare)$PFAS)
+```
+
+```{r tests-fct_reorder_PFAS}
+test_that("fct_reorder_PFAS works", {
+  expect_true(inherits(fct_reorder_PFAS, "function"))
+  expect_equal(object = levels(fct_reorder_PFAS(BMF_diet_PFAS_ng_gdw_compare)$PFAS),
+               expected = c("sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", 
+"PFTeDA", "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", 
+"8:2 FTSA"))
+})
+```
 
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop

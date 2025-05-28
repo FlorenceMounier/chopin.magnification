@@ -22,6 +22,7 @@ Suggests:
     DT,
     FSA,
     ggbreak,
+    ggpmisc,
     ggrepel,
     knitr,
     patchwork,
