@@ -131,12 +131,12 @@ ggsave(
 ---
 ---
 
-## 5. BMF comparison
+## 4. BMF comparison
 
 ```{r}
 BMF_compare <- full_join(BMF_diet_PFAS_ng_gdw_censored_compare, 
-                         BMF_diet_PFAS_ng_gdw_halfLOQ_compare)
-               # full_join(BMF_TL_diet_all_PCB_ng_glw_compare) |> 
+                         BMF_diet_PFAS_ng_gdw_halfLOQ_compare) |>
+               full_join(BMF_diet_PFAS_ng_gdw_uncensored_compare) 
                # full_join(BMF_TL_species_all_PCB_ng_glw_compare)
 DT::datatable(BMF_compare)
 ```
