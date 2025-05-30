@@ -295,7 +295,7 @@ ggsave(
 )
 ```
 
-# 6. Total levels in PCBs and HBCDD isomers versur lipid content
+# 6. Total levels in PCBs versus lipid content
 
 There is a significant positive correlation between lipid content and PCB contamination levels (Spearman's test: p-value = 5×10⁻⁴, ρ = 0.43). However, some species appear to deviate from this general trend. For example, Crangon crangon shows highly variable lipid levels without a corresponding increase in PCB contamination. Conversely, Limecola balthica exhibits relatively stable lipid content despite a wide range of PCB concentrations.
 
@@ -312,23 +312,8 @@ ggplot_lipid_PCB <- ggplot(contam) +
 ggplot_lipid_PCB
 ```
 
-There is a weak but significant negative correlation between lipid content and contamination levels of HBCDD isomers (Spearman's test: p-value = 0.01, ρ = -0.38). Below 4% lipid content (dw), contamination levels appear particularly variable, with notable differences among species.
 ```{r}
-cor.test(x = contam$lipid_percent_dw, y = contam$sommeHBCDD_ng_gdw, method = "spearman")
-```
-
-```{r}
-ggplot_lipid_HBCDD <- ggplot(contam) +
-  aes(x = lipid_percent_dw, y = sommeHBCDD_ng_gdw, color = labels) +
-  geom_point() +
-  scale_color_manual(values = my_colors) +
-  labs(title = "HBCDD", x = "Lipid content (%dw)", y = "Sum concentrations (ng/g dw)", color = NULL)
-ggplot_lipid_HBCDD
-```
-
-```{r}
-ggplot_lipid <- ggplot_lipid_PCB + ggplot_lipid_HBCDD
-ggsave("../inst/results/Data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid, width = 10, height = 5, dpi = 300)
+ggsave("../inst/results/Data_analysis/6.lipid_vs_contaminants.png", ggplot_lipid_PCB, width = 15, height = 12, unit = "cm")
 ```
 
 # 7. Average contamination profiles in soles and their prey
