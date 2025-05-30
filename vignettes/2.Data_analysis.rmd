@@ -130,7 +130,7 @@ sub_data <- list("Soles" = contam |> filter(species == "Solea_solea"),
 
 
 ```{r}
-families <- c("PCB", "PFAS", "HBCDD")
+families <- c("PCB", "PFAS")
 
 sum_levels_ng_gdw <- c()
 for(family in families){
@@ -153,7 +153,7 @@ for(family in families){
 }
 
 sum_levels_ng_glw <- c()
-for(family in families[c(1,3)]){
+for(family in families[c(1)]){
   for(type in 1:length(sub_data)) {
   sum_levels_ng_glw <- rbind(sum_levels_ng_glw,
                              get_stats(type = names(sub_data)[type],
@@ -176,12 +176,12 @@ write_xlsx(x = sum_levels, path = "../inst/results/Data_analysis/3.sum_levels.xl
 Plot of the total levels (sum in ng/g dw) in the different taxa and feeding mode:
 ```{r}
 ggdata_sumfamily_taxalim <- contam |> 
-  select(species, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
-  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw), 
+  select(species, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw,) |> 
+  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw), 
                 names_to = "family", values_to = "sum_ng_gdw") |> 
   mutate(family = family |>  str_remove("somme"),
          family = family |>  str_remove("_ng_gdw"),
-         family = factor(family, levels = c("PCB", "PFAS", "HBCDD")))
+         family = factor(family, levels = c("PCB", "PFAS")))
 
 # Annotations for plot
 counts <- ggdata_sumfamily_taxalim |>
@@ -205,7 +205,7 @@ ggplot_sumfamily_taxalim <- ggplot(ggdata_sumfamily_taxalim) +
   guides(color = FALSE) +
   geom_text(
     data = gg_text,
-    aes(x = rep.int(1:4, times = 3),
+    aes(x = rep.int(1:4, times = 2),
         y = maxs*1.1,
         label = paste0("n=", counts)),
     inherit.aes = FALSE, hjust = 0.5, vjust = 1
@@ -224,20 +224,16 @@ Test taxa effect:
 kruskal.test(sommePCB_ALL_ng_glw ~ grp, data = contam) # p-value < 0.05
 # PFAS in ng/g dw
 kruskal.test(sommePFAS_ALL_ng_gdw ~ grp, data = contam) # p-value < 0.05
-# HBCDD in ng/g lw
-kruskal.test(sommeHBCDD_ALL_ng_glw ~ grp, data = contam) # p-value < 0.05
 ```
 
 ```{r}
 dunn_PCB_grp <- dunnTest(sommePCB_ALL_ng_glw ~ grp, data = contam |> drop_na(sommePCB_ALL_ng_glw))
 dunn_PFAS_grp <- dunnTest(sommePFAS_ALL_ng_gdw ~ grp, data = contam |> drop_na(sommePFAS_ALL_ng_gdw))
-dunn_HBCDD_grp <- dunnTest(sommeHBCDD_ALL_ng_glw ~ grp, data = contam |> drop_na(sommeHBCDD_ALL_ng_glw))
 
 res_dunn_grp <- dunn_PCB_grp$res |> select(Comparison, P.adj) |>
-  full_join(dunn_PFAS_grp$res  |> select(Comparison, P.adj), by = "Comparison") |>
-  full_join(dunn_HBCDD_grp$res  |> select(Comparison, P.adj), by = "Comparison") |> 
-  mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
-names(res_dunn_grp) <- c("Comparison", "PCB", "PFAS", "HBCDD")
+  full_join(dunn_PFAS_grp$res  |> select(Comparison, P.adj), by = "Comparison") |> 
+  mutate(across(.cols = c(P.adj.x, P.adj.y), .fns = ~ signif(.x, digits = 4)))
+names(res_dunn_grp) <- c("Comparison", "PCB", "PFAS")
 
 writexl::write_xlsx(x = res_dunn_grp, path = "../inst/results/Data_analysis/4.test_dunn_taxa.xlsx")
 ```
@@ -249,20 +245,16 @@ Test feeding mode effect:
 kruskal.test(sommePCB_ALL_ng_glw ~ alim, data = contam) # p-value = 0.14
 # PFAS in ng/g dw
 kruskal.test(sommePFAS_ALL_ng_gdw ~ alim, data = contam) # p-value < 0.05
-# HBCDD in ng/g lw
-kruskal.test(sommeHBCDD_ALL_ng_glw ~ alim, data = contam) # p-value < 0.05
 ```
 
 ```{r}
 dunn_PCB_alim <- dunnTest(sommePCB_ALL_ng_glw ~ alim, data = contam |> drop_na(sommePCB_ALL_ng_glw))
 dunn_PFAS_alim <- dunnTest(sommePFAS_ALL_ng_gdw ~ alim, data = contam |> drop_na(sommePFAS_ALL_ng_gdw))
-dunn_HBCDD_alim <- dunnTest(sommeHBCDD_ALL_ng_glw ~ alim, data = contam |> drop_na(sommeHBCDD_ALL_ng_glw))
 
 res_dunn_alim <- dunn_PCB_alim$res |> select(Comparison, P.adj) |>
-  full_join(dunn_PFAS_alim$res  |> select(Comparison, P.adj), by = "Comparison") |>
-  full_join(dunn_HBCDD_alim$res  |> select(Comparison, P.adj), by = "Comparison") |> 
-  mutate(across(.cols = c(P.adj.x, P.adj.y, P.adj), .fns = ~ signif(.x, digits = 4)))
-names(res_dunn_alim) <- c("Comparison", "PCB", "PFAS", "HBCDD")
+  full_join(dunn_PFAS_alim$res  |> select(Comparison, P.adj), by = "Comparison") |> 
+  mutate(across(.cols = c(P.adj.x, P.adj.y), .fns = ~ signif(.x, digits = 4)))
+names(res_dunn_alim) <- c("Comparison", "PCB", "PFAS")
 
 writexl::write_xlsx(x = res_dunn_alim, path = "../inst/results/Data_analysis/4.test_dunn_alim.xlsx")
 ```
@@ -272,12 +264,12 @@ writexl::write_xlsx(x = res_dunn_alim, path = "../inst/results/Data_analysis/4.t
 Plot of the total levels (sum in ng/g dw) in the different species:
 ```{r}
 ggdata_sumfamily_species <- contam |> 
-  select(labels, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw) |> 
-  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw, sommeHBCDD_ng_gdw), 
+  select(labels, grp, alim, sommePCB_ng_gdw, sommePFAS_ng_gdw) |> 
+  pivot_longer(cols = c(sommePCB_ng_gdw, sommePFAS_ng_gdw), 
                 names_to = "family", values_to = "sum_ng_gdw") |> 
   mutate(family = family |>  str_remove("somme"),
          family = family |>  str_remove("_ng_gdw"),
-         family = factor(family, levels = c("PCB", "PFAS", "HBCDD")))
+         family = factor(family, levels = c("PCB", "PFAS")))
 
 ggplot_sumfamily_species <- ggplot(ggdata_sumfamily_species) +
   aes(x = labels, y = sum_ng_gdw, fill = grp, color = grp, shape = alim) +
@@ -328,9 +320,8 @@ contam_profile <- contam |>
   pivot_longer(cols = -type, names_to = "chemical", values_to = "percent") |> 
   mutate(chemical = chemical |> str_remove("_normalised_sum_ng_gdw"),
          family = case_when(str_starts(chemical, "CB") ~ "PCB",
-                            str_detect(chemical, "HBCDD") ~ "HBCDD",
                             TRUE ~ "PFAS")) |> 
-  mutate(family = factor(family, levels = c("PCB", "PFAS", "HBCDD")),
+  mutate(family = factor(family, levels = c("PCB", "PFAS")),
          type = factor(type, levels = c("Sole", "Prey"))) |> 
   group_by(family)  |> 
   mutate(chemical = fct_reorder(chemical, percent, .fun = min)) |>  # order chemical by percent values
