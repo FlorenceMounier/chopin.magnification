@@ -1,6 +1,6 @@
 ############################################################
 ##   Diet-based BMF computation with non-detects for PFASs
-##                 HALF LOQ SCENARIO
+##            LOG NORMAL REGRESSION SCENARIO
 ############################################################
 
 
