@@ -15,7 +15,7 @@ fct_reorder_PCB <- function(data) {
     dplyr::mutate(PCB = factor(PCB, levels = c(
       "sumPCB", "CB28", "CB31", "CB44", "CB49", "CB52", 
       "CB101", "CB105", "CB110", "CB118", "CB128", "CB132", 
-      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180")))
+      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180", "CB187", "CB194")))
   
   return(reordered_data)
 }

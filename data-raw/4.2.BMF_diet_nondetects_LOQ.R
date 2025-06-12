@@ -85,6 +85,8 @@ usethis::use_data(BMF_diet_PFAS_ng_gdw_halfLOQ, overwrite = TRUE)
 write_xlsx(x = BMF_diet_PFAS_ng_gdw_halfLOQ,
            path = "inst/results/BMF_computation_PFAS_ng_gdw/2.BMF_diet_PFAS_ng_gdw_halfLOQ.xlsx")
 
+### Export diet BMFs for comparison
+
 BMF_diet_PFAS_ng_gdw_halfLOQ_compare <- BMF_diet_PFAS_ng_gdw_halfLOQ |>
   select(PFAS, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |>

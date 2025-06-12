@@ -15,11 +15,7 @@ library(writexl)
 #-----------------------------------------------------------
 # 0. Proportions of each prey "grp" in sole's diet
 
-diet_comp <- tibble(taxon = c("Polychaeta", "Crustacea", "Bivalvia"),
-                    diet_portion = diet) |>
-  mutate(diet_portion = round(diet_portion, digits = 3))
-
-usethis::use_data(diet_comp, overwrite = TRUE)
+data("diet_comp")
 
 
 #-----------------------------------------------------------

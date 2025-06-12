@@ -382,6 +382,18 @@ DT::datatable(BMF_compare)
 ```
 
 ```{r}
+BMF_compare_output <- BMF_compare |> 
+  pivot_wider(names_from = type, values_from = c(min, median, max)) |> 
+  mutate(BMF_diet = paste0(median_diet, " [", min_diet, "-", max_diet, "]"),
+         BMF_species = paste0(median_species, " [", min_species, "-", max_species, "]"),
+         BMF_TL_diet = paste0(median_TL_diet, " [", min_TL_diet, "-", max_TL_diet, "]"),
+         BMF_TL_species = paste0(median_TL_species, " [", min_TL_species, "-", max_TL_species, "]")) |> 
+  select(PCB, BMF_diet, BMF_species, BMF_TL_diet, BMF_TL_species)
+write_xlsx(x = BMF_compare_output,
+           path = "../inst/results/BMF_computation_PCB_ng_glw/5.BMF_compare_PCB.xlsx")
+```
+
+```{r}
 ggplot_BMFs_compare <- ggplot(BMF_compare) +
   aes(x = PCB, y = log(median), fill = type) +
   geom_col(position = "dodge") +
@@ -399,6 +411,6 @@ ggplot_BMFs_compare
 ```{r}
 ggsave(plot = ggplot_BMFs_compare, 
        filename = "../inst/results/BMF_computation_PCB_ng_glw/5.ggplot_BMFs_compare.jpg", 
-       width = 22, height = 15, units = "cm")
+       width = 25, height = 15, units = "cm")
 
 ```

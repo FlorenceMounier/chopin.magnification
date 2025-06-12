@@ -25,7 +25,9 @@ data(diet_comp)
 # Select censored dataset
 contam_PFAS_ng_gdw_censored <- contam_PFAS_ng_gdw |>
   select("grp", "type", matches("censored")) |>
-  rename_with(~ str_remove_all(., "_censored"))
+  rename_with(~ str_remove_all(., "_censored")) |>
+  mutate(across(.cols = where(is.numeric),
+                .fns = ~ case_when(.x == 0 ~ NA, TRUE ~ .x)))
 
 # Compute taxon statistics
 contam_PFAS_ng_gdw_censored_taxon_stats <- contam_PFAS_ng_gdw_censored |>
@@ -46,7 +48,7 @@ contam_PFAS_ng_gdw_censored_taxon_stats <- contam_PFAS_ng_gdw_censored |>
 
 # Export dataset as excel file
 write_xlsx(x = contam_PFAS_ng_gdw_censored_taxon_stats,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/1.contam_PFAS_ng_gdw_censored.xlsx")
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/1.contam_PFAS_ng_gdw_censored_taxon_stats.xlsx")
 
 #-----------------------------------------------------------
 # 2. Diet statistics on contamination levels
@@ -86,9 +88,11 @@ usethis::use_data(BMF_diet_PFAS_ng_gdw_censored, overwrite = TRUE)
 write_xlsx(x = BMF_diet_PFAS_ng_gdw_censored,
            path = "inst/results/BMF_computation_PFAS_ng_gdw/1.BMF_diet_PFAS_ng_gdw_censored.xlsx")
 
+### Export diet BMFs for comparison
+
 BMF_diet_PFAS_ng_gdw_censored_compare <- BMF_diet_PFAS_ng_gdw_censored |>
   select(PFAS, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |>
-  mutate(type = "censored")
+  mutate(type = "uncensored")
 
 usethis::use_data(BMF_diet_PFAS_ng_gdw_censored_compare, overwrite = TRUE)

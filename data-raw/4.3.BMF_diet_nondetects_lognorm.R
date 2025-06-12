@@ -16,26 +16,30 @@ library(writexl)
 #-----------------------------------------------------------
 # 0. Deal with censored data
 
-# Select uncensored dataset
+## Select uncensored dataset
 contam_PFAS_ng_gdw_censored <- contam_PFAS_ng_gdw |>
   select("grp", "type", !matches("censored"), -sommePFAS)
 
+
 # Split in two groups for log-normal regression
-contam_PFAS_ng_gdw_censored_prey <- contam_PFAS_ng_gdw_censored |> filter(type == "Prey")
-contam_PFAS_ng_gdw_censored_sole <- contam_PFAS_ng_gdw_censored |> filter(type == "Sole")
+contam_PFAS_ng_gdw_censored_bivalvia <- contam_PFAS_ng_gdw_censored |> filter(grp == "Bivalvia")
+contam_PFAS_ng_gdw_censored_crustacea <- contam_PFAS_ng_gdw_censored |> filter(grp == "Crustacea")
+contam_PFAS_ng_gdw_censored_polychaeta <- contam_PFAS_ng_gdw_censored |> filter(grp == "Polychaeta")
+contam_PFAS_ng_gdw_censored_sole <- contam_PFAS_ng_gdw_censored |> filter(type == "Actinopterygii")
 
 # Draw random values according to the truncated distribution [0, LOQ] for prey and sole
 for(contam in PFAS){
-  contam_PFAS_ng_gdw_censored_prey[[paste0(contam, "_uncensored")]] <- impute_censored_with_truncated_fit(
-    contam_PFAS_ng_gdw_censored_prey,
-    var = contam,
-    var_cens = paste0(contam, "_cen")
+  contam_PFAS_ng_gdw_censored_bivalvia[[paste0(contam, "_uncensored")]] <- impute_censored_with_truncated_fit(
+    contam_PFAS_ng_gdw_censored_bivalvia, var = contam, var_cens = paste0(contam, "_cen")
   )
-
+  contam_PFAS_ng_gdw_censored_crustacea[[paste0(contam, "_uncensored")]] <- impute_censored_with_truncated_fit(
+    contam_PFAS_ng_gdw_censored_crustacea, var = contam, var_cens = paste0(contam, "_cen")
+  )
+  contam_PFAS_ng_gdw_censored_polychaeta[[paste0(contam, "_uncensored")]] <- impute_censored_with_truncated_fit(
+    contam_PFAS_ng_gdw_censored_polychaeta, var = contam, var_cens = paste0(contam, "_cen")
+  )
   contam_PFAS_ng_gdw_censored_sole[[paste0(contam, "_uncensored")]] <- impute_censored_with_truncated_fit(
-    data = contam_PFAS_ng_gdw_censored_sole,
-    var = contam,
-    var_cens = paste0(contam, "_cen")
+    data = contam_PFAS_ng_gdw_censored_sole, var = contam, var_cens = paste0(contam, "_cen")
   )
 }
 
@@ -47,7 +51,7 @@ contam_PFAS_ng_gdw_uncensored <- full_join(contam_PFAS_ng_gdw_censored_sole,
 
 # Export dataset as excel file
 write_xlsx(x = contam_PFAS_ng_gdw_uncensored,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/3.contam_PFAS_ng_gdw_uncensored.xlsx")
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/3.contam_PFAS_ng_gdw_lognorm.xlsx")
 
 # Exploration
 infLOQ_Br_PFOS <- contam_PFAS_ng_gdw_uncensored |>
@@ -82,7 +86,7 @@ contam_PFAS_ng_gdw_uncensored_taxon_stats <- contam_PFAS_ng_gdw_uncensored |>
 
 # Export dataset as excel file
 write_xlsx(x = contam_PFAS_ng_gdw_uncensored_taxon_stats,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/3.contam_PFAS_ng_gdw_uncensored_taxon_stats.xlsx")
+           path = "inst/results/BMF_computation_PFAS_ng_gdw/3.contam_PFAS_ng_gdw_lognorm_taxon_stats.xlsx")
 
 #-----------------------------------------------------------
 # 2. Diet statistics on contamination levels
@@ -119,12 +123,9 @@ BMF_diet_PFAS_ng_gdw_uncensored <- full_join(contam_PFAS_ng_gdw_uncensored_diet_
 
 usethis::use_data(BMF_diet_PFAS_ng_gdw_uncensored, overwrite = TRUE)
 
-write_xlsx(x = BMF_diet_PFAS_ng_gdw_uncensored,
-           path = "inst/results/BMF_computation_PFAS_ng_gdw/3.BMF_diet_PFAS_ng_gdw_uncensored.xlsx")
-
 BMF_diet_PFAS_ng_gdw_uncensored_compare <- BMF_diet_PFAS_ng_gdw_uncensored |>
   select(PFAS, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_diet_"), .cols = starts_with("BMF_diet_")) |>
-  mutate(type = "uncensored")
+  mutate(type = "log-norm")
 
 usethis::use_data(BMF_diet_PFAS_ng_gdw_uncensored_compare, overwrite = TRUE)

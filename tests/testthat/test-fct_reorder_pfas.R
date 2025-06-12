@@ -3,7 +3,7 @@
 test_that("fct_reorder_PFAS works", {
   expect_true(inherits(fct_reorder_PFAS, "function"))
   expect_equal(object = levels(fct_reorder_PFAS(BMF_diet_PFAS_ng_gdw_compare)$PFAS),
-               expected = c("sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", 
+               expected = c("sumPFAS", "PFOA", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", 
 "PFTeDA", "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", 
 "8:2 FTSA"))
 })

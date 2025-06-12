@@ -32,7 +32,7 @@ fct_reorder_PCB <- function(data) {
     dplyr::mutate(PCB = factor(PCB, levels = c(
       "sumPCB", "CB28", "CB31", "CB44", "CB49", "CB52", 
       "CB101", "CB105", "CB110", "CB118", "CB128", "CB132", 
-      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180")))
+      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180", "CB187", "CB194")))
   
   return(reordered_data)
 }
@@ -48,7 +48,7 @@ test_that("fct_reorder_PCB works", {
   expect_equal(object = levels(fct_reorder_PCB(BMF_species_all_PCB_ng_glw_compare)$PCB),
                expected = c("sumPCB", "CB28", "CB31", "CB44", "CB49", "CB52", 
       "CB101", "CB105", "CB110", "CB118", "CB128", "CB132", 
-      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180"))
+      "CB138", "CB149", "CB153", "CB156", "CB170", "CB180", "CB187", "CB194"))
 })
 ```
 
@@ -67,8 +67,8 @@ fct_reorder_PFAS <- function(data) {
   
   reordered_data <- data |> 
     dplyr::mutate(PFAS = factor(PFAS, levels = c(
-      "sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", "PFTeDA", 
-      "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", "8:2 FTSA")))
+      "sumPFAS", "PFOA", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", "PFTeDA", 
+      "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "8:2 FTSA")))
   
   return(reordered_data)
 }
@@ -82,7 +82,7 @@ levels(fct_reorder_PFAS(BMF_diet_PFAS_ng_gdw_compare)$PFAS)
 test_that("fct_reorder_PFAS works", {
   expect_true(inherits(fct_reorder_PFAS, "function"))
   expect_equal(object = levels(fct_reorder_PFAS(BMF_diet_PFAS_ng_gdw_compare)$PFAS),
-               expected = c("sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", 
+               expected = c("sumPFAS", "PFOA", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", 
 "PFTeDA", "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", 
 "8:2 FTSA"))
 })

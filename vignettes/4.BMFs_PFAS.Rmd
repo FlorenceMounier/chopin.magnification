@@ -22,123 +22,66 @@ execute:
 library(chopin.magnification)
 library(tidyverse)
 library(writexl)
-library(DT)
-library(ggpmisc)
+library(ggrepel)
+# library(ggpmisc)
 ```
 
-## 0. Subdatasets for PFAS in ng/gdw
+## Influence of PFAS sub-family and chain length
 
 ```{r}
-# rstudioapi::navigateToFile("../data-raw/4.0.BMF_diet_nondetects_subdataset.R")
-```
-
----
-
-## 1. BMF censored
-
-### Computation
-```{r}
-# rstudioapi::navigateToFile("../data-raw/4.1.BMF_diet_nondetects_censored.R")
-DT::datatable(BMF_diet_PFAS_ng_gdw_censored)
-```
-
-### Graph BMFs per PFAS
-```{r}
-ggdata_BMF_diet_PFAS_ng_gdw_censored <- BMF_diet_PFAS_ng_gdw_censored |>
+ggdata_BMF_diet_PFAS_ng_gdw_ros <- BMF_diet_PFAS_ng_gdw_ros |>
   filter(PFAS != "sumPFAS") |> 
   left_join(contam_prop, by = c("PFAS" = "chemical"))
 ```
 
 ```{r}
-ggplot_BMF_diet_PFAS_ng_gdw_censored <- ggdata_BMF_diet_PFAS_ng_gdw_censored |> 
-  ggplot() +
+ggplot_BMF_diet_PFAS_ng_gdw_ros <-
+  ggplot(data = ggdata_BMF_diet_PFAS_ng_gdw_ros) +
   aes(x = n_C, y = BMF_diet_median, colour = sub_family_TAG) +
   geom_point() +
   geom_errorbar(aes(ymin = BMF_diet_min, ymax = BMF_diet_max), width = 0.05) +
   geom_hline(yintercept = 1) +
+  geom_text_repel(aes(label = PFAS), size = 3) +
   scale_color_manual(values = my_colors) +
-  labs(color = "Sub-family", y = "Diet-based BMF censored") +
-  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
-  stat_poly_eq(
-    inherit.aes = FALSE,
-    data = ggdata_BMF_diet_PFAS_ng_gdw_censored,
-    aes(x = logKow, y = BMF_diet_median,
-        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
-    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
-    label.x = "left",
-    label.y = "top"
-  )
+  labs(color = "Sub-family", 
+       x = "Number of carbon atoms in the perfluorinated chain",
+       y = "Diet-based BMF with ROS method") 
+  # geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
+  # stat_poly_eq(
+  #   inherit.aes = FALSE,
+  #   data = ggdata_BMF_diet_PFAS_ng_gdw_ros,
+  #   aes(x = logKow, y = BMF_diet_median,
+  #       label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
+  #   formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
+  #   label.x = "right",
+  #   label.y = "top"
+  # )
 
-ggplot_BMF_diet_PFAS_ng_gdw_censored
+ggplot_BMF_diet_PFAS_ng_gdw_ros
 ```
 
 ```{r}
 ggsave(
-  filename = "../inst/results/BMF_computation_PFAS_ng_gdw/1.ggplot_BMF_diet_PFAS_ng_gdw_censored.jpg",
-  plot = ggplot_BMF_diet_PFAS_ng_gdw_censored, width = 18, height = 10, units = "cm"
+  filename = "../inst/results/BMF_computation_PFAS_ng_gdw/0.ggplot_BMF_diet_PFAS_ng_gdw_ros.jpg",
+  plot = ggplot_BMF_diet_PFAS_ng_gdw_ros, width = 18, height = 10, units = "cm"
 )
 ```
 
----
----
-
-
-## 2. BMF half LOQ
-
-### Computation
-```{r}
-# rstudioapi::navigateToFile("../data-raw/4.2.BMF_diet_nondetects_LOQ.R")
-DT::datatable(BMF_diet_PFAS_ng_gdw_halfLOQ)
-```
-
-### Graph BMFs per PFAS
-```{r}
-ggdata_BMF_diet_PFAS_ng_gdw_halfLOQ <- BMF_diet_PFAS_ng_gdw_halfLOQ |>
-  filter(PFAS != "sumPFAS") |> 
-  left_join(contam_prop, by = c("PFAS" = "chemical"))
-```
-
-```{r}
-ggplot_BMF_diet_PFAS_ng_gdw_halfLOQ <- ggdata_BMF_diet_PFAS_ng_gdw_halfLOQ |> 
-  ggplot() +
-  aes(x = n_C, y = BMF_diet_median, colour = sub_family_TAG) +
-  geom_point() +
-  geom_errorbar(aes(ymin = BMF_diet_min, ymax = BMF_diet_max), width = 0.05) +
-  geom_hline(yintercept = 1) +
-  scale_color_manual(values = my_colors) +
-  labs(color = "Sub-family", y = "Diet-based BMF half-LOQ") +
-  geom_smooth(method = "lm", formula = y ~ poly(x, 2), se = TRUE, color = "black", linewidth = 0.6) +
-  stat_poly_eq(
-    inherit.aes = FALSE,
-    data = ggdata_BMF_diet_PFAS_ng_gdw_halfLOQ,
-    aes(x = logKow, y = BMF_diet_median,
-        label = paste(..eq.label.., ..rr.label.., ..p.value.label.., sep = "~~~")),
-    formula = y ~ poly(x, 2, raw = TRUE), parse = TRUE, 
-    label.x = "left",
-    label.y = "top"
-  )
-
-ggplot_BMF_diet_PFAS_ng_gdw_halfLOQ
-```
-
-```{r}
-ggsave(
-  filename = "../inst/results/BMF_computation_PFAS_ng_gdw/2.ggplot_BMF_diet_PFAS_ng_gdw_halfLOQ.jpg",
-  plot = ggplot_BMF_diet_PFAS_ng_gdw_halfLOQ, width = 18, height = 10, units = "cm"
-)
-```
-
----
----
-
-## 4. BMF comparison
+## BMF comparison between nondetects scenarios
 
 ```{r}
 BMF_compare <- full_join(BMF_diet_PFAS_ng_gdw_censored_compare, 
                          BMF_diet_PFAS_ng_gdw_halfLOQ_compare) |>
-               full_join(BMF_diet_PFAS_ng_gdw_uncensored_compare) 
-               # full_join(BMF_TL_species_all_PCB_ng_glw_compare)
+               full_join(BMF_diet_PFAS_ng_gdw_uncensored_compare) |> 
+               full_join(BMF_diet_PFAS_ng_gdw_cenfit_compare) |> 
+  full_join(BMF_diet_PFAS_ng_gdw_ros_compare) |> 
+  mutate(type = factor(type, levels = c("uncensored", "half-LOQ", "log-norm", "cenfit", "ros"))) |> 
+  filter(PFAS != "sumPFAS")
 DT::datatable(BMF_compare)
+
+write_xlsx(x = BMF_compare,
+           path = "../inst/results/BMF_computation_PFAS_ng_gdw/0.BMF_diet_PFAS_ng_gdw_compare.xlsx")
+
 ```
 
 ```{r}
@@ -149,7 +92,8 @@ ggplot_BMFs_compare <- ggplot(BMF_compare) +
                 position = position_dodge(width = 0.9),
                 width = 0.4) +
   geom_hline(yintercept = 0) +
-  scale_color_manual(values = c("#CB2027", "#009E73", "black", "black")) +
+  scale_color_manual(values = c("black", "black", "black", "black", "black")) +
+  scale_fill_manual(values = my_colors[1:5]) +
   labs(x = NULL, y = "Log BMF PFAS", fill = "BMF type", color = "BMF type") +
   theme(axis.text.x=element_text(size=9, angle=45, hjust=1))
 
@@ -158,7 +102,8 @@ ggplot_BMFs_compare
 
 ```{r}
 ggsave(plot = ggplot_BMFs_compare, 
-       filename = "../inst/results/BMF_computation_PFAS_ng_gdw/5.ggplot_BMFs_compare.jpg", 
+       filename = "../inst/results/BMF_computation_PFAS_ng_gdw/0.ggplot_BMFs_compare.jpg", 
        width = 22, height = 15, units = "cm")
 
 ```
+

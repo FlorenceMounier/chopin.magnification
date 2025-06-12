@@ -19,8 +19,7 @@ library(chopin.magnification)
 
 contam_PCB_ng_glw <- contam |>
   select(species, alim, labels, grp, d15N,
-         starts_with("CB") & ends_with("ng_glw"),
-         -contains("187"), -contains("194")) |>
+         starts_with("CB") & ends_with("ng_glw")) |>
   mutate(type = case_when(species == "Solea_solea" ~ "Sole",
                           TRUE ~ "Prey")) |>
   drop_na(CB153_ng_glw)

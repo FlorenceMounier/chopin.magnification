@@ -13,8 +13,8 @@ fct_reorder_PFAS <- function(data) {
   
   reordered_data <- data |> 
     dplyr::mutate(PFAS = factor(PFAS, levels = c(
-      "sumPFAS", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", "PFTeDA", 
-      "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "6:2 FTSA", "8:2 FTSA")))
+      "sumPFAS", "PFOA", "PFPeA", "PFNA", "PFDA", "PFUnDA", "PFDoDA", "PFTrDA", "PFTeDA", 
+      "FOSA", "EtFOSAA", "L-PFOS", "Br-PFOS", "8:2 FTSA")))
   
   return(reordered_data)
 }
