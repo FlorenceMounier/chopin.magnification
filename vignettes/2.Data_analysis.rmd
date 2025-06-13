@@ -37,9 +37,15 @@ gg_color_hue <- function(n) {
 }
 colors = gg_color_hue(4)
 
-ggdata_diet <- tibble("taxon" = names(diet), "diet" = diet)
-ggplot_diet <- ggplot(ggdata_diet) +
-  aes(x = "", y = diet, fill = taxon) +
+diet <- diet %>%
+  arrange(desc(taxon)) %>%
+  mutate(
+    ypos = diet_portion / 2 + c(0, cumsum(diet_portion)[-length(diet_portion)]),
+    label = paste0(round(diet_portion * 100), "%")
+  )
+
+ggplot_diet <- ggplot(data = diet) +
+  aes(x = "", y = diet_portion, fill = taxon) +
   geom_bar(width = 1, stat = "identity") +
   coord_polar("y", start=0) +
   scale_fill_manual(values = c(colors[4], colors[3], colors[2])) +
@@ -53,14 +59,12 @@ ggplot_diet <- ggplot(ggdata_diet) +
     axis.ticks = element_blank()
   ) +
   theme(axis.text.x=element_blank()) +
-  geom_text(aes(y = diet/3 + c(0, cumsum(diet)[-length(diet)])), 
-            label = paste(round(diet*100, digits = 0), "%"), size=5)
+  geom_text(aes(y = ypos, label = label), size = 5)
 
 # Save plot
 ggsave(plot = ggplot_diet, filename = "../inst/results/Data_analysis/1.ggplot_diet.jpg",
        width = 5, height = 3)
 ```
-
 
 ## 2. Lipid contents
 

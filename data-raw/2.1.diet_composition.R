@@ -11,16 +11,19 @@
 library(tidyverse)
 library(chopin.magnification)
 
-#-----------------------------------------------------------
-# Diet computation
 
-taxa <- stomac_soles |> distinct(Faunistic_grp) |>  pull()
-abundance_tot <- sum(stomac_soles$N_tot_in_tractus, na.rm = T)
-diet <- c(NA)
-for (taxon in 1:length(taxa)) {
-  diet[taxon] <- sum(stomac_soles[stomac_soles$Faunistic_grp == taxa[taxon], ]$N_tot_in_tractus, na.rm = T) / abundance_tot
-}
-names(diet) <- taxa
+#-----------------------------------------------------------
+# Diet computation taxon
+
+diet <- stomac_soles %>%
+  filter(Class != "Hexanauplia") |>
+  mutate(
+    total_N = sum(N_tot_in_tractus, na.rm = TRUE),
+    abundance_pct = N_tot_in_tractus / total_N
+  ) |>
+  group_by(Faunistic_grp) |>
+  summarise(diet_portion = sum(abundance_pct, na.rm = TRUE), .groups = "drop") |>
+  rename(taxon = Faunistic_grp)
 
 usethis::use_data(diet, overwrite = TRUE)
 

@@ -1,762 +1,761 @@
-Fish_TAG,Faunistic_grp,ScientificName_accepted,N_tot_in_tractus
-06-17/C1-sole-G0/10,Annelida,Polydora ciliata,5
-06-17/C1-sole-G0/10,Arthropoda,Corophium volutator,1
-06-17/C1-Sole-G0/12,Annelida,Annelida,1
-06-17/C1-Sole-G0/12,Arthropoda,Corophium volutator,1
-06-17/C1-Sole-G0/12,Arthropoda,Harpacticoida,107
-06-17/C1-Sole-G0/15,Arthropoda,Harpacticoida,20
-06-17/C1-Sole-G0/15,Arthropoda,Amphipoda,1
-06-17/C1-Sole-G0/15,Annelida,Annelida,1
-06-17/C1-Sole-G0/15,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/16,Annelida,Hediste diversicolor,1
-06-17/C1-Sole-G0/16,Annelida,Polydora ciliata,2
-06-17/C1-Sole-G0/16,Arthropoda,Harpacticoida,2
-06-17/C1-Sole-G0/17,Arthropoda,Harpacticoida,144
-06-17/C1-Sole-G0/17,Arthropoda,Corophium volutator,5
-06-17/C1-Sole-G0/17,Annelida,Annelida,1
-06-17/C1-Sole-G0/18,Arthropoda,Harpacticoida,129
-06-17/C1-Sole-G0/18,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/19,Arthropoda,Harpacticoida,2
-06-17/C1-Sole-G0/19,Annelida,Polydora ciliata,5
-06-17/C1-Sole-G0/19,Arthropoda,Corophium volutator,4
-06-17/C1-Sole-G0/20,Arthropoda,Harpacticoida,66
-06-17/C1-Sole-G0/20,Arthropoda,Corophium volutator,1
-06-17/C1-Sole-G0/20,Annelida,Polydora ciliata,3
-06-17/C1-Sole-G0/21,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/22,Arthropoda,Harpacticoida,16
-06-17/C1-Sole-G0/22,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/6,Arthropoda,Corophium volutator,10
-06-17/C1-Sole-G0/6,Annelida,Polydora ciliata,2
-06-17/C1-Sole-G0/6,Arthropoda,Harpacticoida,4
-06-17/C1-Sole-G0/6,Mollusca,Bivalvia_larve,2
-06-17/C2-Sole-G0/3,Annelida,Annelida,1
-06-17/C2-Sole-G0/3,Arthropoda,Corophium volutator,3
-06-17/C2-Sole-G0/3,Arthropoda,Harpacticoida,86
-06-17/C2-Sole-G0/3,Annelida,Polynoidae,1
-06-17/C3-Sole-G0/1,Arthropoda,Harpacticoida,1
-06-17/C3-Sole-G0/1,Annelida,Polydora ciliata,3
-06-17/C6-Sole-G0/1,Mollusca,Cardiidae,1
-06-17/C6-Sole-G0/1,Mollusca,Bivalvia,4
-06-17/C6-Sole-G0/1,Mollusca,Phaxas pellucidus,1
-06-17/C6-Sole-G0/1,Annelida,Polynoidae,1
-06-17/C7-Sole-G0/13,Arthropoda,Amphipoda,1
-06-17/C7-Sole-G0/13,Annelida,Annelida,1
-06-17/C7-Sole-G0/13,Mollusca,Bivalvia,1
-06-17/C7-Sole-G0/7,Arthropoda,Ostracoda,1
-06-17/C7-Sole-G0/7,Mollusca,Cardiidae,1
-06-17/C7-Sole-G0/7,Annelida,Polydora ciliata,4
-06-17/C7-Sole-G0/7,Arthropoda,Amphipoda,1
-06-17/CF5-C6-Sole-G0/1,Annelida,Annelida,1
-06-17/CF5-C6-Sole-G0/2,Mollusca,Bivalvia,1
-06-17/CF5-C6-Sole-G0/2,Annelida,Polydora ciliata,3
-06-17/CF5-C6-Sole-G0/3,Annelida,Polydora ciliata,1
-06-17/CF5-C6-Sole-G0/4,Annelida,Annelida,1
-06-17/CF5-C6-Sole-G0/5,Annelida,Annelida,1
-06-17/AN2-Sole-G0/10,Mollusca,Bivalvia,3
-06-17/AN2-Sole-G0/10,Mollusca,Bivalvia,2
-06-17/AN2-Sole-G0/10,Mollusca,Veneridae,6
-06-17/AN2-Sole-G0/10,Arthropoda,Harpacticoida,2
-06-17/AN2-Sole-G0/11,Mollusca,Cardiidae,1
-06-17/AN2-Sole-G0/11,Arthropoda,Ostracoda,2
-06-17/AN2-Sole-G0/11,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/12,Mollusca,Cardiidae,1
-06-17/AN2-Sole-G0/12,Mollusca,Pharidae,1
-06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,2
-06-17/AN2-Sole-G0/13,Mollusca,Cardiidae,1
-06-17/AN2-Sole-G0/13,Arthropoda,Diastylis sp,1
-06-17/AN2-Sole-G0/13,Mollusca,Pharidae,2
-06-17/AN2-Sole-G0/13,Mollusca,Mactridae,1
-06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,2
-06-17/AN2-Sole-G0/14,Arthropoda,Nototropis falcatus,1
-06-17/AN2-Sole-G0/14,Mollusca,Kurtiella bidentata,1
-06-17/AN2-Sole-G0/14,Arthropoda,Ostracoda,1
-06-17/AN2-Sole-G0/14,Mollusca,Veneridae,1
-06-17/AN2-Sole-G0/48,Mollusca,Kurtiella bidentata,5
-06-17/AN2-Sole-G0/48,Mollusca,Bivalvia,10
-06-17/AN2-Sole-G0/48,Arthropoda,Arthropoda,1
-06-17/AN2-Sole-G0/48,Annelida,Spionidae,2
-06-17/AN2-Sole-G0/49,Arthropoda,Harpacticoida,1
-06-17/AN2-Sole-G0/49,Mollusca,Bivalvia,2
-06-17/AN2-Sole-G0/50,Mollusca,Bivalvia,8
-06-17/AN2-Sole-G0/50,Arthropoda,Harpacticoida,2
-06-17/AN2-Sole-G0/50,Arthropoda,Diastylis sp,4
-06-17/AN2-Sole-G0/50,Arthropoda,Ostracoda,1
-06-17/AN2-Sole-G0/51,Arthropoda,Harpacticoida,5
-06-17/AN2-Sole-G0/51,Annelida,Spionidae,1
-06-17/AN2-Sole-G0/52,Mollusca,Bivalvia,10
-06-17/AN2-Sole-G0/52,Mollusca,Cerastoderma edule,2
-06-17/AN2-Sole-G0/52,Mollusca,Kurtiella bidentata,3
-06-17/AN2-Sole-G0/54,Mollusca,Bivalvia,14
-06-17/AN2-Sole-G0/54,Mollusca,Abra alba,8
-06-17/AN2-Sole-G0/54,Arthropoda,Balanidae,1
-06-17/AN2-Sole-G0/54,Annelida,Spionidae,1
-06-17/AN2-Sole-G0/55,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/55,Annelida,Polydora ciliata,2
-06-17/AN2-Sole-G0/57,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/57,Mollusca,Abra alba,9
-06-17/AN2-Sole-G0/57,Mollusca,Cerastoderma edule,1
-06-17/AN2-Sole-G0/58,Mollusca,Cerastoderma edule,1
-06-17/AN2-Sole-G0/58,Mollusca,Abra alba,1
-06-17/AN2-Sole-G0/58,Arthropoda,Harpacticoida,1
-06-17/AN2-Sole-G0/59,Arthropoda,Arthropoda,1
-06-17/AN2-Sole-G0/59,Annelida,Annelida,1
-06-17/AN2-Sole-G0/59,Arthropoda,Ostracoda,1
-06-17/AN2-Sole-G0/59,Annelida,Spionidae,1
-06-17/AN2-Sole-G0/62,Annelida,Spionidae,2
-06-17/AN2-Sole-G0/62,Arthropoda,Diastylis sp,1
-06-17/AN2-Sole-G0/62,Arthropoda,Harpacticoida,1
-06-17/AN2-Sole-G0/62,Arthropoda,Ostracoda,1
-06-17/AN2-Sole-G0/62,Mollusca,Phaxas pellucidus,1
-06-17/AN2-Sole-G0/62,Annelida,Nephtys sp,1
-06-17/AN2-Sole-G0/8,Mollusca,Bivalvia,1
-06-17/AN2-Sole-G0/8,Arthropoda,Harpacticoida,2
-06-17/AN2-Sole-G0/8,Annelida,Spionidae,1
-06-17/AN2-Sole-G0/9,Annelida,Sabellidae,1
-06-17/AN2-Sole-G0/9,Arthropoda,Harpacticoida,2
-06-17/AN2-Sole-G0/9,Mollusca,Veneridae,5
-06-17/AN2-Sole-G0/9,Mollusca,Pharidae,2
-06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,2
-06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/AS2-Sole-G0/3,Arthropoda,Acari,1
-06-17/AS2-Sole-G0/3,Arthropoda,Pontocrates altamarinus,3
-06-17/AS2-Sole-G0/3,Annelida,Spionidae,1
-06-17/AS2-Sole-G0/3,Arthropoda,Balanidae,1
-06-17/AS2-Sole-G0/3,Arthropoda,Ostracoda,2
-06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/AS2-Sole-G0/3,Mollusca,Mactridae,3
-06-17/AS2-Sole-G0/3,Annelida,Nephtys sp,1
-06-17/AS2-Sole-G0/3,Arthropoda,Harpacticoida,1
-06-17/AS2-Sole-G0/4,Arthropoda,Cumacea,1
-06-17/AS2-Sole-G0/4,Annelida,Spionidae,1
-06-17/AS2-Sole-G0/4,Mollusca,Bivalvia,1
-06-17/AS2-Sole-G0/5,Arthropoda,Pseudocumatidae,1
-06-17/AS2-Sole-G0/5,Arthropoda,Ostracoda,1
-06-17/AS2-Sole-G0/5,Annelida,Spionidae,1
-06-17/AS2-Sole-G0/6,Mollusca,Cardiidae,1
-06-17/AS2-Sole-G0/6,Mollusca,Bivalvia,4
-06-17/AS2-Sole-G0/6,Arthropoda,Harpacticoida,1
-06-17/AS2-Sole-G0/6,Annelida,Spionidae,1
-06-17/EM2-Sole-G0/1,Arthropoda,Harpacticoida,1
-06-17/EM2-Sole-G0/1,Mollusca,Bivalvia,3
-06-17/EM2-Sole-G0/1,Arthropoda,Amphipoda,1
-06-17/EM2-Sole-G0/1,Annelida,Spionidae,2
-06-17/EM6-Sole-G0/3,Arthropoda,Harpacticoida,5
-06-17/EM6-Sole-G0/3,Annelida,Nephtys sp,3
-06-17/CC5-FN1-Sole-G0/1,Annelida,Hediste diversicolor,2
-06-17/CC5-FN1-Sole-G0/1,Mollusca,Bivalvia,1
-06-17/CC5-FN1-Sole-G0/1,Arthropoda,Corophium volutator,1
-06-17/CC5-FN1-Sole-G0/2,Annelida,Hediste diversicolor,2
-06-17/CC5-FN1-Sole-G0/2,Arthropoda,Corophium volutator,1
-06-17/CC5-FN1-Sole-G0/3,Annelida,Hediste diversicolor,2
-06-17/CC5-FN1-Sole-G0/3,Arthropoda,Gnathiidae,1
-06-17/CC5-FN1-Sole-G0/3,Arthropoda,Corophium volutator,1
-06-17/CC5-FN1-Sole-G0/4,Annelida,Hediste diversicolor,1
-06-17/CC5-FN1-Sole-G0/4,Arthropoda,Crangon crangon,1
-06-17/CC5-FN1-Sole-G0/5,Annelida,Hediste diversicolor,3
-06-17/CC5-FN1-Sole-G0/5,Arthropoda,Corophium volutator,1
-06-17/CC7-FN5-Sole-G0/1,Annelida,Spionidae,2
-06-17/CC7-FN5-Sole-G0/1,Mollusca,Bivalvia_larve,1
-06-17/CC7-FN5-Sole-G0/1,Annelida,Nephtys sp,3
-06-17/CC7-FN5-Sole-G0/1,Arthropoda,Harpacticoida,1
-06-17/CC7-FN5-Sole-G0/2,Arthropoda,Arthropoda,1
-06-17/CC7-FN5-Sole-G0/2,Annelida,Spionidae,1
-06-17/CC7-FN5-Sole-G0/2,Arthropoda,Harpacticoida,2
-06-17/CC7-FN5-Sole-G0/2,Mollusca,Cerastoderma edule,5
-06-17/CC7-FN5-Sole-G0/2,Arthropoda,Ostracoda,1
-06-17/CC8-FN8-Sole-G0/3,Annelida,Spionidae,1
-06-17/CC8-FN8-Sole-G0/3,Arthropoda,Harpacticoida,24
-06-17/CC8-FN8-Sole-G0/3,Mollusca,Kurtiella bidentata,2
-06-17/CC8-FN8-Sole-G0/3,Arthropoda,Gammarus sp,2
-06-17/CC8-FN8-Sole-G0/3,Arthropoda,Corophium volutator,1
-06-17/CC8-FN8-Sole-G0/3,Annelida,Nephtys sp,1
-06-17/CC8-FN8-Sole-G0/3,Annelida,Polynoidae,1
-06-17/CC8-FN8-Sole-G0/6,Annelida,Polydora ciliata,2
-06-17/FN3-Sole-G0/1,Arthropoda,Crangon crangon,1
-06-17/FN3-Sole-G0/1,Arthropoda,Harpacticoida,1
-06-17/FN3-Sole-G0/1,Mollusca,Cardiidae,1
-06-17/FN3-Sole-G0/1,Annelida,Spionidae,1
-06-17/FN3-Sole-G0/2,Annelida,Spionidae,1
-06-17/FN3-Sole-G0/3,Mollusca,Bivalvia_larve,4
-06-17/FN3-Sole-G0/3,Annelida,Spionidae,1
-06-17/FN3-Sole-G0/3,Annelida,Nephtys sp,1
-06-17/FN4-Sole-G0/1,Arthropoda,Corophium volutator,1
-06-17/FN4-Sole-G0/1,Annelida,Polydora ciliata,1
-06-17/FN4-Sole-G0/3,Annelida,Polydora ciliata,1
-06-17/FN4-Sole-G0/5,Annelida,Polydora ciliata,1
-06-17/FN4-Sole-G0/5,Mollusca,Bivalvia,1
-06-17/FN4-Sole-G0/6,Mollusca,Cardiidae,1
-06-17/FN4-Sole-G0/6,Mollusca,Bivalvia,3
-06-17/FN4-Sole-G0/6,Annelida,Polydora ciliata,1
-06-17/FN5-Sole-G0/1,Annelida,Polydora ciliata,1
-06-17/FN5-Sole-G0/2,Annelida,Polydora ciliata,1
-06-17/FN5-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/FN5-Sole-G0/3,Annelida,Polydora ciliata,1
-06-17/FN9-Sole-G0/1,Arthropoda,Corophium volutator,14
-06-17/FN9-Sole-G0/1,Annelida,Spionidae,1
-06-17/FN9-Sole-G0/2,Arthropoda,Corophium volutator,11
-06-17/FN9-Sole-G0/2,Mollusca,Cerastoderma edule,1
-06-17/FN9-Sole-G0/2,Mollusca,Bivalvia,1
-06-17/FN9-Sole-G0/2,Annelida,Polydora ciliata,2
-06-17/FN9-Sole-G0/3,Arthropoda,Corophium volutator,8
-06-17/FN9-Sole-G0/3,Arthropoda,Ostracoda,1
-06-17/FN9-Sole-G0/3,Annelida,Spionidae,1
-06-17/CC2-FS4-Sole-G0/1,Mollusca,Bivalvia,55
-06-17/CC2-FS4-Sole-G0/1,Annelida,Nephtys sp,1
-06-17/CC2-FS4-Sole-G0/1,Annelida,Aphroditidae,1
-06-17/CC2-FS4-Sole-G0/1,Mollusca,Limecola balthica,1
-06-17/CC2-FS4-Sole-G0/1,Arthropoda,Insecta,1
-06-17/CC2-FS4-Sole-G0/2,Annelida,Pygospio elegans,3
-06-17/CC2-FS4-Sole-G0/2,Annelida,Nephtys sp,2
-06-17/CC2-FS4-Sole-G0/2,Mollusca,Bivalvia,3
-06-17/CC2-FS4-Sole-G0/3,Annelida,Spionidae,1
-06-17/CC2-FS4-Sole-G0/4,Mollusca,Limecola balthica,1
-06-17/CC2-FS4-Sole-G0/4,Mollusca,Bivalvia,1
-06-17/CC2-FS4-Sole-G0/4,Annelida,Pygospio elegans,2
-06-17/CC2-FS4-Sole-G0/5,Annelida,Spionidae,1
-06-17/CC2-FS4-Sole-G0/6,Mollusca,Bivalvia,1
-06-17/CC2-FS4-Sole-G0/6,Arthropoda,Arthropoda,1
-06-17/CC2-FS4-Sole-G0/6,Annelida,Spionidae,1
-06-17/FS2-Sole-G0/2,Annelida,Spionidae,3
-06-17/FS2-Sole-G0/2,Arthropoda,Decapoda,1
-06-17/FS2-Sole-G0/2,Annelida,Polydora ciliata,6
-06-17/FS2-Sole-G0/3,Annelida,Nephtys sp,1
-06-17/FS2-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/FS2-Sole-G0/4,Annelida,Polydora ciliata,4
-06-17/FS2-Sole-G0/5,Mollusca,Phaxas pellucidus,3
-06-17/FS2-Sole-G0/5,Annelida,Polydora ciliata,2
-06-17/FS2-Sole-G0/5,Mollusca,Bivalvia,2
-06-17/FS3-Sole-G0/10,Mollusca,Bivalvia,2
-06-17/FS3-Sole-G0/10,Annelida,Polydora ciliata,2
-06-17/FS3-Sole-G0/10,Arthropoda,Melita hergensis,1
-06-17/FS3-Sole-G0/11,Mollusca,Bivalvia,2
-06-17/FS3-Sole-G0/11,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/11,Mollusca,Bivalvia,1
-06-17/FS3-Sole-G0/12,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/12,Arthropoda,Harpacticoida,4
-06-17/FS3-Sole-G0/13,Mollusca,Bivalvia,2
-06-17/FS3-Sole-G0/13,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/4,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/4,Arthropoda,Harpacticoida,1
-06-17/FS3-Sole-G0/5,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/5,Mollusca,Bivalvia,1
-06-17/FS3-Sole-G0/6,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/7,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/9,Annelida,Polydora ciliata,1
-06-17/FS5-Sole-G0/6,Annelida,Nephtys sp,3
-06-17/FS5-Sole-G0/6,Annelida,Polydora ciliata,1
-09-17/C1-Sole-G0/1,Arthropoda,Corophium volutator,19
-09-17/C1-Sole-G0/1,Annelida,Polydora ciliata,11
-09-17/C1-Sole-G0/2,Arthropoda,Corophium volutator,28
-09-17/C1-Sole-G0/2,Annelida,Polydora ciliata,14
-09-17/C1-Sole-G0/3,Annelida,Polydora ciliata,3
-09-17/C1-Sole-G0/3,Arthropoda,Corophium volutator,6
-09-17/C1-Sole-G0/4,Annelida,Polydora ciliata,13
-09-17/C1-Sole-G0/4,Arthropoda,Corophium volutator,1
-09-17/C1-Sole-G0/4,Annelida,Boccardiella ligerica,1
-09-17/C1-Sole-G0/5,Annelida,Polydora ciliata,19
-09-17/C1-Sole-G0/5,Arthropoda,Corophium volutator,4
-09-17/C1-Sole-G0/5,Annelida,Nereididae,1
-09-17/C1-Sole-G0/6,Annelida,Polydora ciliata,21
-09-17/C1-Sole-G0/6,Arthropoda,Ericthonius punctatus,1
-09-17/C1-Sole-G0/6,Annelida,Boccardiella ligerica,1
-09-17/C1-Sole-G0/6,Arthropoda,Corophium volutator,1
-10-17/C1-Sole-G0/1,Arthropoda,Corophium volutator,9
-10-17/C1-Sole-G0/1,Annelida,Polydora ciliata,16
-10-17/C1-Sole-G0/2,Arthropoda,Corophium volutator,79
-10-17/C1-Sole-G0/2,Annelida,Polydora ciliata,3
-10-17/C1-Sole-G0/2,Mollusca,Bivalvia_larve,1
-10-17/C1-Sole-G0/3,Arthropoda,Corophium volutator,24
-10-17/C1-Sole-G0/3,Annelida,Polydora ciliata,21
-10-17/C1-Sole-G0/3,Arthropoda,Crangon crangon,2
-10-17/C1-Sole-G0/3,Annelida,Boccardiella ligerica,1
-10-17/C2-Sole-G0/1,Arthropoda,Corophium volutator,52
-10-17/C2-Sole-G0/1,Annelida,Polydora ciliata,2
-10-17/C2-Sole-G0/1,Annelida,Boccardiella ligerica,1
-4-10-17/C7-Sole-G0/1,Arthropoda,Corophium volutator,3
-4-10-17/C7-Sole-G0/1,Annelida,Polydora ciliata,49
-4-10-17/C7-Sole-G0/1,Annelida,Pseudopolydora pulchra,1
-4-10-17/C7-Sole-G0/2,Annelida,Polydora ciliata,42
-4-10-17/C7-Sole-G0/2,Mollusca,Kurtiella bidentata,1
-4-10-17/C7-Sole-G0/2,Annelida,Alitta succinea,1
-4-10-17/C7-Sole-G0/2,Arthropoda,Corophium volutator,2
-4-10-17/C7-Sole-G0/2,Annelida,Boccardiella ligerica,1
-4-10-17/C7-Sole-G0/2,Mollusca,Abra alba,2
-4-10-17/C7-Sole-G0/3,Annelida,Polydora ciliata,20
-4-10-17/C7-Sole-G0/3,Annelida,Nereididae,1
-4-10-17/C7-Sole-G0/3,Mollusca,Kurtiella bidentata,1
-4-10-17/C7-Sole-G0/3,Annelida,Phyllodocidae,1
-4-10-17/C7-Sole-G0/3,Arthropoda,Arthropoda,1
-4-10-17/C7-Sole-G0/4,Annelida,Polydora ciliata,51
-4-10-17/C7-Sole-G0/4,Arthropoda,Arthropoda,1
-4-10-17/C7-Sole-G0/4,Mollusca,Kurtiella bidentata,2
-4-10-17/C7-Sole-G0/4,Annelida,Nereididae,1
-4-10-17/C7-Sole-G0/5,Annelida,Polydora ciliata,14
-4-10-17/C7-Sole-G0/5,Annelida,Nereididae,1
-4-10-17/C7-Sole-G0/5,Arthropoda,Arthropoda,1
-4-10-17/C7-Sole-G0/6,Annelida,Polydora ciliata,13
-4-10-17/C7-Sole-G0/6,Arthropoda,Crangon crangon,1
-4-10-17/C7-Sole-G0/7,Annelida,Polydora ciliata,30
-4-10-17/C7-Sole-G0/7,Annelida,Nereididae,1
-4-10-17/C7-Sole-G0/7,Arthropoda,Corophium volutator,1
-4-10-17/C7-Sole-G0/8,Annelida,Polydora ciliata,3
-4-10-17/C7-Sole-G0/8,Annelida,Nereididae,1
-09-17/AN1-Sole-G0/5,Annelida,Nephtys sp,1
-09-17/AN1-Sole-G0/5,Arthropoda,Arthropoda,1
-10-17/AN1-Sole-G0/2,Arthropoda,Diastylis bradyi,1
-10-17/AN1-Sole-G0/2,Annelida,Ampharete lindstroemi,2
-10-17/AN1-Sole-G0/2,Annelida,Nephtys sp,1
-10-17/AN1-Sole-G0/2,Annelida,Owenia fusiformis,1
-10-17/AN1-Sole-G0/2,Annelida,Lanice conchilega,2
-10-17/AN1-Sole-G0/2,Annelida,Melinna palmata,2
-10-17/AN1-Sole-G0/2,Annelida,Polydora ciliata,1
-10-17/AN1-Sole-G0/2,Annelida,Phyllodocidae,1
-10-17/AN1-Sole-G0/2,Arthropoda,Crangon crangon,1
-10-17/AN1-Sole-G0/2,Arthropoda,Brachyura,1
-09-17/AN2-Sole-G0/1,Arthropoda,Crangonidae,1
-09-17/AN2-Sole-G0/1,Annelida,Aphroditiformia,1
-09-17/AN2-Sole-G0/1,Annelida,Ampharetidae,1
-09-17/AN2-Sole-G0/1,Annelida,Spionidae,1
-09-17/AN2-Sole-G0/3,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/1,Arthropoda,Diastylis bradyi,16
-10-17/AN2-Sole-G0/1,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/1,Annelida,Phyllodocidae,1
-10-17/AN2-Sole-G0/1,Arthropoda,Ostracoda,1
-10-17/AN2-Sole-G0/1,Arthropoda,Pariambus typicus,2
-10-17/AN2-Sole-G0/1,Arthropoda,Liocarcinus sp,1
-10-17/AN2-Sole-G0/1,Mollusca,Spisula subtruncata,2
-10-17/AN2-Sole-G0/1,Annelida,Owenia fusiformis,1
-10-17/AN2-Sole-G0/1,Annelida,Pholoe inornata,1
-10-17/AN2-Sole-G0/1,Annelida,Melinna palmata,1
-10-17/AN2-Sole-G0/2,Annelida,Phyllodocidae,1
-10-17/AN2-Sole-G0/2,Arthropoda,Crangon crangon,1
-10-17/AN2-Sole-G0/2,Annelida,Owenia fusiformis,1
-10-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,2
-10-17/AN2-Sole-G0/2,Annelida,Lagis koreni,1
-10-17/AN2-Sole-G0/2,Mollusca,Bivalvia,14
-10-17/AN2-Sole-G0/3,Mollusca,Bivalvia,6
-10-17/AN2-Sole-G0/3,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/3,Arthropoda,Arthropoda,1
-4-10-17/AN2-Sole-G0/4,Annelida,Melinna palmata,2
-4-10-17/AN2-Sole-G0/4,Arthropoda,Copepoda,1
-4-10-17/AN2-Sole-G0/4,Annelida,Polydora ciliata,1
-10-17/AN3-Sole-G0/1,Annelida,Phyllodocidae,1
-10-17/AN3-Sole-G0/1,Arthropoda,Amphipoda,1
-10-17/AN3-Sole-G0/1,Arthropoda,Crangon crangon,3
-10-17/AN3-Sole-G0/1,Arthropoda,Photis longicaudata,1
-10-17/AN3-Sole-G0/1,Annelida,Lagis koreni,1
-10-17/AN3-Sole-G0/1,Arthropoda,Ostracoda,1
-09-17/AN4-Sole-G0/2,Annelida,Pseudopolydora pulchra,2
-09-17/AN4-Sole-G0/2,Arthropoda,Amphipoda,1
-09-17/AN4-Sole-G0/2,Arthropoda,Crangonidae,2
-10-17/AS4-Sole-G0/1b,Arthropoda,Diastylis bradyi,5
-10-17/AS4-Sole-G0/1b,Arthropoda,Pseudocuma (Pseudocuma) longicorne,1
-10-17/AS4-Sole-G0/1b,Annelida,Nephtys sp,1
-10-17/AS4-Sole-G0/1b,Arthropoda,Photis longicaudata,1
-10-17/AS4-Sole-G0/1b,Arthropoda,Crangon crangon,1
-10-17/AS4-Sole-G0/1b,Annelida,Spionidae,1
-10-17/AS4-Sole-G0/1b,Mollusca,Mya sp,1
-10-17/AS4-Sole-G0/2a,Annelida,Owenia fusiformis,1
-10-17/AS4-Sole-G0/2a,Annelida,Nephtys sp,1
-10-17/AS4-Sole-G0/2a,Arthropoda,Diastylis sp,6
-10-17/AS4-Sole-G0/2a,Arthropoda,Pseudocuma (Pseudocuma) longicorne,1
-10-17/AS4-Sole-G0/2b,Annelida,Annelida,1
-10-17/AS4-Sole-G0/2b,Arthropoda,Diastylis bradyi,8
-10-17/AS4-Sole-G0/2b,Arthropoda,Crangon crangon,1
-10-17/AS4-Sole-G0/2b,Mollusca,Bivalvia,1
-10-17/AS4-Sole-G0/5,Arthropoda,Diastylis bradyi,5
-10-17/AS4-Sole-G0/5,Arthropoda,Ostracoda,1
-10-17/AS4-Sole-G0/5,Mollusca,Mya sp,4
-10-17/AS4-Sole-G0/5,Arthropoda,Crangonidae,1
-10-17/AS4-Sole-G0/5,Arthropoda,Perioculodes longimanus,1
-10-17/AS5-sole-G0/3,Arthropoda,Arthropoda,2
-10-17/AS5-sole-G0/3,Arthropoda,Amphipoda,1
-10-17/AS5-sole-G0/3,Annelida,Annelida,1
-10-17/AS5-Sole-G0/5,Annelida,Phyllodocidae,1
-10-17/AS5-Sole-G0/5,Arthropoda,Ostracoda,1
-10-17/AS5-sole-G0/6,Annelida,Phyllodocidae,1
-10-17/AS5-sole-G0/6,Annelida,Annelida,1
-10-17/AS5-sole-G0/6,Annelida,Ampharetidae,1
-10-17/AS5-sole-G0/6,Mollusca,Bivalvia,1
-10-17/AS5-Sole-G0/8,Annelida,Ampharetidae,1
-10-17/AS5-Sole-G0/8,Annelida,Owenia fusiformis,1
-10-17/AS5-Sole-G0/8,Arthropoda,Ostracoda,1
-10-17/AS5-Sole-G0/8,Arthropoda,Leucothoe incisa,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Lagis koreni,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Portunidae,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Crangon crangon,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Ampharetidae,1
-10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Melinna palmata,1
-10-17/CC3-FN5-Sole-G0/1,Annelida,Annelida,1
-10-17/CC3-FN5-Sole-G0/1,Arthropoda,Corophium volutator,1
-10-17/CC3-FN5-Sole-G0/1,Arthropoda,Crangon crangon,2
-10-17/CC3-FN5-Sole-G0/2,Arthropoda,Corophium volutator,20
-10-17/CC3-FN5-Sole-G0/2,Annelida,Polydora ciliata,5
-10-17/CC3-FN5-Sole-G0/2,Annelida,Nephtys sp,1
-10-17/CC3-FN5-Sole-G0/2,Annelida,Hediste diversicolor,1
-10-17/CC3-FN5-Sole-G0/3,Annelida,Polydora ciliata,5
-10-17/CC3-FN5-Sole-G0/4,Mollusca,Bivalvia,1
-10-17/CC3-FN5-Sole-G0/4,Annelida,Polydora ciliata,14
-10-17/CC3-FN5-Sole-G0/4,Arthropoda,Crangon crangon,1
-10-17/CC3-FN5-Sole-G0/4,Arthropoda,Corophium volutator,2
-10-17/CC3-FN5-Sole-G0/5,Annelida,Annelida,1
-10-17/CC3-FN5-Sole-G0/6,Annelida,Nereididae,1
-10-17/CC3-FN5-Sole-G0/6,Mollusca,Bivalvia,1
-10-17/CC5-FN11-Sole-G0/1,Mollusca,Bivalvia,3
-10-17/CC5-FN11-Sole-G0/1,Arthropoda,Corophium volutator,3
-10-17/CC5-FN11-Sole-G0/1,Annelida,Ampharete lindstroemi,1
-10-17/CC5-FN11-Sole-G0/1,Annelida,Hediste diversicolor,1
-10-17/CC5-FN11-Sole-G0/1,Arthropoda,Arthropoda,1
-10-17/CC5-FN11-Sole-G0/1,Annelida,Polydora ciliata,3
-10-17/CC5-FN11-Sole-G0/1,Annelida,Phyllodocidae,1
-4-10-17/FN1-Sole-G0/1,Annelida,Boccardiella ligerica,4
-4-10-17/FN1-Sole-G0/4,Annelida,Hediste diversicolor,2
-4-10-17/FN1-Sole-G0/4,Annelida,Nephtys sp,1
-4-10-17/FN1-Sole-G0/4,Arthropoda,Arthropoda,1
-4-10-17/FN1-Sole-G0/5,Annelida,Hediste diversicolor,2
-4-10-17/FN1-Sole-G0/5,Arthropoda,Crangon crangon,1
-4-10-17/FN1-Sole-G0/5,Arthropoda,Corophium volutator,1
-10-17/FN3-Sole-G0/1,Arthropoda,Crangon crangon,14
-10-17/FN3-Sole-G0/1,Arthropoda,Ampelisca sp,1
-10-17/FN3-Sole-G0/1,Arthropoda,Cyathura carinata,2
-10-17/FN3-Sole-G0/1,Mollusca,Bivalvia,13
-10-17/FN3-Sole-G0/1,Annelida,Hediste diversicolor,4
-10-17/FN3-Sole-G0/1,Arthropoda,Corophium volutator,2
-4-10-17/FN8-Sole-G0/11,Annelida,Nereididae,1
-4-10-17/FN8-Sole-G0/11,Annelida,Polydora ciliata,2
-4-10-17/FN8-Sole-G0/11,Arthropoda,Corophium volutator,2
-4-10-17/FN8-Sole-G0/17,Annelida,Nereididae,1
-4-10-17/FN8-Sole-G0/17,Annelida,Aphroditiformia,1
-4-10-17/FN8-Sole-G0/17,Annelida,Polydora ciliata,16
-4-10-17/FN8-Sole-G0/21,Annelida,Nereididae,1
-4-10-17/FN8-Sole-G0/22,Annelida,Nereididae,1
-4-10-17/FN8-Sole-G0/22,Annelida,Polydora ciliata,3
-4-10-17/FN8-Sole-G0/22,Mollusca,Bivalvia,NA
-4-10-17/FN8-Sole-G0/22,Arthropoda,Crangon crangon,1
-4-10-17/FN8-Sole-G0/22,Arthropoda,Corophium volutator,1
-4-10-17/FN8-Sole-G0/23,Arthropoda,Corophium volutator,4
-4-10-17/FN8-Sole-G0/23,Annelida,Polydora ciliata,3
-4-10-17/FN8-Sole-G0/23,Annelida,Nereididae,1
-4-10-17/FN8-Sole-G0/24,Annelida,Polydora ciliata,1
-4-10-17/FN8-Sole-G0/24,Mollusca,Bivalvia,1
-4-10-17/FN8-Sole-G0/25,Arthropoda,Crangon crangon,3
-4-10-17/FN8-Sole-G0/25,Arthropoda,Corophium volutator,15
-4-10-17/FN8-Sole-G0/25,Annelida,Polydora ciliata,5
-4-10-17/FN8-Sole-G0/25,Annelida,Hediste diversicolor,2
-4-10-17/FN8-Sole-G0/25,Arthropoda,Carcinus maenas,1
-4-10-17/FN8-Sole-G0/25,Annelida,Sabellaria spinulosa,1
-4-10-17/FN8-Sole-G0/25,Arthropoda,Ostracoda,3
-4-10-17/FN8-Sole-G0/26,Annelida,Polydora ciliata,11
-4-10-17/FN8-Sole-G0/26,Arthropoda,Corophium volutator,1
-4-10-17/FN8-Sole-G0/26,Annelida,Spionidae,1
-4-10-17/FN8-Sole-G0/6,Annelida,Nephtys sp,1
-4-10-17/FN8-Sole-G0/6,Annelida,Polydora ciliata,3
-4-10-17/FN8-Sole-G0/6,Arthropoda,Arthropoda,1
-10-17/FN9-Sole-G0/1,Annelida,Hediste diversicolor,1
-10-17/FN9-Sole-G0/1,Arthropoda,Corophium volutator,6
-10-17/FN9-Sole-G0/1,Arthropoda,Cyathura carinata,6
-10-17/FN9-Sole-G0/1,Annelida,Nephtys sp,1
-10-17/FN9-Sole-G0/1,Annelida,Polydora ciliata,1
-10-17/FN9-Sole-G0/1,Arthropoda,eurytemora affinis,2
-10-17/FN9-Sole-G0/1,Arthropoda,Ostracoda,1
-10-17/FN9-Sole-G0/1,Arthropoda,Crangon crangon,1
-4-10-17/FN9-Sole-G0/1,Arthropoda,Corophium volutator,26
-4-10-17/FN9-Sole-G0/1,Arthropoda,Cyathura carinata,1
-10-17/FS0-Sole-G0/1,Annelida,Phyllodocidae,1
-10-17/FS0-Sole-G0/1,Annelida,Nereididae,1
-10-17/FS0-Sole-G0/1,Annelida,Polydora ciliata,4
-3-10-17/FS1-Sole-G0/1,Annelida,Polydora ciliata,2
-3-10-17/FS1-Sole-G0/1,Annelida,Lagis koreni,6
-3-10-17/FS1-Sole-G0/1,Arthropoda,Arthropoda,1
-3-10-17/FS1-Sole-G0/1,Mollusca,Bivalvia,2
-3-10-17/FS1-Sole-G0/2,Annelida,Lagis koreni,5
-3-10-17/FS1-Sole-G0/2,Annelida,Polydora ciliata,3
-3-10-17/FS1-Sole-G0/2,Arthropoda,Crangon crangon,1
-3-10-17/FS1-Sole-G0/3,Annelida,Polydora ciliata,3
-3-10-17/FS1-Sole-G0/3,Annelida,Lagis koreni,3
-3-10-17/FS1-Sole-G0/3,Arthropoda,Crangon crangon,1
-3-10-17/FS1-Sole-G0/3,Annelida,Ampharetidae,1
-3-10-17/FS1-Sole-G0/3,Arthropoda,Ostracoda,1
-3-10-17/FS1-Sole-G0/4,Annelida,Polydora ciliata,1
-10-17/FS3-Sole-G0/1,Annelida,Polydora ciliata,11
-10-17/FS3-Sole-G0/1,Annelida,Nephtys sp,1
-10-17/FS3-Sole-G0/1,Arthropoda,Arthropoda,1
-10-17/FS3-Sole-G0/1,Annelida,Polynoidae,1
-10-17/FS3-Sole-G0/10,Arthropoda,Arthropoda,1
-10-17/FS3-Sole-G0/10,Annelida,Nereididae,3
-10-17/FS3-Sole-G0/10,Annelida,Polydora ciliata,5
-10-17/FS3-Sole-G0/2,Annelida,Polydora ciliata,24
-10-17/FS3-Sole-G0/3,Annelida,Nereididae,1
-10-17/FS3-Sole-G0/3,Annelida,Polydora ciliata,3
-10-17/FS3-Sole-G0/4,Mollusca,Bivalvia,1
-10-17/FS3-Sole-G0/4,Annelida,Polydora ciliata,1
-10-17/FS3-Sole-G0/5,Mollusca,Bivalvia,2
-10-17/FS3-Sole-G0/5,Annelida,Annelida,1
-10-17/FS3-Sole-G0/6,Mollusca,Bivalvia,2
-10-17/FS3-Sole-G0/6,Annelida,Polydora ciliata,4
-10-17/FS3-Sole-G0/6,Arthropoda,Arthropoda,1
-10-17/FS3-Sole-G0/7,Annelida,Polydora ciliata,9
-10-17/FS3-Sole-G0/7,Annelida,Phyllodocidae,1
-10-17/FS3-Sole-G0/7,Arthropoda,Arthropoda,1
-10-17/FS3-Sole-G0/7,Mollusca,Bivalvia,1
-10-17/FS3-Sole-G0/8,Mollusca,Bivalvia,1
-10-17/FS3-Sole-G0/8,Annelida,Hediste diversicolor,1
-3-10-17/FS4-Sole-G0/1,Annelida,Lagis koreni,1
-3-10-17/FS4-Sole-G0/1,Annelida,Nephtys sp,2
-3-10-17/FS4-Sole-G0/1,Annelida,Polynoidae,1
-3-10-17/FS4-Sole-G0/1,Annelida,Polydora ciliata,2
-3-10-17/FS4-Sole-G0/1,Arthropoda,Copepoda,1
-3-10-17/FS4-Sole-G0/1,Arthropoda,Ostracoda,1
-3-10-17/FS4-Sole-G0/1,Mollusca,Bivalvia_larve,1
-3-10-17/FS4-Sole-G0/1,Annelida,Phyllodocidae,1
-10-17/FS5-Sole-G0/1,Annelida,Phyllodocidae,1
-10-17/FS5-Sole-G0/1,Annelida,Polydora ciliata,12
-10-17/FS5-Sole-G0/4,Annelida,Nereididae,1
-10-17/FS5-Sole-G0/4,Annelida,Phyllodocidae,1
-10-17/FS5-Sole-G0/6,Mollusca,Bivalvia,5
-10-17/FS5-Sole-G0/6,Annelida,Polydorinae,1
-3-10-17/FS5-Sole-G0/1,Mollusca,Bivalvia,3
-3-10-17/FS5-Sole-G0/2,Annelida,Spionidae,1
-4-10-17/FN9-Sole-G0/2,Arthropoda,Cyathura carinata,8
-4-10-17/FN9-Sole-G0/2,Arthropoda,Corophium volutator,2
-4-10-17/FN9-Sole-G0/2,Annelida,Arenicola marina,1
-4-10-17/FN9-Sole-G0/2,Annelida,Hediste diversicolor,1
-4-10-17/FN9-Sole-G0/2,Annelida,Nephtys sp,1
-4-10-17/FN9-Sole-G0/2,Annelida,Polydora ciliata,1
-4-10-17/FN9-Sole-G0/2,Annelida,Annelida,1
-4-10-17/FN1-Sole-G0/2,Annelida,Polydora ciliata,1
-4-10-17/FN1-Sole-G0/2,Arthropoda,Bathyporeia sp,1
-4-10-17/FN1-Sole-G0/2,Annelida,Hediste diversicolor,1
-4-10-17/FN1-Sole-G0/3,Annelida,Hediste diversicolor,3
-4-10-17/FN1-Sole-G0/3,Annelida,Nephtys sp,1
-06-17/C2-Sole-G0/2,Annelida,Polydora ciliata,1
-06-17/C2-Sole-G0/2,Arthropoda,Harpacticoida,37
-06-17/C1-Sole-G0/1,Arthropoda,Harpacticoida,123
-06-17/C1-Sole-G0/1,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/2,Annelida,Polydora ciliata,3
-06-17/C1-Sole-G0/2,Arthropoda,Halacaridae,1
-06-17/C1-Sole-G0/3,Arthropoda,Harpacticoida,11
-06-17/C1-Sole-G0/3,Annelida,Polydora ciliata,1
-06-17/C1-Sole-G0/3,Arthropoda,Halacaridae,1
-06-17/C1-Sole-G0/5,Annelida,Polydora ciliata,2
-06-17/C1-Sole-G0/5,Arthropoda,Harpacticoida,163
-06-17/C1-Sole-G0/5,Arthropoda,Halacaridae,2
-06-17/C1-Sole-G0/8,Annelida,Annelida,1
-06-17/C1-Sole-G0/8,Annelida,Boccardiella ligerica,1
-06-17/C1-Sole-G0/9,Annelida,Annelida,1
-06-17/C1-Sole-G0/9,Annelida,Polydora ciliata,5
-06-17/C1-Sole-G0/9,Arthropoda,Harpacticoida,3
-06-17/C1-Sole-G0/11,Annelida,Boccardiella ligerica,2
-06-17/C1-Sole-G0/11,Arthropoda,Corophium volutator,5
-06-17/C1-Sole-G0/11,Arthropoda,Harpacticoida,6
-06-17/C1-Sole-G0/11,Arthropoda,Arthropoda,1
-06-17/C1-Sole-G0/13,Arthropoda,Harpacticoida,2
-06-17/C1-Sole-G0/13,Annelida,Polydora ciliata,6
-06-17/FS0-Sole-G0/2,Annelida,Polydora ciliata,1
-06-17/FS3-Sole-G0/14,Annelida,Polydora ciliata,3
-10-17/CC3-FN5-Sole-G0/16,Arthropoda,Crangon crangon,3
-10-17/CC3-FN5-Sole-G0/16,Annelida,Nephtys sp,1
-10-17/FN5-Sole-G0/2,Arthropoda,Crangon crangon,1
-10-17/FN5-Sole-G0/2,Annelida,Nephtys sp,1
-10-17/CC3-FN5-Sole-G0/15,Arthropoda,Crangon crangon,2
-10-17/CC3-FN5-Sole-G0/15,Annelida,Polydora ciliata,14
-4-10-17/FN5-Sole-G0/4,Annelida,Nephtys sp,1
-4-10-17/FN5-Sole-G0/4,Arthropoda,Harpacticoida,2
-4-10-17/FN5-Sole-G0/4,Arthropoda,Crangon crangon,1
-10-17/FN5-Sole-G0/1,Annelida,Spionidae,1
-10-17/FN5-Sole-G0/1,Arthropoda,Crangon crangon,1
-10-17/CC3-FN5-Sole-G0/7,Arthropoda,Corophium volutator,1
-10-17/CC3-FN5-Sole-G0/7,Annelida,Annelida,1
-10-17/CC3-FN5-Sole-G0/14,Annelida,Nephtys sp,1
-4-10-17/FN5-Sole-G0/3,Annelida,Annelida,1
-4-10-17/FN5-Sole-G0/3,Annelida,Nephtys kersivalensis,1
-10-17/CC3-FN5-Sole-G0/8,Annelida,Nephtys sp,1
-10-17/CC3-FN5-Sole-G0/8,Arthropoda,Arthropoda,1
-10-17/CC3-FN5-Sole-G0/13,Annelida,Polydora ciliata,4
-10-17/CC3-FN5-Sole-G0/13,Annelida,Hediste diversicolor,1
-10-17/CC3-FN5-Sole-G0/13,Arthropoda,Harpacticoida,4
-10-17/CC3-FN5-Sole-G0/13,Arthropoda,Corophiidae,1
-4-10-17/FN5-Sole-G0/2,Annelida,Polydora ciliata,3
-4-10-17/FN5-Sole-G0/1,Annelida,Nephtys sp,1
-4-10-17/FN5-Sole-G0/1,Mollusca,Bivalvia,1
-4-10-17/FN5-Sole-G0/1,Annelida,Polydora ciliata,1
-10-17/CC3-FN5-Sole-G0/10,Annelida,Nephtys sp,1
-10-17/CC3-FN5-Sole-G0/10,Annelida,Glycera sp,1
-10-17/CC3-FN5-Sole-G0/10,Arthropoda,Corophium volutator,3
-10-17/CC3-FN5-Sole-G0/10,Annelida,Polydora ciliata,5
-10-17/CC3-FN5-Sole-G0/10,Arthropoda,Sessilia,1
-10-17/CC3-FN5-Sole-G0/10,Arthropoda,Crangon crangon,1
-06-17/C6-Sole-G0/2,Annelida,Nereididae,1
-06-17/C6-Sole-G0/2,Arthropoda,Sessilia,1
-06-17/C6-Sole-G0/2,Arthropoda,Halacaridae,1
-06-17/C6-Sole-G0/2,Arthropoda,Ostracoda,1
-06-17/C7-Sole-G0/8,Annelida,Polydora ciliata,1
-06-17/C7-Sole-G0/17,Annelida,Polydora ciliata,1
-06-17/C7-Sole-G0/6,Arthropoda,Crangon crangon,1
-06-17/C7-Sole-G0/6,Annelida,Polydora ciliata,1
-06-17/C7-Sole-G0/6,Arthropoda,Ostracoda,1
-06-17/C7-Sole-G0/15,Annelida,Polydora ciliata,6
-06-17/C7-Sole-G0/15,Annelida,Nephtys sp,1
-06-17/C7-Sole-G0/15,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/5,Annelida,Polydora ciliata,6
-06-17/C7-Sole-G0/5,Annelida,Streblospio benedicti,1
-06-17/C7-Sole-G0/14,Annelida,Polydora ciliata,6
-06-17/C7-Sole-G0/12,Annelida,Spionidae,1
-06-17/C7-Sole-G0/12,Annelida,Polydora ciliata,10
-06-17/C7-Sole-G0/12,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/4,Annelida,Polydora ciliata,1
-06-17/C7-Sole-G0/3,Arthropoda,Ostracoda,1
-06-17/C7-Sole-G0/3,Arthropoda,Sessilia,2
-06-17/C7-Sole-G0/3,Annelida,Polydora ciliata,4
-06-17/C7-Sole-G0/3,Mollusca,Nucula sp,1
-06-17/C7-Sole-G0/3,Arthropoda,Sessilia_larva,1
-06-17/C7-Sole-G0/1,Annelida,Polydora ciliata,3
-06-17/C7-Sole-G0/11,Annelida,Polydora ciliata,24
-06-17/C7-Sole-G0/11,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/10,Annelida,Polydora ciliata,4
-06-17/C7-Sole-G0/10,Arthropoda,Sessilia,1
-06-17/C7-Sole-G0/2,Annelida,Polydora ciliata,4
-06-17/C7-Sole-G0/2,Annelida,Nereididae,1
-06-17/C7-Sole-G0/9,Annelida,Polydora ciliata,5
-10-17/FS3bis-Sole-G0/7,Mollusca,Cerastoderma edule,18
-10-17/FS3bis-Sole-G0/7,Mollusca,Bivalvia,10
-3-10-17/FS3-Sole-G0/2,Annelida,Nereididae,1
-3-10-17/FS3-Sole-G0/2,Mollusca,Bivalvia,1
-10-17/FS3bis-Sole-G0/12,Annelida,Polydora ciliata,21
-10-17/FS3bis-Sole-G0/12,Mollusca,Cerastoderma edule,2
-10-17/FS3bis-Sole-G0/12,Arthropoda,Harpacticoida,2
-10-17/FS3bis-Sole-G0/1,Mollusca,Bivalvia,4
-10-17/FS3bis-Sole-G0/1,Annelida,Eunereis longissima,1
-10-17/FS3bis-Sole-G0/1,Annelida,Polydora ciliata,1
-3-10-17/FS3-Sole-G0/1,Mollusca,Bivalvia,18
-3-10-17/FS3-Sole-G0/1,Annelida,Polydora ciliata,4
-3-10-17/FS3-Sole-G0/1,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/2,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/4,Annelida,Nereididae,3
-10-17/FS3bis-Sole-G0/4,Mollusca,Bivalvia,1
-10-17/FS3bis-Sole-G0/4,Annelida,Polydora ciliata,2
-10-17/FS3bis-Sole-G0/5,Annelida,Polydora ciliata,3
-10-17/FS3bis-Sole-G0/5,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/18,Mollusca,Bivalvia,24
-10-17/FS3bis-Sole-G0/18,Annelida,Polydora ciliata,4
-10-17/FS3bis-Sole-G0/3,Mollusca,Bivalvia,6
-10-17/FS3bis-Sole-G0/3,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/19,Annelida,Polydora ciliata,9
-10-17/FS3bis-Sole-G0/19,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/20,Annelida,Polydora ciliata,1
-10-17/FS3bis-Sole-G0/20,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/20,Mollusca,Bivalvia,7
-10-17/FS3bis-Sole-G0/6,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/13,Mollusca,Bivalvia,3
-10-17/FS3bis-Sole-G0/21,Mollusca,Bivalvia,7
-10-17/FS3bis-Sole-G0/21,Annelida,Polydora ciliata,1
-10-17/FS3bis-Sole-G0/21,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/8,Annelida,Polydora ciliata,6
-10-17/FS3bis-Sole-G0/10,Annelida,Polydora ciliata,7
-10-17/FS3bis-Sole-G0/10,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/25,Annelida,Nereididae,2
-10-17/FS3bis-Sole-G0/25,Annelida,Nephtys kersivalensis,1
-10-17/FS3bis-Sole-G0/25,Arthropoda,Crangon crangon,1
-10-17/FS3bis-Sole-G0/25,Annelida,Polydora ciliata,2
-10-17/FS3bis-Sole-G0/16,Mollusca,Bivalvia,19
-10-17/FS3bis-Sole-G0/16,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/17,Annelida,Nereididae,1
-10-17/FS3bis-Sole-G0/17,Mollusca,Bivalvia,23
-10-17/AN1-Sole-G0/1,Annelida,Nephtys sp,1
-10-17/AN1-Sole-G0/1,Annelida,Owenia fusiformis,1
-10-17/AN1-Sole-G0/1,Annelida,Polydora ciliata,1
-06-17/FN8-Sole-G0/2,Mollusca,Gastropoda,1
-06-17/FN8-Sole-G0/2,Annelida,Spionidae,2
-06-17/FN8-Sole-G0/2,Arthropoda,Gastrosaccus spinifer,1
-06-17/FN8-Sole-G0/2,Arthropoda,Mysidae,1
-06-17/FN8-Sole-G0/2,Arthropoda,Ostracoda,1
-06-17/FN8-Sole-G0/2,Mollusca,Cerastoderma edule,1
-06-17/FN8-Sole-G0/2,Arthropoda,Copepoda,1
-06-17/FN8-Sole-G0/1,Arthropoda,Pontocrates sp,1
-06-17/FN8-Sole-G0/1,Annelida,Spionidae,1
-06-17/FN8-Sole-G0/1,Arthropoda,Sessilia,2
-06-17/FN8-Sole-G0/1,Arthropoda,Harpacticoida,7
-06-17/CC8-FN8-Sole-G0/5,Mollusca,Cerastoderma edule,11
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Pariambus typicus,1
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Diogenes pugilator,1
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Diastylis sp,1
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Stenothoe marina,1
-06-17/CC8-FN8-Sole-G0/5,Annelida,Spionidae,1
-06-17/CC8-FN8-Sole-G0/5,Annelida,Polynoidae,1
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Harpacticoida,1
-06-17/CC8-FN8-Sole-G0/5,Arthropoda,Amphipoda,1
-06-17/CC8-FN8-Sole-G0/2,Annelida,Polydora ciliata,5
-06-17/CC8-FN8-Sole-G0/7,Annelida,Polydora ciliata,4
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Harpacticoida,4
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Sessilia,7
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Crangon crangon,1
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Amphipoda,1
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Copepoda,1
-06-17/CC8-FN8-Sole-G0/7,Arthropoda,Ostracoda,2
-06-17/CC8-FN8-Sole-G0/7,Mollusca,Bivalvia,1
-06-17/FS5-Sole-G0/4,Annelida,Nephtys sp,1
-06-17/FS5-Sole-G0/4,Annelida,Spionidae,1
-06-17/FS5-Sole-G0/4,Arthropoda,Arthropoda,1
-10-17/AN2-Sole-G0/4,Arthropoda,Crangon crangon,2
-10-17/AN2-Sole-G0/4,Annelida,Owenia fusiformis,7
-10-17/AN2-Sole-G0/4,Arthropoda,Diastylis sp,3
-10-17/AN2-Sole-G0/4,Annelida,Ampharetidae,1
-10-17/AN2-Sole-G0/7,Annelida,Owenia fusiformis,2
-10-17/AN2-Sole-G0/7,Annelida,Lanice conchilega,3
-10-17/AN2-Sole-G0/7,Mollusca,Bivalvia,2
-10-17/AS4-Sole-G0/1a,Arthropoda,Caridea,1
-10-17/AS4-Sole-G0/1a,Arthropoda,Diastylis sp,3
-10-17/AS4-Sole-G0/1a,Annelida,Nephtys sp,1
-10-17/AN2-Sole-G0/5,Annelida,Lanice conchilega,1
-09-17/AN3-Sole-G0/4,Annelida,Magelona sp,1
-09-17/AN3-Sole-G0/4,Arthropoda,Crangon crangon,1
-09-17/AN3-Sole-G0/4,Mollusca,Nucula nitidosa,1
-09-17/AN3-Sole-G0/4,Arthropoda,Ostracoda,4
-09-17/AN3-Sole-G0/4,Annelida,Nephtys sp,1
-09-17/AN3-Sole-G0/4,Annelida,Spionidae,1
-09-17/AN3-Sole-G0/4,Annelida,Polydora ciliata,23
-09-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,2
-09-17/AN2-Sole-G0/2,Arthropoda,Crangon crangon,1
-09-17/AN2-Sole-G0/2,Annelida,Annelida,1
-09-17/AN2-Sole-G0/2,Annelida,Spionidae,1
-10-17/AN2-Sole-G0/6,Mollusca,Bivalvia,24
-10-17/AN2-Sole-G0/6,Annelida,Annelida,1
-10-17/AS5-Sole-G0/4,Mollusca,Bivalvia,16
-09-17/AN1-Sole-G0/1,Arthropoda,Monocorophium insidiosum,1
-06-17/FN8-Sole-G0/4,Annelida,Spionidae,4
-06-17/FN8-Sole-G0/4,Mollusca,Cerastoderma edule,8
-06-17/FN8-Sole-G0/4,Arthropoda,Gastrosaccus spinifer,2
-06-17/FN8-Sole-G0/4,Arthropoda,Sessilia,1
-06-17/FN8-Sole-G0/4,Arthropoda,Ostracoda,1
-06-17/CC8-FN8-Sole-G0/10,Annelida,Spionidae,1
-06-17/CC8-FN8-Sole-G0/10,Arthropoda,Harpacticoida,51
-06-17/CC8-FN8-Sole-G0/10,Mollusca,Kurtiella bidentata,1
-06-17/CC8-FN8-Sole-G0/10,Arthropoda,Ostracoda,2
-06-17/CC8-FN8-Sole-G0/10,Mollusca,Bivalvia,8
-06-17/CC8-FN8-Sole-G0/10,Annelida,Polynoidae,1
-06-17/CC8-FN8-Sole-G0/10,Arthropoda,Pariambus typicus,2
-06-17/CC1-FS5-Sole-G0/3,Mollusca,Cerastoderma edule,1
-06-17/CC1-FS5-Sole-G0/3,Annelida,Spionidae,1
-06-17/CC1-FS5-Sole-G0/4,Annelida,Spionidae,1
-06-17/CC1-FS5-Sole-G0/4,Arthropoda,Copepoda,1
-06-17/CC1-FS5-Sole-G0/5,Annelida,Polydora ciliata,9
-06-17/CC1-FS5-Sole-G0/5,Arthropoda,Harpacticoida,1
-06-17/CC1-FS5-Sole-G0/6,Annelida,Polydora ciliata,11
-06-17/CC1-FS5-Sole-G0/17,Annelida,Polydora ciliata,1
-06-17/FN8-Sole-G0/5,Arthropoda,Gastrosaccus spinifer,1
-06-17/FN8-Sole-G0/5,Annelida,Pygospio elegans,2
-06-17/FN8-Sole-G0/5,Arthropoda,Harpacticoida,4
-06-17/FN8-Sole-G0/5,Arthropoda,Ostracoda,2
-06-17/FN8-Sole-G0/5,Mollusca,Bivalvia,1
-06-17/FN8-Sole-G0/5,Arthropoda,Sessilia,1
-06-17/FN8-Sole-G0/7,Annelida,Pygospio elegans,1
-06-17/FN8-Sole-G0/7,Arthropoda,Harpacticoida,6
-06-17/FN8-Sole-G0/7,Mollusca,Mactridae,6
-06-17/FN8-Sole-G0/7,Arthropoda,Diastylis sp,1
-06-17/FN8-Sole-G0/3,Annelida,Pygospio elegans,1
-06-17/FN8-Sole-G0/3,Mollusca,Mactridae,8
-06-17/FN8-Sole-G0/3,Mollusca,Bivalvia,1
-06-17/FN8-Sole-G0/3,Arthropoda,Harpacticoida,1
-06-17/FN8-Sole-G0/3,Arthropoda,Sessilia,1
-06-17/FN8-Sole-G0/3,Arthropoda,Ostracoda,1
+Fish_TAG,Faunistic_grp,Class,ScientificName_accepted,N_tot_in_tractus
+06-17/C1-sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+06-17/C1-sole-G0/10,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/C1-Sole-G0/12,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C1-Sole-G0/12,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/C1-Sole-G0/12,Arthropoda,Hexanauplia,Harpacticoida,107
+06-17/C1-Sole-G0/15,Arthropoda,Hexanauplia,Harpacticoida,20
+06-17/C1-Sole-G0/15,Arthropoda,Malacostraca,Amphipoda,1
+06-17/C1-Sole-G0/15,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C1-Sole-G0/15,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/16,Annelida,Polychaeta errantia,Hediste diversicolor,1
+06-17/C1-Sole-G0/16,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/C1-Sole-G0/16,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/C1-Sole-G0/17,Arthropoda,Hexanauplia,Harpacticoida,144
+06-17/C1-Sole-G0/17,Arthropoda,Malacostraca,Corophium volutator,5
+06-17/C1-Sole-G0/17,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C1-Sole-G0/18,Arthropoda,Hexanauplia,Harpacticoida,129
+06-17/C1-Sole-G0/18,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/19,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/C1-Sole-G0/19,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+06-17/C1-Sole-G0/19,Arthropoda,Malacostraca,Corophium volutator,4
+06-17/C1-Sole-G0/20,Arthropoda,Hexanauplia,Harpacticoida,66
+06-17/C1-Sole-G0/20,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/C1-Sole-G0/20,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+06-17/C1-Sole-G0/21,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/22,Arthropoda,Hexanauplia,Harpacticoida,16
+06-17/C1-Sole-G0/22,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/6,Arthropoda,Malacostraca,Corophium volutator,10
+06-17/C1-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/C1-Sole-G0/6,Arthropoda,Hexanauplia,Harpacticoida,4
+06-17/C1-Sole-G0/6,Mollusca,Bivalvia,Bivalvia_larve,2
+06-17/C2-Sole-G0/3,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C2-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,3
+06-17/C2-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,86
+06-17/C2-Sole-G0/3,Annelida,Polychaeta errantia,Polynoidae,1
+06-17/C3-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/C3-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+06-17/C6-Sole-G0/1,Mollusca,Bivalvia,Cardiidae,1
+06-17/C6-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,4
+06-17/C6-Sole-G0/1,Mollusca,Bivalvia,Phaxas pellucidus,1
+06-17/C6-Sole-G0/1,Annelida,Polychaeta errantia,Polynoidae,1
+06-17/C7-Sole-G0/13,Arthropoda,Malacostraca,Amphipoda,1
+06-17/C7-Sole-G0/13,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C7-Sole-G0/13,Mollusca,Bivalvia,Bivalvia,1
+06-17/C7-Sole-G0/7,Arthropoda,Ostracoda,Ostracoda,1
+06-17/C7-Sole-G0/7,Mollusca,Bivalvia,Cardiidae,1
+06-17/C7-Sole-G0/7,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/C7-Sole-G0/7,Arthropoda,Malacostraca,Amphipoda,1
+06-17/CF5-C6-Sole-G0/1,Annelida,Annelida sp.,Annelida sp.,1
+06-17/CF5-C6-Sole-G0/2,Mollusca,Bivalvia,Bivalvia,1
+06-17/CF5-C6-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+06-17/CF5-C6-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/CF5-C6-Sole-G0/4,Annelida,Annelida sp.,Annelida sp.,1
+06-17/CF5-C6-Sole-G0/5,Annelida,Annelida sp.,Annelida sp.,1
+06-17/AN2-Sole-G0/10,Mollusca,Bivalvia,Bivalvia,3
+06-17/AN2-Sole-G0/10,Mollusca,Bivalvia,Bivalvia,2
+06-17/AN2-Sole-G0/10,Mollusca,Bivalvia,Veneridae,6
+06-17/AN2-Sole-G0/10,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/AN2-Sole-G0/11,Mollusca,Bivalvia,Cardiidae,1
+06-17/AN2-Sole-G0/11,Arthropoda,Ostracoda,Ostracoda,2
+06-17/AN2-Sole-G0/11,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/12,Mollusca,Bivalvia,Cardiidae,1
+06-17/AN2-Sole-G0/12,Mollusca,Bivalvia,Pharidae,1
+06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,Bivalvia,2
+06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,Cardiidae,1
+06-17/AN2-Sole-G0/13,Arthropoda,Malacostraca,Diastylis sp,1
+06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,Pharidae,2
+06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,Mactridae,1
+06-17/AN2-Sole-G0/13,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,Bivalvia,2
+06-17/AN2-Sole-G0/14,Arthropoda,Malacostraca,Nototropis falcatus,1
+06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,Kurtiella bidentata,1
+06-17/AN2-Sole-G0/14,Arthropoda,Ostracoda,Ostracoda,1
+06-17/AN2-Sole-G0/14,Mollusca,Bivalvia,Veneridae,1
+06-17/AN2-Sole-G0/48,Mollusca,Bivalvia,Kurtiella bidentata,5
+06-17/AN2-Sole-G0/48,Mollusca,Bivalvia,Bivalvia,10
+06-17/AN2-Sole-G0/48,Arthropoda,Malacostraca,Arthropoda,1
+06-17/AN2-Sole-G0/48,Annelida,Polychaeta sedentaria,Spionidae,2
+06-17/AN2-Sole-G0/49,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/AN2-Sole-G0/49,Mollusca,Bivalvia,Bivalvia,2
+06-17/AN2-Sole-G0/50,Mollusca,Bivalvia,Bivalvia,8
+06-17/AN2-Sole-G0/50,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/AN2-Sole-G0/50,Arthropoda,Malacostraca,Diastylis sp,4
+06-17/AN2-Sole-G0/50,Arthropoda,Ostracoda,Ostracoda,1
+06-17/AN2-Sole-G0/51,Arthropoda,Hexanauplia,Harpacticoida,5
+06-17/AN2-Sole-G0/51,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AN2-Sole-G0/52,Mollusca,Bivalvia,Bivalvia,10
+06-17/AN2-Sole-G0/52,Mollusca,Bivalvia,Cerastoderma edule,2
+06-17/AN2-Sole-G0/52,Mollusca,Bivalvia,Kurtiella bidentata,3
+06-17/AN2-Sole-G0/54,Mollusca,Bivalvia,Bivalvia,14
+06-17/AN2-Sole-G0/54,Mollusca,Bivalvia,Abra alba,8
+06-17/AN2-Sole-G0/54,Arthropoda,Maxillopoda,Balanidae,1
+06-17/AN2-Sole-G0/54,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AN2-Sole-G0/55,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/55,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/AN2-Sole-G0/57,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/57,Mollusca,Bivalvia,Abra alba,9
+06-17/AN2-Sole-G0/57,Mollusca,Bivalvia,Cerastoderma edule,1
+06-17/AN2-Sole-G0/58,Mollusca,Bivalvia,Cerastoderma edule,1
+06-17/AN2-Sole-G0/58,Mollusca,Bivalvia,Abra alba,1
+06-17/AN2-Sole-G0/58,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/AN2-Sole-G0/59,Arthropoda,Malacostraca,Arthropoda,1
+06-17/AN2-Sole-G0/59,Annelida,Annelida sp.,Annelida sp.,1
+06-17/AN2-Sole-G0/59,Arthropoda,Ostracoda,Ostracoda,1
+06-17/AN2-Sole-G0/59,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AN2-Sole-G0/62,Annelida,Polychaeta sedentaria,Spionidae,2
+06-17/AN2-Sole-G0/62,Arthropoda,Malacostraca,Diastylis sp,1
+06-17/AN2-Sole-G0/62,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/AN2-Sole-G0/62,Arthropoda,Ostracoda,Ostracoda,1
+06-17/AN2-Sole-G0/62,Mollusca,Bivalvia,Phaxas pellucidus,1
+06-17/AN2-Sole-G0/62,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/AN2-Sole-G0/8,Mollusca,Bivalvia,Bivalvia,1
+06-17/AN2-Sole-G0/8,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/AN2-Sole-G0/8,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AN2-Sole-G0/9,Annelida,Polychaeta sedentaria,Sabellidae,1
+06-17/AN2-Sole-G0/9,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/AN2-Sole-G0/9,Mollusca,Bivalvia,Veneridae,5
+06-17/AN2-Sole-G0/9,Mollusca,Bivalvia,Pharidae,2
+06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,2
+06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,1
+06-17/AS2-Sole-G0/3,Arthropoda,Arachnida,Acari,1
+06-17/AS2-Sole-G0/3,Arthropoda,Malacostraca,Pontocrates altamarinus,3
+06-17/AS2-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AS2-Sole-G0/3,Arthropoda,Maxillopoda,Balanidae,1
+06-17/AS2-Sole-G0/3,Arthropoda,Ostracoda,Ostracoda,2
+06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,1
+06-17/AS2-Sole-G0/3,Mollusca,Bivalvia,Mactridae,3
+06-17/AS2-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/AS2-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/AS2-Sole-G0/4,Arthropoda,Malacostraca,Cumacea,1
+06-17/AS2-Sole-G0/4,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AS2-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,1
+06-17/AS2-Sole-G0/5,Arthropoda,Malacostraca,Pseudocumatidae,1
+06-17/AS2-Sole-G0/5,Arthropoda,Ostracoda,Ostracoda,1
+06-17/AS2-Sole-G0/5,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/AS2-Sole-G0/6,Mollusca,Bivalvia,Cardiidae,1
+06-17/AS2-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,4
+06-17/AS2-Sole-G0/6,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/AS2-Sole-G0/6,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/EM2-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/EM2-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,3
+06-17/EM2-Sole-G0/1,Arthropoda,Malacostraca,Amphipoda,1
+06-17/EM2-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,2
+06-17/EM6-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,5
+06-17/EM6-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,3
+06-17/CC5-FN1-Sole-G0/1,Annelida,Polychaeta errantia,Hediste diversicolor,2
+06-17/CC5-FN1-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,1
+06-17/CC5-FN1-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/CC5-FN1-Sole-G0/2,Annelida,Polychaeta errantia,Hediste diversicolor,2
+06-17/CC5-FN1-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/CC5-FN1-Sole-G0/3,Annelida,Polychaeta errantia,Hediste diversicolor,2
+06-17/CC5-FN1-Sole-G0/3,Arthropoda,Malacostraca,Gnathiidae,1
+06-17/CC5-FN1-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/CC5-FN1-Sole-G0/4,Annelida,Polychaeta errantia,Hediste diversicolor,1
+06-17/CC5-FN1-Sole-G0/4,Arthropoda,Malacostraca,Crangon crangon,1
+06-17/CC5-FN1-Sole-G0/5,Annelida,Polychaeta errantia,Hediste diversicolor,3
+06-17/CC5-FN1-Sole-G0/5,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/CC7-FN5-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,2
+06-17/CC7-FN5-Sole-G0/1,Mollusca,Bivalvia,Bivalvia_larve,1
+06-17/CC7-FN5-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,3
+06-17/CC7-FN5-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/CC7-FN5-Sole-G0/2,Arthropoda,Malacostraca,Arthropoda,1
+06-17/CC7-FN5-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC7-FN5-Sole-G0/2,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/CC7-FN5-Sole-G0/2,Mollusca,Bivalvia,Cerastoderma edule,5
+06-17/CC7-FN5-Sole-G0/2,Arthropoda,Ostracoda,Ostracoda,1
+06-17/CC8-FN8-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC8-FN8-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,24
+06-17/CC8-FN8-Sole-G0/3,Mollusca,Bivalvia,Kurtiella bidentata,2
+06-17/CC8-FN8-Sole-G0/3,Arthropoda,Malacostraca,Gammarus sp,2
+06-17/CC8-FN8-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/CC8-FN8-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/CC8-FN8-Sole-G0/3,Annelida,Polychaeta errantia,Polynoidae,1
+06-17/CC8-FN8-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/FN3-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,1
+06-17/FN3-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/FN3-Sole-G0/1,Mollusca,Bivalvia,Cardiidae,1
+06-17/FN3-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FN3-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FN3-Sole-G0/3,Mollusca,Bivalvia,Bivalvia_larve,4
+06-17/FN3-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FN3-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/FN4-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,1
+06-17/FN4-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN4-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN4-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN4-Sole-G0/5,Mollusca,Bivalvia,Bivalvia,1
+06-17/FN4-Sole-G0/6,Mollusca,Bivalvia,Cardiidae,1
+06-17/FN4-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,3
+06-17/FN4-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN5-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN5-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN5-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,1
+06-17/FN5-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,14
+06-17/FN9-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FN9-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,11
+06-17/FN9-Sole-G0/2,Mollusca,Bivalvia,Cerastoderma edule,1
+06-17/FN9-Sole-G0/2,Mollusca,Bivalvia,Bivalvia,1
+06-17/FN9-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/FN9-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,8
+06-17/FN9-Sole-G0/3,Arthropoda,Ostracoda,Ostracoda,1
+06-17/FN9-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC2-FS4-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,55
+06-17/CC2-FS4-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/CC2-FS4-Sole-G0/1,Annelida,Polychaeta errantia,Aphroditidae,1
+06-17/CC2-FS4-Sole-G0/1,Mollusca,Bivalvia,Limecola balthica,1
+06-17/CC2-FS4-Sole-G0/2,Annelida,Polychaeta sedentaria,Pygospio elegans,3
+06-17/CC2-FS4-Sole-G0/2,Annelida,Polychaeta errantia,Nephtys sp,2
+06-17/CC2-FS4-Sole-G0/2,Mollusca,Bivalvia,Bivalvia,3
+06-17/CC2-FS4-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC2-FS4-Sole-G0/4,Mollusca,Bivalvia,Limecola balthica,1
+06-17/CC2-FS4-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,1
+06-17/CC2-FS4-Sole-G0/4,Annelida,Polychaeta sedentaria,Pygospio elegans,2
+06-17/CC2-FS4-Sole-G0/5,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC2-FS4-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,1
+06-17/CC2-FS4-Sole-G0/6,Arthropoda,Malacostraca,Arthropoda,1
+06-17/CC2-FS4-Sole-G0/6,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FS2-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,3
+06-17/FS2-Sole-G0/2,Arthropoda,Malacostraca,Decapoda,1
+06-17/FS2-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+06-17/FS2-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/FS2-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,1
+06-17/FS2-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/FS2-Sole-G0/5,Mollusca,Bivalvia,Phaxas pellucidus,3
+06-17/FS2-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/FS2-Sole-G0/5,Mollusca,Bivalvia,Bivalvia,2
+06-17/FS3-Sole-G0/10,Mollusca,Bivalvia,Bivalvia,2
+06-17/FS3-Sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/FS3-Sole-G0/10,Arthropoda,Malacostraca,Melita hergensis,1
+06-17/FS3-Sole-G0/11,Mollusca,Bivalvia,Bivalvia,2
+06-17/FS3-Sole-G0/11,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/11,Mollusca,Bivalvia,Bivalvia,1
+06-17/FS3-Sole-G0/12,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/12,Arthropoda,Hexanauplia,Harpacticoida,4
+06-17/FS3-Sole-G0/13,Mollusca,Bivalvia,Bivalvia,2
+06-17/FS3-Sole-G0/13,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/4,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/FS3-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/5,Mollusca,Bivalvia,Bivalvia,1
+06-17/FS3-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/7,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/9,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS5-Sole-G0/6,Annelida,Polychaeta errantia,Nephtys sp,3
+06-17/FS5-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+09-17/C1-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,19
+09-17/C1-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,11
+09-17/C1-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,28
+09-17/C1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,14
+09-17/C1-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+09-17/C1-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,6
+09-17/C1-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,13
+09-17/C1-Sole-G0/4,Arthropoda,Malacostraca,Corophium volutator,1
+09-17/C1-Sole-G0/4,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+09-17/C1-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,19
+09-17/C1-Sole-G0/5,Arthropoda,Malacostraca,Corophium volutator,4
+09-17/C1-Sole-G0/5,Annelida,Polychaeta errantia,Nereididae,1
+09-17/C1-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,21
+09-17/C1-Sole-G0/6,Arthropoda,Malacostraca,Ericthonius punctatus,1
+09-17/C1-Sole-G0/6,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+09-17/C1-Sole-G0/6,Arthropoda,Malacostraca,Corophium volutator,1
+10-17/C1-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,9
+10-17/C1-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,16
+10-17/C1-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,79
+10-17/C1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+10-17/C1-Sole-G0/2,Mollusca,Bivalvia,Bivalvia_larve,1
+10-17/C1-Sole-G0/3,Arthropoda,Malacostraca,Corophium volutator,24
+10-17/C1-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,21
+10-17/C1-Sole-G0/3,Arthropoda,Malacostraca,Crangon crangon,2
+10-17/C1-Sole-G0/3,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+10-17/C2-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,52
+10-17/C2-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+10-17/C2-Sole-G0/1,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+4-10-17/C7-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,3
+4-10-17/C7-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,49
+4-10-17/C7-Sole-G0/1,Annelida,Polychaeta sedentaria,Pseudopolydora pulchra,1
+4-10-17/C7-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,42
+4-10-17/C7-Sole-G0/2,Mollusca,Bivalvia,Kurtiella bidentata,1
+4-10-17/C7-Sole-G0/2,Annelida,Polychaeta errantia,Alitta succinea,1
+4-10-17/C7-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,2
+4-10-17/C7-Sole-G0/2,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+4-10-17/C7-Sole-G0/2,Mollusca,Bivalvia,Abra alba,2
+4-10-17/C7-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,20
+4-10-17/C7-Sole-G0/3,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/C7-Sole-G0/3,Mollusca,Bivalvia,Kurtiella bidentata,1
+4-10-17/C7-Sole-G0/3,Annelida,Polychaeta errantia,Phyllodocidae,1
+4-10-17/C7-Sole-G0/3,Arthropoda,Malacostraca,Arthropoda,1
+4-10-17/C7-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,51
+4-10-17/C7-Sole-G0/4,Arthropoda,Malacostraca,Arthropoda,1
+4-10-17/C7-Sole-G0/4,Mollusca,Bivalvia,Kurtiella bidentata,2
+4-10-17/C7-Sole-G0/4,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/C7-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,14
+4-10-17/C7-Sole-G0/5,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/C7-Sole-G0/5,Arthropoda,Malacostraca,Arthropoda,1
+4-10-17/C7-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,13
+4-10-17/C7-Sole-G0/6,Arthropoda,Malacostraca,Crangon crangon,1
+4-10-17/C7-Sole-G0/7,Annelida,Polychaeta sedentaria,Polydora ciliata,30
+4-10-17/C7-Sole-G0/7,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/C7-Sole-G0/7,Arthropoda,Malacostraca,Corophium volutator,1
+4-10-17/C7-Sole-G0/8,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+4-10-17/C7-Sole-G0/8,Annelida,Polychaeta errantia,Nereididae,1
+09-17/AN1-Sole-G0/5,Annelida,Polychaeta errantia,Nephtys sp,1
+09-17/AN1-Sole-G0/5,Arthropoda,Malacostraca,Arthropoda,1
+10-17/AN1-Sole-G0/2,Arthropoda,Malacostraca,Diastylis bradyi,1
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Ampharete lindstroemi,2
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Lanice conchilega,2
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Melinna palmata,2
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/AN1-Sole-G0/2,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AN1-Sole-G0/2,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/AN1-Sole-G0/2,Arthropoda,Malacostraca,Brachyura,1
+09-17/AN2-Sole-G0/1,Arthropoda,Malacostraca,Crangonidae,1
+09-17/AN2-Sole-G0/1,Annelida,Polychaeta errantia,Aphroditiformia,1
+09-17/AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Ampharetidae,1
+09-17/AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,1
+09-17/AN2-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN2-Sole-G0/1,Arthropoda,Malacostraca,Diastylis bradyi,16
+10-17/AN2-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN2-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AN2-Sole-G0/1,Arthropoda,Ostracoda,Ostracoda,1
+10-17/AN2-Sole-G0/1,Arthropoda,Malacostraca,Pariambus typicus,2
+10-17/AN2-Sole-G0/1,Arthropoda,Malacostraca,Liocarcinus sp,1
+10-17/AN2-Sole-G0/1,Mollusca,Bivalvia,Spisula subtruncata,2
+10-17/AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AN2-Sole-G0/1,Annelida,Polychaeta errantia,Pholoe inornata,1
+10-17/AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Melinna palmata,1
+10-17/AN2-Sole-G0/2,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AN2-Sole-G0/2,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/AN2-Sole-G0/2,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,Ostracoda,2
+10-17/AN2-Sole-G0/2,Annelida,Polychaeta sedentaria,Lagis koreni,1
+10-17/AN2-Sole-G0/2,Mollusca,Bivalvia,Bivalvia,14
+10-17/AN2-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,6
+10-17/AN2-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN2-Sole-G0/3,Arthropoda,Malacostraca,Arthropoda,1
+4-10-17/AN2-Sole-G0/4,Annelida,Polychaeta sedentaria,Melinna palmata,2
+4-10-17/AN2-Sole-G0/4,Arthropoda,Hexanauplia,Copepoda,1
+4-10-17/AN2-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/AN3-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AN3-Sole-G0/1,Arthropoda,Malacostraca,Amphipoda,1
+10-17/AN3-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,3
+10-17/AN3-Sole-G0/1,Arthropoda,Malacostraca,Photis longicaudata,1
+10-17/AN3-Sole-G0/1,Annelida,Polychaeta sedentaria,Lagis koreni,1
+10-17/AN3-Sole-G0/1,Arthropoda,Ostracoda,Ostracoda,1
+09-17/AN4-Sole-G0/2,Annelida,Polychaeta sedentaria,Pseudopolydora pulchra,2
+09-17/AN4-Sole-G0/2,Arthropoda,Malacostraca,Amphipoda,1
+09-17/AN4-Sole-G0/2,Arthropoda,Malacostraca,Crangonidae,2
+10-17/AS4-Sole-G0/1b,Arthropoda,Malacostraca,Diastylis bradyi,5
+10-17/AS4-Sole-G0/1b,Arthropoda,Malacostraca,Pseudocuma (Pseudocuma) longicorne,1
+10-17/AS4-Sole-G0/1b,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AS4-Sole-G0/1b,Arthropoda,Malacostraca,Photis longicaudata,1
+10-17/AS4-Sole-G0/1b,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/AS4-Sole-G0/1b,Annelida,Polychaeta sedentaria,Spionidae,1
+10-17/AS4-Sole-G0/1b,Mollusca,Bivalvia,Mya sp,1
+10-17/AS4-Sole-G0/2a,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AS4-Sole-G0/2a,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AS4-Sole-G0/2a,Arthropoda,Malacostraca,Diastylis sp,6
+10-17/AS4-Sole-G0/2a,Arthropoda,Malacostraca,Pseudocuma (Pseudocuma) longicorne,1
+10-17/AS4-Sole-G0/2b,Annelida,Annelida sp.,Annelida sp.,1
+10-17/AS4-Sole-G0/2b,Arthropoda,Malacostraca,Diastylis bradyi,8
+10-17/AS4-Sole-G0/2b,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/AS4-Sole-G0/2b,Mollusca,Bivalvia,Bivalvia,1
+10-17/AS4-Sole-G0/5,Arthropoda,Malacostraca,Diastylis bradyi,5
+10-17/AS4-Sole-G0/5,Arthropoda,Ostracoda,Ostracoda,1
+10-17/AS4-Sole-G0/5,Mollusca,Bivalvia,Mya sp,4
+10-17/AS4-Sole-G0/5,Arthropoda,Malacostraca,Crangonidae,1
+10-17/AS4-Sole-G0/5,Arthropoda,Malacostraca,Perioculodes longimanus,1
+10-17/AS5-sole-G0/3,Arthropoda,Malacostraca,Arthropoda,2
+10-17/AS5-sole-G0/3,Arthropoda,Malacostraca,Amphipoda,1
+10-17/AS5-sole-G0/3,Annelida,Annelida sp.,Annelida sp.,1
+10-17/AS5-Sole-G0/5,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AS5-Sole-G0/5,Arthropoda,Ostracoda,Ostracoda,1
+10-17/AS5-sole-G0/6,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/AS5-sole-G0/6,Annelida,Annelida sp.,Annelida sp.,1
+10-17/AS5-sole-G0/6,Annelida,Polychaeta sedentaria,Ampharetidae,1
+10-17/AS5-sole-G0/6,Mollusca,Bivalvia,Bivalvia,1
+10-17/AS5-Sole-G0/8,Annelida,Polychaeta sedentaria,Ampharetidae,1
+10-17/AS5-Sole-G0/8,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AS5-Sole-G0/8,Arthropoda,Ostracoda,Ostracoda,1
+10-17/AS5-Sole-G0/8,Arthropoda,Malacostraca,Leucothoe incisa,1
+10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Lagis koreni,1
+10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Malacostraca,Portunidae,1
+10-17/CC1-EM1-AN2-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Ampharetidae,1
+10-17/CC1-EM1-AN2-Sole-G0/1,Annelida,Polychaeta sedentaria,Melinna palmata,1
+10-17/CC3-FN5-Sole-G0/1,Annelida,Annelida sp.,Annelida sp.,1
+10-17/CC3-FN5-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,1
+10-17/CC3-FN5-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,2
+10-17/CC3-FN5-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,20
+10-17/CC3-FN5-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+10-17/CC3-FN5-Sole-G0/2,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/CC3-FN5-Sole-G0/2,Annelida,Polychaeta errantia,Hediste diversicolor,1
+10-17/CC3-FN5-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+10-17/CC3-FN5-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,1
+10-17/CC3-FN5-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,14
+10-17/CC3-FN5-Sole-G0/4,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/CC3-FN5-Sole-G0/4,Arthropoda,Malacostraca,Corophium volutator,2
+10-17/CC3-FN5-Sole-G0/5,Annelida,Annelida sp.,Annelida sp.,1
+10-17/CC3-FN5-Sole-G0/6,Annelida,Polychaeta errantia,Nereididae,1
+10-17/CC3-FN5-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,1
+10-17/CC5-FN11-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,3
+10-17/CC5-FN11-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,3
+10-17/CC5-FN11-Sole-G0/1,Annelida,Polychaeta sedentaria,Ampharete lindstroemi,1
+10-17/CC5-FN11-Sole-G0/1,Annelida,Polychaeta errantia,Hediste diversicolor,1
+10-17/CC5-FN11-Sole-G0/1,Arthropoda,Malacostraca,Arthropoda,1
+10-17/CC5-FN11-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+10-17/CC5-FN11-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+4-10-17/FN1-Sole-G0/1,Annelida,Polychaeta sedentaria,Boccardiella ligerica,4
+4-10-17/FN1-Sole-G0/4,Annelida,Polychaeta errantia,Hediste diversicolor,2
+4-10-17/FN1-Sole-G0/4,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN1-Sole-G0/4,Arthropoda,Malacostraca,Arthropoda,1
+4-10-17/FN1-Sole-G0/5,Annelida,Polychaeta errantia,Hediste diversicolor,2
+4-10-17/FN1-Sole-G0/5,Arthropoda,Malacostraca,Crangon crangon,1
+4-10-17/FN1-Sole-G0/5,Arthropoda,Malacostraca,Corophium volutator,1
+10-17/FN3-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,14
+10-17/FN3-Sole-G0/1,Arthropoda,Malacostraca,Ampelisca sp,1
+10-17/FN3-Sole-G0/1,Arthropoda,Malacostraca,Cyathura carinata,2
+10-17/FN3-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,13
+10-17/FN3-Sole-G0/1,Annelida,Polychaeta errantia,Hediste diversicolor,4
+10-17/FN3-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,2
+4-10-17/FN8-Sole-G0/11,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/FN8-Sole-G0/11,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+4-10-17/FN8-Sole-G0/11,Arthropoda,Malacostraca,Corophium volutator,2
+4-10-17/FN8-Sole-G0/17,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/FN8-Sole-G0/17,Annelida,Polychaeta errantia,Aphroditiformia,1
+4-10-17/FN8-Sole-G0/17,Annelida,Polychaeta sedentaria,Polydora ciliata,16
+4-10-17/FN8-Sole-G0/21,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/FN8-Sole-G0/22,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/FN8-Sole-G0/22,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+4-10-17/FN8-Sole-G0/22,Mollusca,Bivalvia,Bivalvia,NA
+4-10-17/FN8-Sole-G0/22,Arthropoda,Malacostraca,Crangon crangon,1
+4-10-17/FN8-Sole-G0/22,Arthropoda,Malacostraca,Corophium volutator,1
+4-10-17/FN8-Sole-G0/23,Arthropoda,Malacostraca,Corophium volutator,4
+4-10-17/FN8-Sole-G0/23,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+4-10-17/FN8-Sole-G0/23,Annelida,Polychaeta errantia,Nereididae,1
+4-10-17/FN8-Sole-G0/24,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+4-10-17/FN8-Sole-G0/24,Mollusca,Bivalvia,Bivalvia,1
+4-10-17/FN8-Sole-G0/25,Arthropoda,Malacostraca,Crangon crangon,3
+4-10-17/FN8-Sole-G0/25,Arthropoda,Malacostraca,Corophium volutator,15
+4-10-17/FN8-Sole-G0/25,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+4-10-17/FN8-Sole-G0/25,Annelida,Polychaeta errantia,Hediste diversicolor,2
+4-10-17/FN8-Sole-G0/25,Arthropoda,Malacostraca,Carcinus maenas,1
+4-10-17/FN8-Sole-G0/25,Annelida,Polychaeta sedentaria,Sabellaria spinulosa,1
+4-10-17/FN8-Sole-G0/25,Arthropoda,Ostracoda,Ostracoda,3
+4-10-17/FN8-Sole-G0/26,Annelida,Polychaeta sedentaria,Polydora ciliata,11
+4-10-17/FN8-Sole-G0/26,Arthropoda,Malacostraca,Corophium volutator,1
+4-10-17/FN8-Sole-G0/26,Annelida,Polychaeta sedentaria,Spionidae,1
+4-10-17/FN8-Sole-G0/6,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN8-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+4-10-17/FN8-Sole-G0/6,Arthropoda,Malacostraca,Arthropoda,1
+10-17/FN9-Sole-G0/1,Annelida,Polychaeta errantia,Hediste diversicolor,1
+10-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,6
+10-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Cyathura carinata,6
+10-17/FN9-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/FN9-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/FN9-Sole-G0/1,Arthropoda,Hexanauplia,eurytemora affinis,2
+10-17/FN9-Sole-G0/1,Arthropoda,Ostracoda,Ostracoda,1
+10-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,1
+4-10-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Corophium volutator,26
+4-10-17/FN9-Sole-G0/1,Arthropoda,Malacostraca,Cyathura carinata,1
+10-17/FS0-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/FS0-Sole-G0/1,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS0-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+3-10-17/FS1-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+3-10-17/FS1-Sole-G0/1,Annelida,Polychaeta sedentaria,Lagis koreni,6
+3-10-17/FS1-Sole-G0/1,Arthropoda,Malacostraca,Arthropoda,1
+3-10-17/FS1-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,2
+3-10-17/FS1-Sole-G0/2,Annelida,Polychaeta sedentaria,Lagis koreni,5
+3-10-17/FS1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+3-10-17/FS1-Sole-G0/2,Arthropoda,Malacostraca,Crangon crangon,1
+3-10-17/FS1-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+3-10-17/FS1-Sole-G0/3,Annelida,Polychaeta sedentaria,Lagis koreni,3
+3-10-17/FS1-Sole-G0/3,Arthropoda,Malacostraca,Crangon crangon,1
+3-10-17/FS1-Sole-G0/3,Annelida,Polychaeta sedentaria,Ampharetidae,1
+3-10-17/FS1-Sole-G0/3,Arthropoda,Ostracoda,Ostracoda,1
+3-10-17/FS1-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/FS3-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,11
+10-17/FS3-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/FS3-Sole-G0/1,Arthropoda,Malacostraca,Arthropoda,1
+10-17/FS3-Sole-G0/1,Annelida,Polychaeta errantia,Polynoidae,1
+10-17/FS3-Sole-G0/10,Arthropoda,Malacostraca,Arthropoda,1
+10-17/FS3-Sole-G0/10,Annelida,Polychaeta errantia,Nereididae,3
+10-17/FS3-Sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+10-17/FS3-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,24
+10-17/FS3-Sole-G0/3,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+10-17/FS3-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,1
+10-17/FS3-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/FS3-Sole-G0/5,Mollusca,Bivalvia,Bivalvia,2
+10-17/FS3-Sole-G0/5,Annelida,Annelida sp.,Annelida sp.,1
+10-17/FS3-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,2
+10-17/FS3-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+10-17/FS3-Sole-G0/6,Arthropoda,Malacostraca,Arthropoda,1
+10-17/FS3-Sole-G0/7,Annelida,Polychaeta sedentaria,Polydora ciliata,9
+10-17/FS3-Sole-G0/7,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/FS3-Sole-G0/7,Arthropoda,Malacostraca,Arthropoda,1
+10-17/FS3-Sole-G0/7,Mollusca,Bivalvia,Bivalvia,1
+10-17/FS3-Sole-G0/8,Mollusca,Bivalvia,Bivalvia,1
+10-17/FS3-Sole-G0/8,Annelida,Polychaeta errantia,Hediste diversicolor,1
+3-10-17/FS4-Sole-G0/1,Annelida,Polychaeta sedentaria,Lagis koreni,1
+3-10-17/FS4-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,2
+3-10-17/FS4-Sole-G0/1,Annelida,Polychaeta errantia,Polynoidae,1
+3-10-17/FS4-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+3-10-17/FS4-Sole-G0/1,Arthropoda,Hexanauplia,Copepoda,1
+3-10-17/FS4-Sole-G0/1,Arthropoda,Ostracoda,Ostracoda,1
+3-10-17/FS4-Sole-G0/1,Mollusca,Bivalvia,Bivalvia_larve,1
+3-10-17/FS4-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/FS5-Sole-G0/1,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/FS5-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,12
+10-17/FS5-Sole-G0/4,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS5-Sole-G0/4,Annelida,Polychaeta errantia,Phyllodocidae,1
+10-17/FS5-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,5
+10-17/FS5-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydorinae,1
+3-10-17/FS5-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,3
+3-10-17/FS5-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,1
+4-10-17/FN9-Sole-G0/2,Arthropoda,Malacostraca,Cyathura carinata,8
+4-10-17/FN9-Sole-G0/2,Arthropoda,Malacostraca,Corophium volutator,2
+4-10-17/FN9-Sole-G0/2,Annelida,Polychaeta sedentaria,Arenicola marina,1
+4-10-17/FN9-Sole-G0/2,Annelida,Polychaeta errantia,Hediste diversicolor,1
+4-10-17/FN9-Sole-G0/2,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN9-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+4-10-17/FN9-Sole-G0/2,Annelida,Annelida sp.,Annelida sp.,1
+4-10-17/FN1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+4-10-17/FN1-Sole-G0/2,Arthropoda,Malacostraca,Bathyporeia sp,1
+4-10-17/FN1-Sole-G0/2,Annelida,Polychaeta errantia,Hediste diversicolor,1
+4-10-17/FN1-Sole-G0/3,Annelida,Polychaeta errantia,Hediste diversicolor,3
+4-10-17/FN1-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/C2-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C2-Sole-G0/2,Arthropoda,Hexanauplia,Harpacticoida,37
+06-17/C1-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,123
+06-17/C1-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+06-17/C1-Sole-G0/2,Arthropoda,Arachnida,Halacaridae,1
+06-17/C1-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,11
+06-17/C1-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C1-Sole-G0/3,Arthropoda,Arachnida,Halacaridae,1
+06-17/C1-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+06-17/C1-Sole-G0/5,Arthropoda,Hexanauplia,Harpacticoida,163
+06-17/C1-Sole-G0/5,Arthropoda,Arachnida,Halacaridae,2
+06-17/C1-Sole-G0/8,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C1-Sole-G0/8,Annelida,Polychaeta sedentaria,Boccardiella ligerica,1
+06-17/C1-Sole-G0/9,Annelida,Annelida sp.,Annelida sp.,1
+06-17/C1-Sole-G0/9,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+06-17/C1-Sole-G0/9,Arthropoda,Hexanauplia,Harpacticoida,3
+06-17/C1-Sole-G0/11,Annelida,Polychaeta sedentaria,Boccardiella ligerica,2
+06-17/C1-Sole-G0/11,Arthropoda,Malacostraca,Corophium volutator,5
+06-17/C1-Sole-G0/11,Arthropoda,Hexanauplia,Harpacticoida,6
+06-17/C1-Sole-G0/11,Arthropoda,Malacostraca,Arthropoda,1
+06-17/C1-Sole-G0/13,Arthropoda,Hexanauplia,Harpacticoida,2
+06-17/C1-Sole-G0/13,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+06-17/FS0-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FS3-Sole-G0/14,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+10-17/CC3-FN5-Sole-G0/16,Arthropoda,Malacostraca,Crangon crangon,3
+10-17/CC3-FN5-Sole-G0/16,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/FN5-Sole-G0/2,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/FN5-Sole-G0/2,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/CC3-FN5-Sole-G0/15,Arthropoda,Malacostraca,Crangon crangon,2
+10-17/CC3-FN5-Sole-G0/15,Annelida,Polychaeta sedentaria,Polydora ciliata,14
+4-10-17/FN5-Sole-G0/4,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN5-Sole-G0/4,Arthropoda,Hexanauplia,Harpacticoida,2
+4-10-17/FN5-Sole-G0/4,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/FN5-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,1
+10-17/FN5-Sole-G0/1,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/CC3-FN5-Sole-G0/7,Arthropoda,Malacostraca,Corophium volutator,1
+10-17/CC3-FN5-Sole-G0/7,Annelida,Annelida sp.,Annelida sp.,1
+10-17/CC3-FN5-Sole-G0/14,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN5-Sole-G0/3,Annelida,Annelida sp.,Annelida sp.,1
+4-10-17/FN5-Sole-G0/3,Annelida,Polychaeta errantia,Nephtys kersivalensis,1
+10-17/CC3-FN5-Sole-G0/8,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/CC3-FN5-Sole-G0/8,Arthropoda,Malacostraca,Arthropoda,1
+10-17/CC3-FN5-Sole-G0/13,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+10-17/CC3-FN5-Sole-G0/13,Annelida,Polychaeta errantia,Hediste diversicolor,1
+10-17/CC3-FN5-Sole-G0/13,Arthropoda,Hexanauplia,Harpacticoida,4
+10-17/CC3-FN5-Sole-G0/13,Arthropoda,Malacostraca,Corophiidae,1
+4-10-17/FN5-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+4-10-17/FN5-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+4-10-17/FN5-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,1
+4-10-17/FN5-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/CC3-FN5-Sole-G0/10,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/CC3-FN5-Sole-G0/10,Annelida,Polychaeta errantia,Glycera sp,1
+10-17/CC3-FN5-Sole-G0/10,Arthropoda,Malacostraca,Corophium volutator,3
+10-17/CC3-FN5-Sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+10-17/CC3-FN5-Sole-G0/10,Arthropoda,Hexanauplia,Sessilia,1
+10-17/CC3-FN5-Sole-G0/10,Arthropoda,Malacostraca,Crangon crangon,1
+06-17/C6-Sole-G0/2,Annelida,Polychaeta errantia,Nereididae,1
+06-17/C6-Sole-G0/2,Arthropoda,Hexanauplia,Sessilia,1
+06-17/C6-Sole-G0/2,Arthropoda,Arachnida,Halacaridae,1
+06-17/C6-Sole-G0/2,Arthropoda,Ostracoda,Ostracoda,1
+06-17/C7-Sole-G0/8,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C7-Sole-G0/17,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C7-Sole-G0/6,Arthropoda,Malacostraca,Crangon crangon,1
+06-17/C7-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C7-Sole-G0/6,Arthropoda,Ostracoda,Ostracoda,1
+06-17/C7-Sole-G0/15,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+06-17/C7-Sole-G0/15,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/C7-Sole-G0/15,Arthropoda,Hexanauplia,Sessilia,1
+06-17/C7-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+06-17/C7-Sole-G0/5,Annelida,Polychaeta sedentaria,Streblospio benedicti,1
+06-17/C7-Sole-G0/14,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+06-17/C7-Sole-G0/12,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/C7-Sole-G0/12,Annelida,Polychaeta sedentaria,Polydora ciliata,10
+06-17/C7-Sole-G0/12,Arthropoda,Hexanauplia,Sessilia,1
+06-17/C7-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/C7-Sole-G0/3,Arthropoda,Ostracoda,Ostracoda,1
+06-17/C7-Sole-G0/3,Arthropoda,Hexanauplia,Sessilia,2
+06-17/C7-Sole-G0/3,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/C7-Sole-G0/3,Mollusca,Bivalvia,Nucula sp,1
+06-17/C7-Sole-G0/3,Arthropoda,Hexanauplia,Sessilia_larva,1
+06-17/C7-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+06-17/C7-Sole-G0/11,Annelida,Polychaeta sedentaria,Polydora ciliata,24
+06-17/C7-Sole-G0/11,Arthropoda,Hexanauplia,Sessilia,1
+06-17/C7-Sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/C7-Sole-G0/10,Arthropoda,Hexanauplia,Sessilia,1
+06-17/C7-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/C7-Sole-G0/2,Annelida,Polychaeta errantia,Nereididae,1
+06-17/C7-Sole-G0/9,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+10-17/FS3bis-Sole-G0/7,Mollusca,Bivalvia,Cerastoderma edule,18
+10-17/FS3bis-Sole-G0/7,Mollusca,Bivalvia,Bivalvia,10
+3-10-17/FS3-Sole-G0/2,Annelida,Polychaeta errantia,Nereididae,1
+3-10-17/FS3-Sole-G0/2,Mollusca,Bivalvia,Bivalvia,1
+10-17/FS3bis-Sole-G0/12,Annelida,Polychaeta sedentaria,Polydora ciliata,21
+10-17/FS3bis-Sole-G0/12,Mollusca,Bivalvia,Cerastoderma edule,2
+10-17/FS3bis-Sole-G0/12,Arthropoda,Hexanauplia,Harpacticoida,2
+10-17/FS3bis-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,4
+10-17/FS3bis-Sole-G0/1,Annelida,Polychaeta errantia,Eunereis longissima,1
+10-17/FS3bis-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+3-10-17/FS3-Sole-G0/1,Mollusca,Bivalvia,Bivalvia,18
+3-10-17/FS3-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+3-10-17/FS3-Sole-G0/1,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/2,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/4,Annelida,Polychaeta errantia,Nereididae,3
+10-17/FS3bis-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,1
+10-17/FS3bis-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+10-17/FS3bis-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,3
+10-17/FS3bis-Sole-G0/5,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/18,Mollusca,Bivalvia,Bivalvia,24
+10-17/FS3bis-Sole-G0/18,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+10-17/FS3bis-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,6
+10-17/FS3bis-Sole-G0/3,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/19,Annelida,Polychaeta sedentaria,Polydora ciliata,9
+10-17/FS3bis-Sole-G0/19,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/20,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/FS3bis-Sole-G0/20,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/20,Mollusca,Bivalvia,Bivalvia,7
+10-17/FS3bis-Sole-G0/6,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/13,Mollusca,Bivalvia,Bivalvia,3
+10-17/FS3bis-Sole-G0/21,Mollusca,Bivalvia,Bivalvia,7
+10-17/FS3bis-Sole-G0/21,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+10-17/FS3bis-Sole-G0/21,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/8,Annelida,Polychaeta sedentaria,Polydora ciliata,6
+10-17/FS3bis-Sole-G0/10,Annelida,Polychaeta sedentaria,Polydora ciliata,7
+10-17/FS3bis-Sole-G0/10,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/25,Annelida,Polychaeta errantia,Nereididae,2
+10-17/FS3bis-Sole-G0/25,Annelida,Polychaeta errantia,Nephtys kersivalensis,1
+10-17/FS3bis-Sole-G0/25,Arthropoda,Malacostraca,Crangon crangon,1
+10-17/FS3bis-Sole-G0/25,Annelida,Polychaeta sedentaria,Polydora ciliata,2
+10-17/FS3bis-Sole-G0/16,Mollusca,Bivalvia,Bivalvia,19
+10-17/FS3bis-Sole-G0/16,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/17,Annelida,Polychaeta errantia,Nereididae,1
+10-17/FS3bis-Sole-G0/17,Mollusca,Bivalvia,Bivalvia,23
+10-17/AN1-Sole-G0/1,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN1-Sole-G0/1,Annelida,Polychaeta sedentaria,Owenia fusiformis,1
+10-17/AN1-Sole-G0/1,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN8-Sole-G0/2,Mollusca,Gastropoda,Gastropoda,1
+06-17/FN8-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,2
+06-17/FN8-Sole-G0/2,Arthropoda,Malacostraca,Gastrosaccus spinifer,1
+06-17/FN8-Sole-G0/2,Arthropoda,Malacostraca,Mysidae,1
+06-17/FN8-Sole-G0/2,Arthropoda,Ostracoda,Ostracoda,1
+06-17/FN8-Sole-G0/2,Mollusca,Bivalvia,Cerastoderma edule,1
+06-17/FN8-Sole-G0/2,Arthropoda,Hexanauplia,Copepoda,1
+06-17/FN8-Sole-G0/1,Arthropoda,Malacostraca,Pontocrates sp,1
+06-17/FN8-Sole-G0/1,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FN8-Sole-G0/1,Arthropoda,Hexanauplia,Sessilia,2
+06-17/FN8-Sole-G0/1,Arthropoda,Hexanauplia,Harpacticoida,7
+06-17/CC8-FN8-Sole-G0/5,Mollusca,Bivalvia,Cerastoderma edule,11
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Malacostraca,Pariambus typicus,1
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Malacostraca,Diogenes pugilator,1
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Malacostraca,Diastylis sp,1
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Malacostraca,Stenothoe marina,1
+06-17/CC8-FN8-Sole-G0/5,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC8-FN8-Sole-G0/5,Annelida,Polychaeta errantia,Polynoidae,1
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/CC8-FN8-Sole-G0/5,Arthropoda,Malacostraca,Amphipoda,1
+06-17/CC8-FN8-Sole-G0/2,Annelida,Polychaeta sedentaria,Polydora ciliata,5
+06-17/CC8-FN8-Sole-G0/7,Annelida,Polychaeta sedentaria,Polydora ciliata,4
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Hexanauplia,Harpacticoida,4
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Hexanauplia,Sessilia,7
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Malacostraca,Crangon crangon,1
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Malacostraca,Amphipoda,1
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Hexanauplia,Copepoda,1
+06-17/CC8-FN8-Sole-G0/7,Arthropoda,Ostracoda,Ostracoda,2
+06-17/CC8-FN8-Sole-G0/7,Mollusca,Bivalvia,Bivalvia,1
+06-17/FS5-Sole-G0/4,Annelida,Polychaeta errantia,Nephtys sp,1
+06-17/FS5-Sole-G0/4,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/FS5-Sole-G0/4,Arthropoda,Malacostraca,Arthropoda,1
+10-17/AN2-Sole-G0/4,Arthropoda,Malacostraca,Crangon crangon,2
+10-17/AN2-Sole-G0/4,Annelida,Polychaeta sedentaria,Owenia fusiformis,7
+10-17/AN2-Sole-G0/4,Arthropoda,Malacostraca,Diastylis sp,3
+10-17/AN2-Sole-G0/4,Annelida,Polychaeta sedentaria,Ampharetidae,1
+10-17/AN2-Sole-G0/7,Annelida,Polychaeta sedentaria,Owenia fusiformis,2
+10-17/AN2-Sole-G0/7,Annelida,Polychaeta sedentaria,Lanice conchilega,3
+10-17/AN2-Sole-G0/7,Mollusca,Bivalvia,Bivalvia,2
+10-17/AS4-Sole-G0/1a,Arthropoda,Malacostraca,Caridea,1
+10-17/AS4-Sole-G0/1a,Arthropoda,Malacostraca,Diastylis sp,3
+10-17/AS4-Sole-G0/1a,Annelida,Polychaeta errantia,Nephtys sp,1
+10-17/AN2-Sole-G0/5,Annelida,Polychaeta sedentaria,Lanice conchilega,1
+09-17/AN3-Sole-G0/4,Annelida,Polychaeta sedentaria,Magelona sp,1
+09-17/AN3-Sole-G0/4,Arthropoda,Malacostraca,Crangon crangon,1
+09-17/AN3-Sole-G0/4,Mollusca,Bivalvia,Nucula nitidosa,1
+09-17/AN3-Sole-G0/4,Arthropoda,Ostracoda,Ostracoda,4
+09-17/AN3-Sole-G0/4,Annelida,Polychaeta errantia,Nephtys sp,1
+09-17/AN3-Sole-G0/4,Annelida,Polychaeta sedentaria,Spionidae,1
+09-17/AN3-Sole-G0/4,Annelida,Polychaeta sedentaria,Polydora ciliata,23
+09-17/AN2-Sole-G0/2,Arthropoda,Ostracoda,Ostracoda,2
+09-17/AN2-Sole-G0/2,Arthropoda,Malacostraca,Crangon crangon,1
+09-17/AN2-Sole-G0/2,Annelida,Annelida sp.,Annelida sp.,1
+09-17/AN2-Sole-G0/2,Annelida,Polychaeta sedentaria,Spionidae,1
+10-17/AN2-Sole-G0/6,Mollusca,Bivalvia,Bivalvia,24
+10-17/AN2-Sole-G0/6,Annelida,Annelida sp.,Annelida sp.,1
+10-17/AS5-Sole-G0/4,Mollusca,Bivalvia,Bivalvia,16
+09-17/AN1-Sole-G0/1,Arthropoda,Malacostraca,Monocorophium insidiosum,1
+06-17/FN8-Sole-G0/4,Annelida,Polychaeta sedentaria,Spionidae,4
+06-17/FN8-Sole-G0/4,Mollusca,Bivalvia,Cerastoderma edule,8
+06-17/FN8-Sole-G0/4,Arthropoda,Malacostraca,Gastrosaccus spinifer,2
+06-17/FN8-Sole-G0/4,Arthropoda,Hexanauplia,Sessilia,1
+06-17/FN8-Sole-G0/4,Arthropoda,Ostracoda,Ostracoda,1
+06-17/CC8-FN8-Sole-G0/10,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC8-FN8-Sole-G0/10,Arthropoda,Hexanauplia,Harpacticoida,51
+06-17/CC8-FN8-Sole-G0/10,Mollusca,Bivalvia,Kurtiella bidentata,1
+06-17/CC8-FN8-Sole-G0/10,Arthropoda,Ostracoda,Ostracoda,2
+06-17/CC8-FN8-Sole-G0/10,Mollusca,Bivalvia,Bivalvia,8
+06-17/CC8-FN8-Sole-G0/10,Annelida,Polychaeta errantia,Polynoidae,1
+06-17/CC8-FN8-Sole-G0/10,Arthropoda,Malacostraca,Pariambus typicus,2
+06-17/CC1-FS5-Sole-G0/3,Mollusca,Bivalvia,Cerastoderma edule,1
+06-17/CC1-FS5-Sole-G0/3,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC1-FS5-Sole-G0/4,Annelida,Polychaeta sedentaria,Spionidae,1
+06-17/CC1-FS5-Sole-G0/4,Arthropoda,Hexanauplia,Copepoda,1
+06-17/CC1-FS5-Sole-G0/5,Annelida,Polychaeta sedentaria,Polydora ciliata,9
+06-17/CC1-FS5-Sole-G0/5,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/CC1-FS5-Sole-G0/6,Annelida,Polychaeta sedentaria,Polydora ciliata,11
+06-17/CC1-FS5-Sole-G0/17,Annelida,Polychaeta sedentaria,Polydora ciliata,1
+06-17/FN8-Sole-G0/5,Arthropoda,Malacostraca,Gastrosaccus spinifer,1
+06-17/FN8-Sole-G0/5,Annelida,Polychaeta sedentaria,Pygospio elegans,2
+06-17/FN8-Sole-G0/5,Arthropoda,Hexanauplia,Harpacticoida,4
+06-17/FN8-Sole-G0/5,Arthropoda,Ostracoda,Ostracoda,2
+06-17/FN8-Sole-G0/5,Mollusca,Bivalvia,Bivalvia,1
+06-17/FN8-Sole-G0/5,Arthropoda,Hexanauplia,Sessilia,1
+06-17/FN8-Sole-G0/7,Annelida,Polychaeta sedentaria,Pygospio elegans,1
+06-17/FN8-Sole-G0/7,Arthropoda,Hexanauplia,Harpacticoida,6
+06-17/FN8-Sole-G0/7,Mollusca,Bivalvia,Mactridae,6
+06-17/FN8-Sole-G0/7,Arthropoda,Malacostraca,Diastylis sp,1
+06-17/FN8-Sole-G0/3,Annelida,Polychaeta sedentaria,Pygospio elegans,1
+06-17/FN8-Sole-G0/3,Mollusca,Bivalvia,Mactridae,8
+06-17/FN8-Sole-G0/3,Mollusca,Bivalvia,Bivalvia,1
+06-17/FN8-Sole-G0/3,Arthropoda,Hexanauplia,Harpacticoida,1
+06-17/FN8-Sole-G0/3,Arthropoda,Hexanauplia,Sessilia,1
+06-17/FN8-Sole-G0/3,Arthropoda,Ostracoda,Ostracoda,1
