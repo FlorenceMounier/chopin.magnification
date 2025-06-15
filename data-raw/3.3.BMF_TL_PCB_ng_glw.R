@@ -42,7 +42,7 @@ TL_taxa <- isotopes |>
   select(-d15N_median) |>
   pivot_wider(names_from = grp, values_from = TL)
 
-d15N_diet <- d15N_median_taxa$Bivalvia * diet["Mollusca"] +
+d15N_diet <- d15N_median_taxa$Bivalvia * diet[["Mollusca"]] +
   d15N_median_taxa$Crustacea * diet[["Arthropoda"]] +
   d15N_median_taxa$Polychaeta * diet[["Annelida"]]
 names(d15N_diet) <- "diet"
@@ -80,7 +80,7 @@ BMF_TL_species_PCB_ng_glw_summarised <- BMF_TL_species_all_PCB_ng_glw |>
   group_by(PCB) |>
   summarise(min = median_plus(BMF_TL_min),
             median = median_plus(BMF_TL_median),
-            max = median_plus(BMF_TL_max)) |>
+            max = median_plus(BMF_TL_max), .groups = "drop") |>
   mutate(across(.cols = where(is.numeric),
                 .fns = ~ round(.x, digits = 2)))
 
@@ -89,7 +89,7 @@ usethis::use_data(BMF_TL_species_PCB_ng_glw_summarised, overwrite = TRUE)
 write_xlsx(x = BMF_TL_species_PCB_ng_glw_summarised,
            path = "inst/results/BMF_computation_PCB_ng_glw/3.BMF_TL_species_PCB_ng_glw_summarised.xlsx")
 
-# Dataset for comparison
+# Export dataset of TL-BMF species for comparison
 
 BMF_TL_species_all_PCB_ng_glw_compare <- BMF_TL_species_PCB_ng_glw_summarised |>
   mutate(type = "TL_species")
@@ -105,7 +105,8 @@ BMF_TL_diet_all_PCB_ng_glw <- BMF_diet_all_PCB_ng_glw |>
   mutate(
     BMF_TL_min = 10^(log10(min_sole / max_diet) / (TL_taxa$Actinopterygii - TL_diet)),
     BMF_TL_median = 10^(log10(median_sole / median_diet) / (TL_taxa$Actinopterygii - TL_diet)),
-    BMF_TL_max = 10^(log10(max_sole / min_diet) / (TL_taxa$Actinopterygii - TL_diet))) |>
+    BMF_TL_max = 10^(log10(max_sole / min_diet) / (TL_taxa$Actinopterygii - TL_diet))
+    ) |>
   fct_reorder_PCB() |>
   mutate(across(.cols = where(is.numeric),
                 .fns = ~ round(.x, digits = 2)))
@@ -115,9 +116,12 @@ usethis::use_data(BMF_TL_diet_all_PCB_ng_glw, overwrite = TRUE)
 write_xlsx(x = BMF_TL_diet_all_PCB_ng_glw,
            path = "inst/results/BMF_computation_PCB_ng_glw/3.BMF_TL_diet_all_PCB_ng_glw.xlsx")
 
+### Export diet TL-BMFs for comparison
+
 BMF_TL_diet_all_PCB_ng_glw_compare <- BMF_TL_diet_all_PCB_ng_glw |>
   select(PCB, starts_with("BMF")) |>
   rename_with(~ str_remove(.x, "BMF_TL_"), .cols = starts_with("BMF_TL_")) |>
   mutate(type = "TL_diet")
 
 usethis::use_data(BMF_TL_diet_all_PCB_ng_glw_compare, overwrite = TRUE)
+

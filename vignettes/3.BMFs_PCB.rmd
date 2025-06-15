@@ -69,8 +69,8 @@ ggsave(
 ### Graph BMFs for all species & sumPCB
 
 ```{r}
-ggplot_BMF_species_sumPCB <- BMF_species_all_PCB_ng_glw |> 
-  filter(PCB == "sumPCB") |> 
+ggplot_BMF_species_CB153 <- BMF_species_all_PCB_ng_glw |> 
+  filter(PCB == "CB153") |> 
   ggplot() +
   aes(x = labels, y = log(BMF_median), fill = grp) +
   geom_col() +
@@ -83,13 +83,13 @@ ggplot_BMF_species_sumPCB <- BMF_species_all_PCB_ng_glw |>
   scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
   labs(x = NULL, y = "Log predator-prey BMF", fill = "Taxon", colour = "Taxon")
 
-ggplot_BMF_species_sumPCB
+ggplot_BMF_species_CB153
 ```
 
 ```{r}
 ggsave(
-  filename = "../inst/results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_sumPCB_ng_glw.jpg",
-  plot = ggplot_BMF_species_sumPCB, width = 15, height = 10, units = "cm"
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/1.ggplot_BMF_species_CB153_ng_glw.jpg",
+  plot = ggplot_BMF_species_CB153, width = 15, height = 10, units = "cm"
 )
 ```
 
@@ -247,8 +247,8 @@ ggsave(
 ### Graph BMFs for all species & sumPCB
 
 ```{r}
-ggplot_BMF_TL_species_sumPCB <- BMF_TL_species_all_PCB_ng_glw |> 
-  filter(PCB == "sumPCB") |> 
+ggplot_BMF_TL_species_CB153 <- BMF_TL_species_all_PCB_ng_glw |> 
+  filter(PCB == "CB153") |> 
   ggplot() +
   aes(x = labels, y = log(BMF_TL_median), fill = grp) +
   geom_col() +
@@ -261,13 +261,13 @@ ggplot_BMF_TL_species_sumPCB <- BMF_TL_species_all_PCB_ng_glw |>
   scale_colour_manual(values = c("#CB2027", "darkgreen", "darkblue")) +
   labs(x = NULL, y = "Log TL-BMF predator-prey", fill = "Taxon", colour = "Taxon")
 
-ggplot_BMF_TL_species_sumPCB
+ggplot_BMF_TL_species_CB153
 ```
 
 ```{r}
 ggsave(
-  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_BMF_TL_species_sumPCB_ng_glw.jpg",
-  plot = ggplot_BMF_TL_species_sumPCB, width = 15, height = 10, units = "cm"
+  filename = "../inst/results/BMF_computation_PCB_ng_glw/3.ggplot_BMF_TL_species_CB153_ng_glw.jpg",
+  plot = ggplot_BMF_TL_species_CB153, width = 15, height = 10, units = "cm"
 )
 ```
 
@@ -376,19 +376,20 @@ ggsave(
 ```{r}
 BMF_compare <- full_join(BMF_species_all_PCB_ng_glw_compare, 
                          BMF_diet_all_PCB_ng_glw_compare) |> 
-               full_join(BMF_TL_diet_all_PCB_ng_glw_compare) |> 
-               full_join(BMF_TL_species_all_PCB_ng_glw_compare)
+               full_join(BMF_TL_species_all_PCB_ng_glw_compare) |> 
+               full_join(BMF_TL_diet_all_PCB_ng_glw_compare)
 DT::datatable(BMF_compare)
 ```
 
 ```{r}
 BMF_compare_output <- BMF_compare |> 
   pivot_wider(names_from = type, values_from = c(min, median, max)) |> 
-  mutate(BMF_diet = paste0(median_diet, " [", min_diet, "-", max_diet, "]"),
-         BMF_species = paste0(median_species, " [", min_species, "-", max_species, "]"),
-         BMF_TL_diet = paste0(median_TL_diet, " [", min_TL_diet, "-", max_TL_diet, "]"),
-         BMF_TL_species = paste0(median_TL_species, " [", min_TL_species, "-", max_TL_species, "]")) |> 
-  select(PCB, BMF_diet, BMF_species, BMF_TL_diet, BMF_TL_species)
+  mutate(BMF_species = paste0(median_species, " [", min_species, "-", max_species, "]"),
+         BMF_diet = paste0(median_diet, " [", min_diet, "-", max_diet, "]"),
+         BMF_TL_species = paste0(median_TL_species, " [", min_TL_species, "-", max_TL_species, "]"),
+         BMF_TL_diet = paste0(median_TL_diet, " [", min_TL_diet, "-", max_TL_diet, "]")) |> 
+  select(PCB, BMF_species, BMF_diet, BMF_TL_species, BMF_TL_diet)
+
 write_xlsx(x = BMF_compare_output,
            path = "../inst/results/BMF_computation_PCB_ng_glw/5.BMF_compare_PCB.xlsx")
 ```
@@ -412,5 +413,28 @@ ggplot_BMFs_compare
 ggsave(plot = ggplot_BMFs_compare, 
        filename = "../inst/results/BMF_computation_PCB_ng_glw/5.ggplot_BMFs_compare.jpg", 
        width = 25, height = 15, units = "cm")
+
+```
+
+```{r}
+ggplot_BMFs_compare_CB153 <- BMF_compare |>
+  filter(PCB %in% c("CB153")) |> 
+  ggplot() +
+  aes(x = PCB, y = median, fill = type) +
+  geom_col(position = "dodge") +
+  geom_errorbar(aes(ymin = min, ymax = max, colour = type), 
+                position = position_dodge(width = 0.9),
+                width = 0.4) +
+  geom_hline(yintercept = 1) +
+  scale_color_manual(values = c("#CB2027", "#009E73", "black", "black")) +
+  labs(x = NULL, y = "BMF", fill = "BMF type", color = "BMF type") +
+  theme(axis.text.x=element_text(size=9, angle=45, hjust=1))
+
+ggplot_BMFs_compare_CB153
+```
+```{r}
+ggsave(plot = ggplot_BMFs_compare_CB153, 
+       filename = "../inst/results/BMF_computation_PCB_ng_glw/5.ggplot_BMFs_compare_CB153.jpg", 
+       width = 15, height = 10, units = "cm")
 
 ```

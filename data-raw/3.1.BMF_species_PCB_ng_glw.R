@@ -116,7 +116,7 @@ usethis::use_data(BMF_species_PCB_ng_glw_summarised, overwrite = TRUE)
 write_xlsx(x = BMF_species_PCB_ng_glw_summarised,
            path = "inst/results/BMF_computation_PCB_ng_glw/1.BMF_species_PCB_ng_glw_summarised.xlsx")
 
-# Dataset for comparison
+### Export species BMFs for comparison
 
 BMF_species_all_PCB_ng_glw_compare <- BMF_species_PCB_ng_glw_summarised |>
   mutate(type = "species")
