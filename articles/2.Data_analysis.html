@@ -72,22 +72,90 @@
 <h3 id="diet-composition">1. Diet composition<a class="anchor" aria-label="anchor" href="#diet-composition"></a>
 </h3>
 <div class="section level4">
-<h4 id="data-computation">Data computation:<a class="anchor" aria-label="anchor" href="#data-computation"></a>
+<h4 id="data-computation">Data computation<a class="anchor" aria-label="anchor" href="#data-computation"></a>
 </h4>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># rstudioapi::navigateToFile("../data-raw/2.1.diet_composition.R")</span></span></code></pre></div>
 </div>
 <div class="section level4">
-<h4 id="pie-chart">Pie chart:<a class="anchor" aria-label="anchor" href="#pie-chart"></a>
+<h4 id="species-diet-composition">Species diet composition<a class="anchor" aria-label="anchor" href="#species-diet-composition"></a>
 </h4>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">saved_diet_species</span> <span class="op">&lt;-</span> <span class="va">diet_species</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>diet_portion <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="va">diet_portion</span>, digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">saved_diet_species_filtered</span> <span class="op">&lt;-</span> <span class="va">saved_diet_species</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">diet_portion</span> <span class="op">&gt;=</span><span class="fl">0.2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Save dataset</span></span>
+<span><span class="fu">write_xlsx</span><span class="op">(</span>x <span class="op">=</span> <span class="va">saved_diet_species</span>, path <span class="op">=</span> <span class="st">"../inst/results/Data_analysis/2.diet_species.xlsx"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="class-diet-composition">Class diet composition<a class="anchor" aria-label="anchor" href="#class-diet-composition"></a>
+</h4>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">diet_class</span> <span class="op">&lt;-</span> <span class="va">diet_species</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">taxon</span>, <span class="va">Class</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">summarise</span><span class="op">(</span>diet_portion <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">diet_portion</span><span class="op">)</span>, .groups <span class="op">=</span> <span class="st">"drop"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">diet_class</span> <span class="op">&lt;-</span> <span class="va">diet_class</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">Class</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">diet_portion</span> <span class="op">&gt;</span> <span class="fl">0.02</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span></span>
+<span>    ypos <span class="op">=</span> <span class="va">diet_portion</span> <span class="op">/</span> <span class="fl">2</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="va">diet_portion</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">diet_portion</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>    label <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">diet_portion</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span>, <span class="st">"%"</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Color palettes by taxonomic group</span></span>
+<span><span class="va">diet_class</span> <span class="op">|&gt;</span> <span class="fu">group_by</span><span class="op">(</span><span class="va">taxon</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">distinct</span><span class="op">(</span><span class="va">Class</span><span class="op">)</span> <span class="op">|&gt;</span>  <span class="fu">summarise</span><span class="op">(</span><span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 3 × 2</span></span></span>
+<span><span class="co">##   taxon      `n()`</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> Annelida       2</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> Arthropoda     2</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> Mollusca       1</span></span></code></pre>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ggcolors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu">brewer.pal</span><span class="op">(</span><span class="fl">9</span>, <span class="st">"Greens"</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">6</span><span class="op">)</span><span class="op">]</span>,</span>
+<span>              <span class="fu">brewer.pal</span><span class="op">(</span><span class="fl">9</span>, <span class="st">"Blues"</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">7</span>,<span class="fl">5</span><span class="op">)</span><span class="op">]</span>,</span>
+<span>              <span class="fu">brewer.pal</span><span class="op">(</span><span class="fl">9</span>, <span class="st">"Purples"</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span></span>
+<span>              <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Pie chart</span></span>
+<span><span class="va">ggplot_diet_class</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span>data <span class="op">=</span> <span class="va">diet_class</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="st">""</span>, y <span class="op">=</span> <span class="va">diet_portion</span>, fill <span class="op">=</span> <span class="va">Class</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_bar</span><span class="op">(</span>width <span class="op">=</span> <span class="fl">1</span>, stat <span class="op">=</span> <span class="st">"identity"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">coord_polar</span><span class="op">(</span><span class="st">"y"</span>, start<span class="op">=</span><span class="fl">0</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">scale_fill_manual</span><span class="op">(</span>values <span class="op">=</span> <span class="va">ggcolors</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">labs</span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Class"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_minimal</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span></span>
+<span>    axis.title.x <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    axis.title.y <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    panel.border <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    panel.grid <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>    axis.ticks <span class="op">=</span> <span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme</span><span class="op">(</span>axis.text.x<span class="op">=</span><span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">ypos</span>, label <span class="op">=</span> <span class="va">label</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">4</span>, colour <span class="op">=</span> <span class="st">"white"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ggplot_diet_class</span></span></code></pre></div>
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Save plot</span></span>
+<span><span class="fu">ggsave</span><span class="op">(</span>plot <span class="op">=</span> <span class="va">ggplot_diet_class</span>, filename <span class="op">=</span> <span class="st">"../inst/results/Data_analysis/1.ggplot_diet_class.jpg"</span>,</span>
+<span>       width <span class="op">=</span> <span class="fl">5</span>, height <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="taxon-diet-composition">Taxon diet composition<a class="anchor" aria-label="anchor" href="#taxon-diet-composition"></a>
+</h4>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">gg_color_hue</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="va">hues</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">375</span>, length <span class="op">=</span> <span class="va">n</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/grDevices/hcl.html" class="external-link">hcl</a></span><span class="op">(</span>h <span class="op">=</span> <span class="va">hues</span>, l <span class="op">=</span> <span class="fl">65</span>, c <span class="op">=</span> <span class="fl">100</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">]</span></span>
 <span><span class="op">}</span></span>
 <span><span class="va">colors</span> <span class="op">=</span> <span class="fu">gg_color_hue</span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">diet</span> <span class="op">&lt;-</span> <span class="va">diet</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="va">diet</span> <span class="op">&lt;-</span> <span class="va">diet_comp</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">taxon</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span></span>
 <span>    ypos <span class="op">=</span> <span class="va">diet_portion</span> <span class="op">/</span> <span class="fl">2</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/cumsum.html" class="external-link">cumsum</a></span><span class="op">(</span><span class="va">diet_portion</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">diet_portion</span><span class="op">)</span><span class="op">]</span><span class="op">)</span>,</span>
@@ -111,7 +179,10 @@
 <span>  <span class="fu">theme</span><span class="op">(</span>axis.text.x<span class="op">=</span><span class="fu">element_blank</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_text</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>y <span class="op">=</span> <span class="va">ypos</span>, label <span class="op">=</span> <span class="va">label</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Save plot</span></span>
+<span><span class="va">ggplot_diet</span></span></code></pre></div>
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Save plot</span></span>
 <span><span class="fu">ggsave</span><span class="op">(</span>plot <span class="op">=</span> <span class="va">ggplot_diet</span>, filename <span class="op">=</span> <span class="st">"../inst/results/Data_analysis/1.ggplot_diet.jpg"</span>,</span>
 <span>       width <span class="op">=</span> <span class="fl">5</span>, height <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -120,20 +191,20 @@
 <h3 id="lipid-contents">2. Lipid contents<a class="anchor" aria-label="anchor" href="#lipid-contents"></a>
 </h3>
 <p>Dataset:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lipid</span> <span class="op">&lt;-</span> <span class="va">contam</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">species</span>, <span class="va">lipid_percent_dw</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">full_join</span><span class="op">(</span><span class="va">metadata</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">drop_na</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(species)`</span></span></code></pre>
 <p>Descriptive statistics:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">lipid</span><span class="op">$</span><span class="va">lipid_percent_dw</span><span class="op">)</span> <span class="co"># 0.75</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 0.75</span></span></code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">lipid</span><span class="op">$</span><span class="va">lipid_percent_dw</span><span class="op">)</span> <span class="co"># 7</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 7</span></span></code></pre>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lipid</span> <span class="op">|&gt;</span> <span class="fu">summarise</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/median.html" class="external-link">median</a></span><span class="op">(</span><span class="va">lipid_percent_dw</span><span class="op">)</span>, .by <span class="op">=</span> <span class="va">grp</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 4 × 2</span></span></span>
 <span><span class="co">##   grp            `median(lipid_percent_dw)`</span></span>
@@ -143,7 +214,7 @@
 <span><span class="co">## <span style="color: #BCBCBC;">3</span> Polychaeta                           1.48</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">4</span> Actinopterygii                       4</span></span></code></pre>
 <p>Tests between taxa:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dunn_lipid</span> <span class="op">&lt;-</span> <span class="fu">dunnTest</span><span class="op">(</span><span class="va">lipid_percent_dw</span> <span class="op">~</span> <span class="va">grp</span>, data <span class="op">=</span> <span class="va">lipid</span>, method <span class="op">=</span> <span class="st">"bonferroni"</span><span class="op">)</span></span>
 <span><span class="va">res_dunn_grp</span> <span class="op">&lt;-</span> <span class="va">dunn_lipid</span><span class="op">$</span><span class="va">res</span> <span class="op">|&gt;</span> <span class="fu">select</span><span class="op">(</span><span class="va">Comparison</span>, <span class="va">P.adj</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>P.adj <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">P.adj</span>, digits <span class="op">=</span> <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span>
@@ -155,7 +226,7 @@
 <span><span class="co">## 4 Actinopterygii - Polychaeta 0.000</span></span>
 <span><span class="co">## 5       Bivalvia - Polychaeta 0.316</span></span>
 <span><span class="co">## 6      Crustacea - Polychaeta 0.035</span></span></code></pre>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Annotations for boxplots</span></span>
 <span><span class="va">counts</span> <span class="op">&lt;-</span> <span class="va">lipid</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">grp</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -183,7 +254,7 @@
 </h3>
 <p>Table of statistics for each taxon and feeding mode in ng/g dw, ng/g
 ww and ng/d lw:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sub_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">"Soles"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Solea_solea"</span><span class="op">)</span>, </span>
 <span>                 <span class="st">"Prey"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">!=</span> <span class="st">"Solea_solea"</span><span class="op">)</span>, </span>
 <span>                 <span class="st">"Bivalves"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">grp</span> <span class="op">==</span> <span class="st">"Bivalvia"</span><span class="op">)</span>, </span>
@@ -192,7 +263,7 @@ ww and ng/d lw:</p>
 <span>                 <span class="st">"Suspensivores"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">alim</span> <span class="op">==</span> <span class="st">"Suspensivore"</span><span class="op">)</span>, </span>
 <span>                 <span class="st">"Deposivores"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">alim</span> <span class="op">==</span> <span class="st">"Deposivore"</span><span class="op">)</span>, </span>
 <span>                 <span class="st">"Omnivores"</span> <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">alim</span> <span class="op">==</span> <span class="st">"Omnivore"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">families</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"PCB"</span>, <span class="st">"PFAS"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">sum_levels_ng_gdw</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -238,7 +309,7 @@ ww and ng/d lw:</p>
 </h3>
 <p>Plot of the total levels (sum in ng/g dw) in the different taxa and
 feeding mode:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ggdata_sumfamily_taxalim</span> <span class="op">&lt;-</span> <span class="va">contam</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">species</span>, <span class="va">grp</span>, <span class="va">alim</span>, <span class="va">sommePCB_ng_gdw</span>, <span class="va">sommePFAS_ng_gdw</span>,<span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">sommePCB_ng_gdw</span>, <span class="va">sommePFAS_ng_gdw</span><span class="op">)</span>, </span>
@@ -253,13 +324,13 @@ feeding mode:</p>
 <span>  <span class="fu">summarise</span><span class="op">(</span>counts <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">sum_ng_gdw</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## `summarise()` has grouped output by 'family'. You can override using the</span></span>
 <span><span class="co">## `.groups` argument.</span></span></code></pre>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">maxs</span> <span class="op">&lt;-</span> <span class="va">ggdata_sumfamily_taxalim</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">family</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">summarise</span><span class="op">(</span>maxs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">sum_ng_gdw</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">gg_text</span> <span class="op">&lt;-</span> <span class="fu">full_join</span><span class="op">(</span><span class="va">counts</span>, <span class="va">maxs</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(family)`</span></span></code></pre>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ggplot_sumfamily_taxalim</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span><span class="va">ggdata_sumfamily_taxalim</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">grp</span>, y <span class="op">=</span> <span class="va">sum_ng_gdw</span>, fill <span class="op">=</span> <span class="va">alim</span>, col <span class="op">=</span> <span class="va">alim</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_dotplot</span><span class="op">(</span>binaxis <span class="op">=</span> <span class="st">'y'</span>, stackdir <span class="op">=</span> <span class="st">'center'</span>, dotsize <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span> <span class="op">+</span></span>
@@ -288,7 +359,7 @@ feeding mode:</p>
 <span><span class="co">## <span style="color: #555555;">This warning is displayed once every 8 hours.</span></span></span>
 <span><span class="co">## <span style="color: #555555;">Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span></span>
 <span><span class="co">## <span style="color: #555555;">generated.</span></span></span></code></pre>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span></span>
 <span>  filename <span class="op">=</span> <span class="st">"../inst/results/Data_analysis/4.ggplot_contamination_sumfamily_taxalim.jpg"</span>,</span>
 <span>  plot <span class="op">=</span> <span class="va">ggplot_sumfamily_taxalim</span>, width <span class="op">=</span> <span class="fl">20</span>, height <span class="op">=</span> <span class="fl">10</span>, units <span class="op">=</span> <span class="st">"cm"</span></span>
@@ -300,7 +371,7 @@ feeding mode:</p>
 <pre><code><span><span class="co">## Warning: Removed 12 rows containing non-finite outside the scale range</span></span>
 <span><span class="co">## (`stat_summary()`).</span></span></code></pre>
 <p>Test taxa effect:</p>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># PCB in ng/g lw</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html" class="external-link">kruskal.test</a></span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span> <span class="op">~</span> <span class="va">grp</span>, data <span class="op">=</span> <span class="va">contam</span><span class="op">)</span> <span class="co"># p-value &lt; 0.05</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -308,7 +379,7 @@ feeding mode:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## data:  sommePCB_ALL_ng_glw by grp</span></span>
 <span><span class="co">## Kruskal-Wallis chi-squared = 10.715, df = 3, p-value = 0.01337</span></span></code></pre>
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># PFAS in ng/g dw</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html" class="external-link">kruskal.test</a></span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span> <span class="op">~</span> <span class="va">grp</span>, data <span class="op">=</span> <span class="va">contam</span><span class="op">)</span> <span class="co"># p-value &lt; 0.05</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -316,7 +387,7 @@ feeding mode:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## data:  sommePFAS_ALL_ng_gdw by grp</span></span>
 <span><span class="co">## Kruskal-Wallis chi-squared = 25.308, df = 3, p-value = 1.331e-05</span></span></code></pre>
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dunn_PCB_grp</span> <span class="op">&lt;-</span> <span class="fu">dunnTest</span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span> <span class="op">~</span> <span class="va">grp</span>, data <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu">drop_na</span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">dunn_PFAS_grp</span> <span class="op">&lt;-</span> <span class="fu">dunnTest</span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span> <span class="op">~</span> <span class="va">grp</span>, data <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu">drop_na</span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -327,7 +398,7 @@ feeding mode:</p>
 <span></span>
 <span><span class="fu">writexl</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/writexl//reference/write_xlsx.html" class="external-link">write_xlsx</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">res_dunn_grp</span>, path <span class="op">=</span> <span class="st">"../inst/results/Data_analysis/4.test_dunn_taxa.xlsx"</span><span class="op">)</span></span></code></pre></div>
 <p>Test feeding mode effect:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># PCB in ng/g lw</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html" class="external-link">kruskal.test</a></span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span> <span class="op">~</span> <span class="va">alim</span>, data <span class="op">=</span> <span class="va">contam</span><span class="op">)</span> <span class="co"># p-value = 0.14</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -335,7 +406,7 @@ feeding mode:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## data:  sommePCB_ALL_ng_glw by alim</span></span>
 <span><span class="co">## Kruskal-Wallis chi-squared = 3.9438, df = 2, p-value = 0.1392</span></span></code></pre>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># PFAS in ng/g dw</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html" class="external-link">kruskal.test</a></span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span> <span class="op">~</span> <span class="va">alim</span>, data <span class="op">=</span> <span class="va">contam</span><span class="op">)</span> <span class="co"># p-value &lt; 0.05</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -343,7 +414,7 @@ feeding mode:</p>
 <span><span class="co">## </span></span>
 <span><span class="co">## data:  sommePFAS_ALL_ng_gdw by alim</span></span>
 <span><span class="co">## Kruskal-Wallis chi-squared = 19.447, df = 2, p-value = 5.987e-05</span></span></code></pre>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dunn_PCB_alim</span> <span class="op">&lt;-</span> <span class="fu">dunnTest</span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span> <span class="op">~</span> <span class="va">alim</span>, data <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu">drop_na</span><span class="op">(</span><span class="va">sommePCB_ALL_ng_glw</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">dunn_PFAS_alim</span> <span class="op">&lt;-</span> <span class="fu">dunnTest</span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span> <span class="op">~</span> <span class="va">alim</span>, data <span class="op">=</span> <span class="va">contam</span> <span class="op">|&gt;</span> <span class="fu">drop_na</span><span class="op">(</span><span class="va">sommePFAS_ALL_ng_gdw</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
@@ -359,7 +430,7 @@ feeding mode:</p>
 </h2>
 <p>Plot of the total levels (sum in ng/g dw) in the different
 species:</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ggdata_sumfamily_species</span> <span class="op">&lt;-</span> <span class="va">contam</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">labels</span>, <span class="va">grp</span>, <span class="va">alim</span>, <span class="va">sommePCB_ng_gdw</span>, <span class="va">sommePFAS_ng_gdw</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">sommePCB_ng_gdw</span>, <span class="va">sommePFAS_ng_gdw</span><span class="op">)</span>, </span>
@@ -395,7 +466,7 @@ example, Crangon crangon shows highly variable lipid levels without a
 corresponding increase in PCB contamination. Conversely, Limecola
 balthica exhibits relatively stable lipid content despite a wide range
 of PCB concentrations.</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html" class="external-link">cor.test</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">contam</span><span class="op">$</span><span class="va">lipid_percent_dw</span>, y <span class="op">=</span> <span class="va">contam</span><span class="op">$</span><span class="va">sommePCB_ng_gdw</span>, method <span class="op">=</span> <span class="st">"spearman"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning in cor.test.default(x = contam$lipid_percent_dw, y =</span></span>
 <span><span class="co">## contam$sommePCB_ng_gdw, : Cannot compute exact p-value with ties</span></span></code></pre>
@@ -408,7 +479,7 @@ of PCB concentrations.</p>
 <span><span class="co">## sample estimates:</span></span>
 <span><span class="co">##       rho </span></span>
 <span><span class="co">## 0.4353396</span></span></code></pre>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ggplot_lipid_PCB</span> <span class="op">&lt;-</span> <span class="fu">ggplot</span><span class="op">(</span><span class="va">contam</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">aes</span><span class="op">(</span>x <span class="op">=</span> <span class="va">lipid_percent_dw</span>, y <span class="op">=</span> <span class="va">sommePCB_ng_gdw</span>, color <span class="op">=</span> <span class="va">labels</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">geom_point</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
@@ -417,8 +488,8 @@ of PCB concentrations.</p>
 <span><span class="va">ggplot_lipid_PCB</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Removed 6 rows containing missing values or values outside the scale range</span></span>
 <span><span class="co">## (`geom_point()`).</span></span></code></pre>
-<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"../inst/results/Data_analysis/6.lipid_vs_contaminants.png"</span>, <span class="va">ggplot_lipid_PCB</span>, width <span class="op">=</span> <span class="fl">15</span>, height <span class="op">=</span> <span class="fl">12</span>, unit <span class="op">=</span> <span class="st">"cm"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Removed 6 rows containing missing values or values outside the scale range</span></span>
 <span><span class="co">## (`geom_point()`).</span></span></code></pre>
@@ -426,7 +497,7 @@ of PCB concentrations.</p>
 <div class="section level2">
 <h2 id="average-contamination-profiles-in-soles-and-their-prey">7. Average contamination profiles in soles and their prey<a class="anchor" aria-label="anchor" href="#average-contamination-profiles-in-soles-and-their-prey"></a>
 </h2>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contam_profile</span> <span class="op">&lt;-</span> <span class="va">contam</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>type <span class="op">=</span> <span class="fu">case_when</span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Solea_solea"</span> <span class="op">~</span> <span class="st">"Sole"</span>,</span>
 <span>                          <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"Prey"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -451,10 +522,10 @@ of PCB concentrations.</p>
 <span>  <span class="fu">theme</span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"bottom"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">coord_flip</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">ggplot_profile</span></span></code></pre></div>
-<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-19-1.png" width="700"></p>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-21-1.png" width="700"></p>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"../inst/results/Data_analysis/7.contamination_profiles.jpg"</span>, <span class="va">ggplot_profile</span>, width <span class="op">=</span> <span class="fl">8</span>, height <span class="op">=</span> <span class="fl">4</span>, dpi <span class="op">=</span> <span class="fl">300</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contam_profile_report</span> <span class="op">&lt;-</span> <span class="va">contam_profile</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>percent <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">percent</span>, digits <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">pivot_wider</span><span class="op">(</span>names_from <span class="op">=</span> <span class="va">type</span>, values_from <span class="op">=</span> <span class="va">percent</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -465,10 +536,10 @@ of PCB concentrations.</p>
 <div class="section level2">
 <h2 id="physico-chemical-properties-and-contamination-profiles">8. Physico-chemical properties and contamination profiles<a class="anchor" aria-label="anchor" href="#physico-chemical-properties-and-contamination-profiles"></a>
 </h2>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contam_profile_prop</span> <span class="op">&lt;-</span> <span class="fu">left_join</span><span class="op">(</span><span class="va">contam_profile</span>, <span class="va">contam_prop</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Joining with `by = join_by(chemical, family)`</span></span></code></pre>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contam_profile_prop_PCB</span> <span class="op">&lt;-</span> <span class="va">contam_profile_prop</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">family</span> <span class="op">==</span> <span class="st">"PCB"</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"Sole"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>sub_family_TAG <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">sub_family_TAG</span>, </span>
@@ -489,12 +560,12 @@ of PCB concentrations.</p>
 <span>       size <span class="op">=</span> <span class="st">"Chlorine substitution"</span>, color <span class="op">=</span> <span class="st">"Chlorine substitution"</span><span class="op">)</span></span>
 <span><span class="va">ggplot_contam_profile_prop_PCB</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Using <span style="color: #00BB00;">size</span> for a discrete variable is not advised.</span></span></code></pre>
-<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-22-1.png" width="700"></p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-24-1.png" width="700"></p>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"../inst/results/Data_analysis/8.contam_profiles_prop_PCB.jpg"</span>,</span>
 <span>       <span class="va">ggplot_contam_profile_prop_PCB</span>, width <span class="op">=</span> <span class="fl">6</span>, height <span class="op">=</span> <span class="fl">5</span>, dpi <span class="op">=</span> <span class="fl">300</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Using <span style="color: #00BB00;">size</span> for a discrete variable is not advised.</span></span></code></pre>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">contam_profile_prop_PFAS</span> <span class="op">&lt;-</span> <span class="va">contam_profile_prop</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">family</span> <span class="op">==</span> <span class="st">"PFAS"</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"Sole"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">mutate</span><span class="op">(</span>n_C <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">n_C</span><span class="op">)</span><span class="op">)</span></span>
@@ -510,8 +581,8 @@ of PCB concentrations.</p>
 <span></span>
 <span><span class="va">ggplot_contam_profile_prop_PFAS</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Using <span style="color: #00BB00;">size</span> for a discrete variable is not advised.</span></span></code></pre>
-<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-23-1.png" width="700"></p>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<p><img src="2.Data_analysis_files/figure-html/unnamed-chunk-25-1.png" width="700"></p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">ggsave</span><span class="op">(</span><span class="st">"../inst/results/Data_analysis/8.contam_profiles_prop_PFAS.jpg"</span>,</span>
 <span>       <span class="va">ggplot_contam_profile_prop_PFAS</span>, width <span class="op">=</span> <span class="fl">6</span>, height <span class="op">=</span> <span class="fl">6</span>, dpi <span class="op">=</span> <span class="fl">300</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Using <span style="color: #00BB00;">size</span> for a discrete variable is not advised.</span></span></code></pre>
