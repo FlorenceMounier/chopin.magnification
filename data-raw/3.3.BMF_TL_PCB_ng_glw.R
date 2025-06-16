@@ -53,6 +53,15 @@ TL_diet <- TL_taxa$Bivalvia * diet["Mollusca"] +
            TL_taxa$Polychaeta * diet[["Annelida"]]
 names(TL_diet) <- "diet"
 
+table_d15N_TL <- rbind(tibble(species = names(d15N_median_taxa),
+             d15N_median = as.numeric(d15N_median_taxa[1,]),
+             TL = as.numeric(TL_taxa[1,])),
+      tibble(species = "diet", d15N_median = d15N_diet, TL = TL_diet),
+      TL_species)
+
+write_xlsx(x = table_d15N_TL,
+           path = "inst/results/BMF_computation_PCB_ng_glw/3.BMF_TL_species_all_PCB_ng_glw_d15N_TL.xlsx")
+
 #-----------------------------------------------------------
 # 2. Compute species BM_TL
 
