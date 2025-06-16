@@ -235,6 +235,48 @@ sum_levels <- list("sum_levels_ng_gdw" = sum_levels_ng_gdw,
 write_xlsx(x = sum_levels, path = "../inst/results/Data_analysis/3.sum_levels.xlsx")
 ```
 
+```{r}
+families <- c("CB153", "L-PFOS")
+
+sum_levels_ng_gdw <- c()
+for(family in families){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_gdw <- rbind(sum_levels_ng_gdw,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/gdw)"),
+                                       sub_data[[type]][, paste0(family, "_ng_gdw")] |> pull()))
+  }
+}
+
+sum_levels_ng_gww <- c()
+for(family in families){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_gww <- rbind(sum_levels_ng_gww,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/gww)"),
+                                       sub_data[[type]][, paste0(family, "_ng_gww")] |> pull()))
+  }
+}
+
+sum_levels_ng_glw <- c()
+for(family in families[c(1)]){
+  for(type in 1:length(sub_data)) {
+  sum_levels_ng_glw <- rbind(sum_levels_ng_glw,
+                             get_stats(type = names(sub_data)[type],
+                                       contam = paste0(family, " (ng/glw)"),
+                                       sub_data[[type]][, paste0(family, "_ng_glw")] |> pull()))
+  }
+}
+
+# List of data per unit
+sum_levels <- list("sum_levels_ng_gdw" = sum_levels_ng_gdw, 
+                   "sum_levels_ng_gww" = sum_levels_ng_gww, 
+                   "sum_levels_ng_glw" = sum_levels_ng_glw)
+
+# Save dataset
+write_xlsx(x = sum_levels, path = "../inst/results/Data_analysis/3.sum_levels_CB153_LPFOS.xlsx")
+```
+
 ## 4. Total levels by taxon and feeding mode
 
 Plot of the total levels (sum in ng/g dw) in the different taxa and feeding mode:
