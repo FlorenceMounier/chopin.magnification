@@ -78,8 +78,27 @@ BMF_compare <- full_join(BMF_diet_PFAS_ng_gdw_censored_compare,
   mutate(type = factor(type, levels = c("uncensored", "half-LOQ", "log-norm", "cenfit", "ros"))) |> 
   filter(PFAS != "sumPFAS")
 DT::datatable(BMF_compare)
+```
 
-write_xlsx(x = BMF_compare,
+
+```{r}
+saved_BMF_compare <- BMF_compare |> 
+  pivot_wider(names_from = type, values_from = c(min, median, max)) |> 
+  mutate(
+    BMF_uncensored = paste0(median_uncensored, " [", 
+                            min_uncensored, "-", max_uncensored, "]"),
+    BMF_half_LOQ = paste0(`median_half-LOQ`, " [", 
+                          `min_half-LOQ`, "-", `max_half-LOQ`, "]"),
+    BMF_log_norm = paste0(`median_log-norm`, " [", 
+                          `min_log-norm`, "-", `max_log-norm`, "]"),
+    BMF_cenfit = paste0(median_cenfit, " [", 
+                        min_cenfit, "-", max_cenfit, "]"),
+    BMF_ros = paste0(median_ros, " [",
+                     min_ros, "-", max_ros, "]")
+    ) |> 
+  select(PFAS, BMF_uncensored, BMF_half_LOQ, BMF_log_norm, BMF_cenfit, BMF_ros)
+  
+write_xlsx(x = saved_BMF_compare,
            path = "../inst/results/BMF_computation_PFAS_ng_gdw/0.BMF_diet_PFAS_ng_gdw_compare.xlsx")
 
 ```
