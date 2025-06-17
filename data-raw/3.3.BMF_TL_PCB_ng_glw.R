@@ -29,6 +29,12 @@ TL_species <- isotopes |>
   summarise(d15N_median = median(d15N, na.rm = TRUE)) |>
   mutate(TL = trophic_level(d15N_consumer = d15N_median))
 
+# For comparison between TL-BMF scenarios
+TL_prey <- TL_species |>
+  filter(species != "Solea_solea") |>
+  summarise(d15N_median = median(d15N_median, na.rm = TRUE)) |>
+  mutate(TL = trophic_level(d15N_consumer = d15N_median))
+
 # For diet-based BMF_TL
 d15N_median_taxa <- isotopes |>
   group_by(grp) |>
