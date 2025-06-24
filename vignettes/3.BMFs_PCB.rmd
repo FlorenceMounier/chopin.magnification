@@ -436,5 +436,46 @@ ggplot_BMFs_compare_CB153
 ggsave(plot = ggplot_BMFs_compare_CB153, 
        filename = "../inst/results/BMF_computation_PCB_ng_glw/5.ggplot_BMFs_compare_CB153.jpg", 
        width = 15, height = 10, units = "cm")
-
 ```
+
+---
+
+## 6. BMF and TL-BMF comparison
+
+```{r}
+BMF <- seq(1.24, 2.68, by = 0.1)
+TL_BMF <- 10^(log10(BMF)/0.34)
+BMF_vs_TLBMF <- cbind(BMF, TL_BMF)
+ggplot_BMF_vs_TLBMF <- ggplot(BMF_vs_TLBMF) +
+  aes(x = BMF, y = TL_BMF) +
+  geom_line() +
+  labs(x = "Diet-based BMF range for CB153",
+       y = "TL-BMF = 10^( log10(BMF) / TL diet )")
+ggplot_BMF_vs_TLBMF
+```
+
+```{r}
+ggsave(plot = ggplot_BMF_vs_TLBMF, 
+       filename = "../inst/results/BMF_computation_PCB_ng_glw/6.ggplot_BMF_vs_TLBMF_CB153.jpg", 
+       width = 15, height = 10, units = "cm")
+```
+
+---
+
+## 7. Classical TMFs
+
+```{r}
+TMF_data <- BMF_TL_species_all_PCB_ng_glw |> 
+  filter(PCB == "CB153") |> 
+  select(type, grp, min, median, max, TL) |> 
+  rbind(tibble(type = "Sole", grp = "Sole", min = 2134.13, median = 2667.06, max = 2926.74, TL = 3.97))
+
+ggplot(TMF_data) +
+  aes(x = TL, y = median) +
+  geom_point() +
+  geom_errorbar(aes(ymin = min, ymax = max, colour = grp), 
+                position = position_dodge(width = 0.9),
+                width = 0.4) +
+  geom_smooth(method = "lm", formula = y ~ x, se = TRUE, color = "black", linewidth = 0.6)
+```
+
